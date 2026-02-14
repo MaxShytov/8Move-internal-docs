@@ -50,7 +50,7 @@ nav:
       - Overview: api/overview.md
   - Tasks:
       - Overview: tasks/index.md
-      - Current Task: tasks/current.md
+      - Current Tasks: tasks/current.md
       - Completed Tasks: tasks/completed.md
       - Templates:
           - AI Chatbot: tasks/templates/ai-chatbot.md

@@ -1,7 +1,13 @@
-# Current Task
+# Current Tasks
 
 !!! info "Last updated: 2026-02-14"
-    This page reflects the current active task. The full task file lives in the main project repository at `docs/_ai_context/CURRENT_TASK_*.md`.
+    This page reflects active tasks. Full task files live in the main repository at `docs/_ai_context/CURRENT_TASK_*.md`.
+
+## Active Tasks
+
+| ID | Task | Apps | Priority | Status |
+|----|------|------|----------|--------|
+| BE-01 | [Multi-Supplier Client Access Verification](#be-01-multi-supplier-client-access-verification) | Backend, Supply Now, Back Office, Admin | Medium | :material-progress-clock: In Progress |
 
 ---
 
@@ -11,6 +17,15 @@
 **Status:** :material-progress-clock: In Progress
 **Priority:** Medium
 **Estimated effort:** 4-6 hours
+
+**Apps affected:**
+
+| App | Role | Impact |
+|-----|------|--------|
+| :material-server: **Django Backend** | RLA filtering logic | Core — data access layer |
+| :material-cellphone: **Supply Now** | Client app | Client sees all linked suppliers |
+| :material-monitor-dashboard: **Back Office** | Supplier app | Supplier sees only own clients |
+| :material-shield-crown: **Django Admin** | Platform admin | Admin sees all links |
 
 ### Description
 
