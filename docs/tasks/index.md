@@ -26,19 +26,28 @@ graph LR
 
 ## Task Files
 
-Tasks are stored in the main project repository at `docs/_ai_context/`:
+Each task exists in **one place only** — no duplication:
+
+| What | Where | Purpose |
+|------|-------|---------|
+| **Full working file** | `docs/_ai_context/CURRENT_TASK_*.md` (main repo) | Single source of truth. Contains research, plan, implementation tracking. Used by developer and Claude Code. |
+| **Summary card** | `docs_internal/docs/tasks/current/XX-NN.md` (this site) | Compact overview for quick reference. Links to the full file. |
 
 ```
-docs/_ai_context/
-├── CURRENT_TASK_*.md              # Active task (single source of truth)
+Main repo (docs/_ai_context/):
+├── CURRENT_TASK_*.md              # Full working files (single source of truth)
 ├── COMPLETED_TASKS/               # Archived completed tasks
-│   ├── 2025-12-04-feature-name.md
-│   └── 2025-12-14-another-feature.md
 ├── 01. Workflow.md                # Full methodology reference
 ├── 02. Current task template.md   # Task file template
-├── 03. Quick reference.md         # Cheatsheet
-├── 04. Readme.md                  # Getting started
-└── 05. Docs structure.md          # Documentation guide
+└── ...
+
+Docs site (docs_internal/docs/tasks/):
+├── current/
+│   ├── index.md                   # Summary table of all active tasks
+│   ├── BE-01.md                   # Summary card → links to full file
+│   └── BE-01.1.md                 # Summary card → links to full file
+├── completed.md                   # Archive of completed tasks
+└── templates/                     # Documentation templates (4 audiences)
 ```
 
 ## Phase 6: Documentation for 4 Audiences
