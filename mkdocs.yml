@@ -48,6 +48,15 @@ nav:
       - Getting Started: flutter/getting-started.md
   - API:
       - Overview: api/overview.md
+  - Tasks:
+      - Overview: tasks/index.md
+      - Current Task: tasks/current.md
+      - Completed Tasks: tasks/completed.md
+      - Templates:
+          - AI Chatbot: tasks/templates/ai-chatbot.md
+          - Developers: tasks/templates/developers.md
+          - Platform Admins: tasks/templates/admins.md
+          - End Users: tasks/templates/users.md
   - Guides:
       - Development Workflow: guides/development-workflow.md
       - Running Docs Locally: guides/docs-local.md
@@ -59,7 +68,14 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.details
