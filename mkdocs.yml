@@ -50,7 +50,9 @@ nav:
       - Overview: api/overview.md
   - Tasks:
       - Overview: tasks/index.md
-      - Current Tasks: tasks/current.md
+      - Current Tasks:
+          - Overview: tasks/current/index.md
+          - BE-01 Multi-Supplier Verification: tasks/current/BE-01.md
       - Completed Tasks: tasks/completed.md
       - Templates:
           - AI Chatbot: tasks/templates/ai-chatbot.md

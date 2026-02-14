@@ -56,5 +56,5 @@ See [Templates](templates/ai-chatbot.md) for ready-to-use templates for each aud
 
 ## Quick Links
 
-- [Current Task](current.md) — what's being worked on right now
+- [Current Tasks](current/index.md) — what's being worked on right now
 - [Completed Tasks](completed.md) — archive of all finished tasks

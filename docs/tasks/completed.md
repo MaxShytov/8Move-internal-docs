@@ -56,6 +56,6 @@ Each task has a unique ID with a prefix indicating the area:
 
 2. Update this page — add a new row to the table
 
-3. Update [Current Task](current.md) with the next task (or mark as "No active task")
+3. Remove the task file from `tasks/current/` and update [Current Tasks](current/index.md)
 
 4. Complete the [documentation checklist](index.md#phase-6-documentation-for-4-audiences) for all 4 audiences
