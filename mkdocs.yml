@@ -1,0 +1,76 @@
+site_name: 8Move Internal Docs
+site_description: Internal documentation for the 8Move project
+site_url: https://trident-software.github.io/8Move-internal-docs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+repo_url: https://github.com/trident-software/8Move-internal-docs
+repo_name: 8Move-internal-docs
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - Overview: architecture/overview.md
+      - Tech Stack: architecture/tech-stack.md
+  - Backend:
+      - Getting Started: backend/getting-started.md
+      - Project Structure: backend/project-structure.md
+  - Flutter Apps:
+      - Overview: flutter/overview.md
+  - API:
+      - Overview: api/overview.md
+  - Guides:
+      - Development Workflow: guides/development-workflow.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/trident-software
