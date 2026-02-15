@@ -53,6 +53,9 @@ nav:
           - Overview: tasks/current/index.md
           - BE-01 Multi-Supplier Verification: tasks/current/BE-01.md
           - BE-01.1 Client Profile Real Data: tasks/current/BE-01.1.md
+          - Full Details:
+              - BE-01 Full: tasks/current/details/BE-01-full.md
+              - BE-01.1 Full: tasks/current/details/BE-01.1-full.md
       - Completed Tasks: tasks/completed.md
       - Templates:
           - AI Chatbot: tasks/templates/ai-chatbot.md
