@@ -116,11 +116,30 @@
 
     Скопируйте нужную команду и вставьте в терминал. Приложение откроется в Chrome и автоматически залогинится под выбранным пользователем.
 
-### Supply Now (Client App) — порт 8084
+### Port Allocation
+
+Каждому пользователю назначен отдельный порт, чтобы можно было запускать несколько приложений одновременно.
+
+| Port | App | User | Client/Supplier |
+|------|-----|------|-----------------|
+| 8080 | BackOffice | Marc Dupont | Alpine Frais Sàrl |
+| 8081 | BackOffice | Etienne Lambert | TechnoLivraison SA |
+| 8082 | BackOffice | Julien Favre | Café Mont Léman Sàrl |
+| 8083 | BackOffice | Milan Thomas | Le Glaçons Suiss SA |
+| 8084 | Supply Now | Aline Dupuis | Hôtel Edelweiss (admin, 5 suppliers) |
+| 8085 | Supply Now | Mathieu Perrin | Hôtel Edelweiss (manager) |
+| 8086 | Supply Now | Luca Meier | Le Petit Délice (3 suppliers) |
+| 8087 | Supply Now | Luc Blanc | ElectroTop (1 supplier) |
+| 8088 | Supply Now | Julien Ziegler | Julien Morel (3 suppliers) |
+| 8089 | Supply Now | Julie Renaud | École Romande (4 suppliers) |
+
+---
+
+### Supply Now (Client App)
 
 **Запускать из:** `cd mobile/apps/supply_now`
 
-#### Hôtel Edelweiss — 5 поставщиков (максимум)
+#### Hôtel Edelweiss — Aline Dupuis, admin, 5 поставщиков — порт 8084
 ```bash
 flutter run -d chrome --web-port 8084 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
@@ -128,51 +147,51 @@ flutter run -d chrome --web-port 8084 \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### Hôtel Edelweiss — другой сотрудник (Mathieu Perrin)
+#### Hôtel Edelweiss — Mathieu Perrin, manager — порт 8085
 ```bash
-flutter run -d chrome --web-port 8084 \
+flutter run -d chrome --web-port 8085 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=mathieu.perrin_edelweiss-hotel@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### Le Petit Délice — 3 поставщика
+#### Le Petit Délice — 3 поставщика — порт 8086
 ```bash
-flutter run -d chrome --web-port 8084 \
+flutter run -d chrome --web-port 8086 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=info_lepetitdelice@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### ElectroTop — 1 поставщик (минимум)
+#### ElectroTop — 1 поставщик (минимум) — порт 8087
 ```bash
-flutter run -d chrome --web-port 8084 \
+flutter run -d chrome --web-port 8087 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=luc.blanc_electrotop@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### Julien Morel — 3 поставщика (частное лицо)
+#### Julien Morel — 3 поставщика (частное лицо) — порт 8088
 ```bash
-flutter run -d chrome --web-port 8084 \
+flutter run -d chrome --web-port 8088 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=julien_proton@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### École Romande — 4 поставщика
+#### École Romande — 4 поставщика — порт 8089
 ```bash
-flutter run -d chrome --web-port 8084 \
+flutter run -d chrome --web-port 8089 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=julie.renaud_ecoleromande@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-### BackOffice (Supplier App) — порт 8080
+### BackOffice (Supplier App)
 
 **Запускать из:** `cd mobile/apps/back_office`
 
-#### Alpine Frais Sàrl — 6 клиентов
+#### Alpine Frais Sàrl — 6 клиентов — порт 8080
 ```bash
 flutter run -d chrome --web-port 8080 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
@@ -180,25 +199,25 @@ flutter run -d chrome --web-port 8080 \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### TechnoLivraison SA — 3 клиента
+#### TechnoLivraison SA — 3 клиента — порт 8081
 ```bash
-flutter run -d chrome --web-port 8080 \
+flutter run -d chrome --web-port 8081 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=etienne.lambert_techno_livraison_sa@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### Café Mont Léman Sàrl
+#### Café Mont Léman Sàrl — порт 8082
 ```bash
-flutter run -d chrome --web-port 8080 \
+flutter run -d chrome --web-port 8082 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=julien.favre_8move@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
 
-#### Le Glaçons Suiss SA
+#### Le Glaçons Suiss SA — порт 8083
 ```bash
-flutter run -d chrome --web-port 8080 \
+flutter run -d chrome --web-port 8083 \
   --dart-define=API_BASE_URL=http://localhost:8000 \
   --dart-define=AUTO_LOGIN_EMAIL=milan@leglaconsuisse.ch \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
