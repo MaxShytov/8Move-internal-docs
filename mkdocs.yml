@@ -76,6 +76,7 @@ nav:
   - Guides:
       - Development Workflow: guides/development-workflow.md
       - Running Docs Locally: guides/docs-local.md
+  - Changelog: changelog.md
 
 markdown_extensions:
   - pymdownx.highlight:
