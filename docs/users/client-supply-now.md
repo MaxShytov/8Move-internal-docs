@@ -89,9 +89,18 @@ Account and company management.
 
 | Function | Description |
 |----------|-------------|
-| **Personal tab** | Name, email, phone, language, notification preferences |
+| **Personal tab** | Name (auto-saves), email, avatar, language, change password |
 | **Company tab** | Company details (name, VAT, address, logo) |
 | **Suppliers tab** | List of linked suppliers with settings |
+
+#### Personal Tab Details
+
+| Function | Description |
+|----------|-------------|
+| Name editing | First/last name with debounced auto-save (1.5s) |
+| Avatar | Upload/clear profile picture (instant save) |
+| Change password | Dialog: current password + new password + confirm. Min 8 chars, letters + numbers required |
+| Language | Switch app language (EN, DE, FR, IT) |
 
 #### Suppliers Tab Details
 

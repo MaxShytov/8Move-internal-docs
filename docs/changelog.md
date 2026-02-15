@@ -4,6 +4,36 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-16
+
+### Platform (Supply Now + Backend)
+
+#### :material-new-box: Supply Now — Change Password
+
+Users can now change their password directly from the Profile screen:
+
+- **Change Password dialog**: current password, new password, confirm password
+- **Client-side validation**: min 8 chars, must contain letters and numbers, passwords must match
+- **Server-side validation**: checks current password correctness
+- **Localized**: all labels translated to EN, DE, FR, IT
+
+#### :material-wrench: Supply Now — Auto-Save Profile
+
+Profile editing now uses auto-save instead of a manual Save button:
+
+- **Name fields**: debounced auto-save (1.5s after typing stops)
+- **Avatar**: instant save on upload or clear
+- **Improved snackbars**: floating style with check/error icons
+- **Supplier tab**: shows supplier count in tab label
+
+#### :material-api: New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/identity/users/me/change-password/` | Change current user's password (requires current password, validates strength) |
+
+---
+
 ## 2026-02-15
 
 ### Documentation

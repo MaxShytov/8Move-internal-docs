@@ -1,5 +1,14 @@
 # Working Notes
 
+## Completed (2026-02-16)
+
+- [x] Supply Now: change password dialog on Profile screen
+- [x] Supply Now: auto-save profile (debounced name fields + instant avatar save)
+- [x] Supply Now: improved snackbar notifications (floating, icons)
+- [x] Supply Now: supplier count in tab label
+- [x] API: `POST /api/identity/users/me/change-password/`
+- [x] Localization: `currentPassword`, `passwordChangedSuccess` in EN/DE/FR/IT
+
 ## Completed (2026-02-15)
 
 - [x] Описание функционала для 6 групп пользователей → [Users & Roles](../../users/index.md)
