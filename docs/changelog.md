@@ -26,6 +26,27 @@ Profile editing now uses auto-save instead of a manual Save button:
 - **Improved snackbars**: floating style with check/error icons
 - **Supplier tab**: shows supplier count in tab label
 
+#### :material-shield-lock: RLA Filters for Multi-Supplier
+
+Fixed Row-Level Access (RLA) filters to ensure proper data isolation:
+
+- **ClientSupplierLink**: added `rla_roles_filter()` — supplier users see their links, client users see their links
+- **Order**: fixed `rla_roles_filter()` to include client user filtering (clients can now see their orders)
+- **13 automated tests**: covering RLA isolation for suppliers, clients, cross-isolation, and edge cases
+
+#### :material-database: New Seed Data
+
+- **Swiss Timepieces Group SA**: 2 seed users (Philippe Aubert — admin, Caroline Roux — manager)
+- **Standalone Boutique**: client with 0 suppliers + 1 admin user (Thomas Weber) — edge case testing
+
+#### :material-cellphone: Supply Now — Client Company Profile
+
+New "Company" tab on Profile screen showing real company data from the API:
+
+- Company name, official name, VAT number, fiscal number
+- Website, email, description
+- Admin vs Manager role display
+
 #### :material-api: New API Endpoints
 
 | Method | Endpoint | Description |

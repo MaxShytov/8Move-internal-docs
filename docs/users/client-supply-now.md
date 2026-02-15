@@ -90,7 +90,7 @@ Account and company management.
 | Function | Description |
 |----------|-------------|
 | **Personal tab** | Name (auto-saves), email, avatar, language, change password |
-| **Company tab** | Company details (name, VAT, address, logo) |
+| **Company tab** | Company details (name, official name, VAT, fiscal number, website, email, description) |
 | **Suppliers tab** | List of linked suppliers with settings |
 
 #### Personal Tab Details
@@ -101,6 +101,18 @@ Account and company management.
 | Avatar | Upload/clear profile picture (instant save) |
 | Change password | Dialog: current password + new password + confirm. Min 8 chars, letters + numbers required |
 | Language | Switch app language (EN, DE, FR, IT) |
+
+#### Company Tab Details
+
+| Function | Description |
+|----------|-------------|
+| Company name | Display name of the client organization |
+| Official name | Registered legal name |
+| VAT number | VAT registration number |
+| Fiscal number | Fiscal/tax identification number |
+| Website | Company website URL |
+| Email | Company contact email |
+| Description | Company description |
 
 #### Suppliers Tab Details
 

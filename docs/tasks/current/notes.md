@@ -8,6 +8,12 @@
 - [x] Supply Now: supplier count in tab label
 - [x] API: `POST /api/identity/users/me/change-password/`
 - [x] Localization: `currentPassword`, `passwordChangedSuccess` in EN/DE/FR/IT
+- [x] RLA: `ClientSupplierLink.rla_roles_filter()` — supplier+client users can see their links
+- [x] RLA: `Order.rla_roles_filter()` — fixed to include client user filtering
+- [x] Tests: 13 automated RLA multi-supplier tests (all passing)
+- [x] Seed: Swiss Timepieces Group SA — 2 users (admin + manager)
+- [x] Seed: Standalone Boutique — client with 0 suppliers (edge case)
+- [x] Supply Now: client company profile tab with real data
 
 ## Completed (2026-02-15)
 
