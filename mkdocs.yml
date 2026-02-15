@@ -45,6 +45,14 @@ nav:
   - Flutter Apps:
       - Overview: flutter/overview.md
       - Getting Started: flutter/getting-started.md
+  - Users & Roles:
+      - Overview: users/index.md
+      - Platform Admin: users/platform-admin.md
+      - Supplier — Back Office: users/supplier-back-office.md
+      - Client — Supply Now: users/client-supply-now.md
+      - Driver — Driver Pro: users/driver-driver-pro.md
+      - Delivery Manager — Fleet Manager: users/delivery-manager-fleet-manager.md
+      - Employee — DocuFlow: users/employee-docuflow.md
   - API:
       - Overview: api/overview.md
   - Tasks:
