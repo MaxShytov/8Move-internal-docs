@@ -39,6 +39,8 @@ nav:
   - Architecture:
       - Overview: architecture/overview.md
       - Tech Stack: architecture/tech-stack.md
+      - Backend Workflows:
+          - Change Password: architecture/django-backend/workflows/change-password.md
   - Backend:
       - Getting Started: backend/getting-started.md
       - Project Structure: backend/project-structure.md
@@ -73,6 +75,14 @@ nav:
           - Developers: tasks/templates/developers.md
           - Platform Admins: tasks/templates/admins.md
           - End Users: tasks/templates/users.md
+  - Features:
+      - Supply Now:
+          - Change Password:
+              - User Guide: features/supply-now/change-password/user-guide.md
+              - Admin Guide: features/supply-now/change-password/admin-guide.md
+  - Support:
+      - Chatbot KB:
+          - Change Password: support/chatbot/change-password.md
   - Guides:
       - Development Workflow: guides/development-workflow.md
       - Running Docs Locally: guides/docs-local.md
