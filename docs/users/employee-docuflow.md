@@ -68,13 +68,17 @@ View and edit individual receipt data.
 
 ### Profile
 
-User account settings.
+Personal profile management (shared module, identical design across all apps).
 
 | Function | Description |
 |----------|-------------|
-| Personal info | Name, email, phone |
-| Language | Preferred UI language |
-| Notification settings | Email/push preferences |
+| Avatar | Upload or remove profile picture (S3 storage) |
+| Name editing | First and last name with auto-save (1.5s debounce) |
+| Email | Read-only display |
+| Phone | Read-only display |
+| Change password | Dialog with current/new/confirm fields, validation |
+| Language | Selector with supported locales (EN, DE, FR, IT, ES) |
+| Logout | Confirmation dialog, clears session |
 
 ---
 

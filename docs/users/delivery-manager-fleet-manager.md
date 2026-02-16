@@ -99,6 +99,20 @@ Visual workflow builder for delivery processes.
 | Drag-and-drop | Visual workflow creation |
 | Status contexts | Order, route, route stop workflows |
 
+### Profile
+
+Personal profile management accessible via user avatar menu in the AppBar.
+
+| Function | Description |
+|----------|-------------|
+| Avatar | Upload or remove profile picture (S3 storage) |
+| Name editing | First and last name with auto-save (1.5s debounce) |
+| Email | Read-only display |
+| Phone | Read-only display |
+| Change password | Dialog with current/new/confirm fields, validation |
+| Language | Selector with supported locales (EN, DE, FR, IT) |
+| Logout | Confirmation dialog, clears session |
+
 ---
 
 ## Real-Time Tracking

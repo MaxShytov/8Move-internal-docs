@@ -142,6 +142,30 @@ Added ID-based sorting to receipt list (default: newest first):
 - **Flutter**: added "ID (newest)" / "ID (oldest)" sort options with translations in all 5 languages
 - **Default sort**: `-id` (newest receipts appear first)
 
+### Platform (All Apps — Shared Profile Module)
+
+#### :material-new-box: Shared Profile Module — Personal Tab for All 5 Apps
+
+Extracted a shared Profile/Personal module into `shared_core` + `shared_ui` packages and integrated it across all Flutter apps:
+
+- **shared_core**: new `userProfileProvider` — fetch, update profile, change password, auto-fetch on login/reset on logout
+- **shared_ui**: new `ProfilePersonalTab` — avatar (S3 upload), name editing (1.5s debounce auto-save), email/phone (read-only), change password dialog, language selector, logout
+- **shared_ui**: new `SharedProfileScreen` — title + TabBar shell, desktop responsive (max-width 600dp on ≥840dp), optional leading widget (back arrow), supports app-specific tabs
+- **Back Office**: new profile screen accessible via avatar click on dashboard header; removed language switcher, email, and popup menu from header
+- **Fleet Planner**: new profile screen; removed language switcher from header, fixed avatar to show user image instead of letter initial
+- **Driver Pro**: new profile screen accessible from bottom navigation
+- **DocuFlow**: replaced custom `DioService` and `UserProvider` with shared_core providers; simplified profile screen
+- **Supply Now**: refactored profile to use `SharedProfileScreen` with 4 tabs (Personal, Companies, Addresses, Suppliers)
+
+#### :material-folder-move: DocuFlow — Migrated to Shared Core Providers
+
+Replaced DocuFlow's custom networking and user management with shared packages:
+
+- **Removed**: `DioService` (230 lines) — replaced by `shared_core` `dioClientProvider`
+- **Removed**: `UserProvider` (83 lines) — replaced by `shared_core` `userProfileProvider`
+- **Added**: `core/providers.dart` — thin wrappers for `s3StorageServiceProvider`
+- **Updated**: all services now use `dioClientProvider` from shared_core
+
 ---
 
 ## 2026-02-15

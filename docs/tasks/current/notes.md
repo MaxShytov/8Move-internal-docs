@@ -2,6 +2,17 @@
 
 ## 2026-02-16
 
-- [x] BUG-001: Fixed receipt save 500 error — added read_only_fields to ReceiptUpdateSerializer, removed computed fields from Flutter PATCH
-- [x] Added ID sorting to receipt list (backend + Flutter) with default descending order
-- [x] Created Bug Tracker section in docs_internal with numbered bug pages and status tracking
+- [x] Created shared `userProfileProvider` in shared_core (state, notifier, provider with auth listener)
+- [x] Created `ProfilePersonalTab` in shared_ui (avatar, name auto-save, change password, language, logout)
+- [x] Created `SharedProfileScreen` shell in shared_ui (title, tabs, desktop responsive, leading widget)
+- [x] Created `ProfilePersonalLabels` model for localization
+- [x] Integrated profile screen in Back Office (new screen + /profile route)
+- [x] Integrated profile screen in Fleet Planner (new screen + /profile route)
+- [x] Integrated profile screen in Driver Pro (new screen + /profile route + bottom nav)
+- [x] Replaced DocuFlow profile with shared version, removed custom DioService and UserProvider
+- [x] Refactored Supply Now profile to use SharedProfileScreen with 4 tabs
+- [x] Back Office: removed language switcher, email, popup menu from dashboard header; avatar now navigates directly to /profile
+- [x] Fleet Planner: removed language switcher from dashboard header; fixed avatar to show user image
+- [x] Added back arrow (leading widget) to Back Office and Fleet Planner profile screens
+- [ ] Full localization verification across all apps (arb files)
+- [ ] Manual end-to-end testing (avatar upload, change password, language switch, logout)

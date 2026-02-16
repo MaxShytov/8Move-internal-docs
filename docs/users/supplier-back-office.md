@@ -125,6 +125,20 @@ Team management.
 | Dispatch slots | Departure times, zones, vehicles, deadlines |
 | Cycle types | By weekday (Mon-Fri) or by interval (every N days) |
 
+### Profile
+
+Personal profile management accessible via avatar click on dashboard header.
+
+| Function | Description |
+|----------|-------------|
+| Avatar | Upload or remove profile picture (S3 storage) |
+| Name editing | First and last name with auto-save (1.5s debounce) |
+| Email | Read-only display |
+| Phone | Read-only display |
+| Change password | Dialog with current/new/confirm fields, validation |
+| Language | Selector with supported locales (EN, DE, FR, IT) |
+| Logout | Confirmation dialog, clears session |
+
 ---
 
 ## Role Differences
