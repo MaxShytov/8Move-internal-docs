@@ -132,6 +132,7 @@
 | 8087 | Supply Now | Luc Blanc | ElectroTop (1 supplier) |
 | 8088 | Supply Now | Julien Ziegler | Julien Morel (3 suppliers) |
 | 8089 | Supply Now | Julie Renaud | École Romande (4 suppliers) |
+| 8090 | Supply Now | Claire (multi) | 3 компании: Auberge du Lac (admin), Le Petit Délice, Hôtel Edelweiss |
 
 ---
 
@@ -186,6 +187,15 @@ flutter run -d chrome --web-port 8089 \
   --dart-define=AUTO_LOGIN_EMAIL=julie.renaud_ecoleromande@trident.software \
   --dart-define=AUTO_LOGIN_PASSWORD=Password123
 ```
+
+#### Claire — 3 компании (multi-client) — порт 8090
+```bash
+flutter run -d chrome --web-port 8090 \
+  --dart-define=API_BASE_URL=http://localhost:8000 \
+  --dart-define=AUTO_LOGIN_EMAIL=claire_aubergedulac@trident.software \
+  --dart-define=AUTO_LOGIN_PASSWORD=Password123
+```
+> Admin в Auberge du Lac, manager в Le Petit Délice и Hôtel Edelweiss. Для тестирования выбора компании при логине.
 
 ### BackOffice (Supplier App)
 

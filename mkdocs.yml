@@ -59,6 +59,7 @@ nav:
       - Overview: api/overview.md
   - Tasks:
       - Overview: tasks/index.md
+      - Run Commands: tasks/run-commands.md
       - Current Tasks:
           - Overview: tasks/current/index.md
           - Back Office:

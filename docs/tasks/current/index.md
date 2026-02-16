@@ -1,6 +1,6 @@
 # Current Tasks
 
-!!! info "Last updated: 2026-02-15"
+!!! info "Last updated: 2026-02-16"
     Each task has a **summary card** below. The **full working file** (with research, plan, implementation tracking) lives in the main repository at `docs/_ai_context/CURRENT_TASK_*.md` — that is the single source of truth.
 
 ---
@@ -18,7 +18,7 @@
 | ID | Task | Priority | Status |
 |----|------|----------|--------|
 | SN-01 | [Multi-Supplier Verification & Blocking](supply-now/SN-01.md) | Medium | :material-progress-clock: In Progress |
-| SN-02 | [Client Company Profile — Real Data & Settings](supply-now/SN-02.md) | Medium | :material-circle-outline: Not Started |
+| SN-02 | [Client Company Profile — Real Data & Settings](supply-now/SN-02.md) | Medium | :material-progress-clock: In Progress |
 
 ---
 
