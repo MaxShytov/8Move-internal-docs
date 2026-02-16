@@ -12,6 +12,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | # | Task | Notes |
 |---|------|-------|
 | 1 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
+| 2 | Profile / Suppliers: вывести информацию о поставщике в профиль + выбор текущего поставщика | По аналогии с DocuFlow (информация о покупателе в профиле). Админ может редактировать основные параметры поставщика, остальные — только просмотр. Выбор текущего поставщика аналогично выбору основного покупателя в DocuFlow. Заменяет текущий переключатель в хедере. |
 
 ---
 
@@ -31,6 +32,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | # | Task | Notes |
 |---|------|-------|
 | 1 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
+| 2 | Profile / Suppliers + Depo: информация о поставщике в профиль, выбор текущего, просмотр и редактирование Depo | По аналогии с DocuFlow: информация о покупателе → информация о поставщике. Админ редактирует, остальные просматривают. Выбор текущего поставщика. Плюс экран Depo (аналог Адресов в DocuFlow) — просмотр и редактирование. |
 
 ---
 
