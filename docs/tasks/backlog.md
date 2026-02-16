@@ -44,7 +44,8 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 | # | Task | Notes |
 |---|------|-------|
-| — | — | No backlog items yet |
+| 1 | Сжатие изображений чеков при загрузке | При загрузке (фотографировании) чеков они сохраняются в базу очень большими. Нужно сжимать до минимального размера, достаточного для просмотра, печати и распознавания (OCR). |
+| 2 | :bug: Ошибка 500 при сохранении чека | При нажатии кнопки Save на экране редактирования чека (receipt) сервер возвращает 500. Причина: в `ReceiptUpdateSerializer` отсутствуют `read_only_fields` — Flutter перезаписывает вычисляемые поля (`exchange_rate`, `amount_base`, `tax_base`) строками, что вызывает `TypeError` при пересчёте курсов. Фикс: добавить `read_only_fields = ['user', 'exchange_rate', 'amount_base', 'tax_base']`. См. `BUG_Receipt_Save_500.md`. |
 
 ---
 
