@@ -54,7 +54,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 | # | Task | Notes |
 |---|------|-------|
-| — | — | No backlog items yet |
+| 1 | Remove all UIBakery-related code from the Django project (authentication classes, settings, URLs, middleware, references) | Ранее пробовали подключить UIBakery, но отказались. Нужно полностью вычистить все упоминания — auth classes, settings, urls, imports, middleware. Чистый cleanup. |
 
 ---
 
