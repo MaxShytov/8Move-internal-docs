@@ -80,6 +80,26 @@ Fixed `my-settings` endpoints to return absolute URLs for logos:
 - Supplier `my-settings`: same fix for supplier logo
 - Fixes `CachedNetworkImage` loading on mobile (requires absolute URLs)
 
+#### :material-cellphone: Supply Now — Client Addresses Management
+
+New "Addresses" tab on Profile screen for managing company delivery addresses:
+
+- **Multi-company support**: shows addresses from all linked companies, each card displays company name
+- **Address CRUD**: create, edit, delete addresses (admin only)
+- **Google Places Autocomplete**: search addresses with auto-fill of street, city, postal code, country, coordinates
+- **Purpose assignment**: set address as Primary, Billing, or Registered via picker
+- **Purpose display**: color-coded badges (green = Primary, blue = Billing, purple = Registered)
+- **Company tab integration**: each company card shows all 3 purpose slots with assigned addresses, tappable to change
+- **Order protection**: addresses linked to orders are locked (cannot be edited or deleted)
+- **Localized**: all labels translated to EN, DE, FR, IT
+
+#### :material-server: Backend — Address Purpose & Order Protection
+
+- **`set-purpose` fix**: changing purpose now clears the address from any other purpose field first (prevents duplicate assignments)
+- **`get_purpose` fix**: replaced dict-based lookup with if/elif chain to avoid key collision when one address had multiple purposes
+- **`order_count` annotation**: API returns order count per address for edit/delete protection
+- **`perform_update` / `perform_destroy`**: addresses with orders return 409 Conflict instead of allowing modification
+
 #### :material-api: New API Endpoints
 
 | Method | Endpoint | Description |

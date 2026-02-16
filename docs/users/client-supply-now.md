@@ -90,7 +90,8 @@ Account and company management.
 | Function | Description |
 |----------|-------------|
 | **Personal tab** | Name (auto-saves), email, avatar, language, change password |
-| **Company tab** | Company details (name, official name, VAT, fiscal number, website, email, description) |
+| **Company tab** | Company details (name, official name, VAT, fiscal number, website, email, description), address purpose slots |
+| **Addresses tab** | View, create, edit, delete delivery addresses across all companies |
 | **Suppliers tab** | List of linked suppliers with settings |
 
 #### Personal Tab Details
@@ -110,10 +111,23 @@ Account and company management.
 | Company name | Display name of the client organization |
 | Official name | Registered legal name |
 | VAT number | VAT registration number |
-| Address | Primary address of the company |
+| Address purpose slots | Shows Primary, Billing, Registered address assignments. Admin can tap to change |
 | Block/unblock company | Admin can self-block company with confirmation dialog |
 | Document language | Admin can set preferred language for documents (invoices, delivery notes) |
 | Role badge | Shows user's role (Admin/Manager) per company |
+
+#### Addresses Tab Details
+
+| Function | Description |
+|----------|-------------|
+| Address list | All addresses across all linked companies, each showing company name |
+| Purpose badges | Color-coded: green (Primary), blue (Billing), purple (Registered) |
+| Google Places search | Autocomplete address search (default: Switzerland) |
+| Create address | Admin can add new address with auto-filled fields from Places API |
+| Edit address | Admin can edit address (disabled if address has orders) |
+| Delete address | Admin can delete address with confirmation (disabled if address has orders) |
+| Purpose picker | Admin can set/change/clear purpose (Primary, Billing, Registered) per address |
+| Order protection | Addresses linked to orders show lock icon, cannot be edited or deleted |
 
 #### Suppliers Tab Details
 
@@ -153,6 +167,8 @@ The platform has a two-way blocking mechanism:
 | Edit personal profile | Yes | Yes |
 | Edit company details | Yes | Read-only |
 | Upload/change company logo | Yes | No |
+| Manage addresses (CRUD) | Yes | Read-only |
+| Set address purpose | Yes | No |
 | Block/unblock suppliers | Yes | No |
 | Block/unblock own company | Yes | No |
 | Edit company settings | Yes | No |
