@@ -53,6 +53,14 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 ---
 
+## :material-package-variant: Shared Packages (shared_ui / shared_core)
+
+| # | Task | Notes |
+|---|------|-------|
+| 1 | Унифицировать экраны авторизации (Login, Register, Forgot/Reset Password) в shared_ui для всех Flutter-приложений | Единый дизайн, логика, переводы. Каждое приложение передаёт свой логотип/иконку. Бэкенд: убедиться что все приложения используют одни API-эндпоинты авторизации. Перед началом — проанализировать текущие реализации во всех приложениях и выбрать лучшую как основу. |
+
+---
+
 ## :material-server-network: Backend / Infrastructure
 
 | # | Task | Notes |
