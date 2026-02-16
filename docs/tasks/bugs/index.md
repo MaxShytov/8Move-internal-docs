@@ -21,7 +21,7 @@ Known bugs, investigation results, and fix status.
 
 | # | App | Bug | Status | Reported | Fixed |
 |---|-----|-----|--------|----------|-------|
-| BUG-001 | DocuFlow | [Ошибка 500 при сохранении чека](BUG-001.md) | :material-alert-circle:{ .text-red } **Open** | 2026-02-16 | — |
+| BUG-001 | DocuFlow | [Ошибка 500 при сохранении чека](BUG-001.md) | :material-check-circle:{ .text-green } **Fixed** | 2026-02-16 | 2026-02-16 |
 
 ---
 
@@ -31,7 +31,7 @@ Known bugs, investigation results, and fix status.
 
 | # | Bug | Status |
 |---|-----|--------|
-| [BUG-001](BUG-001.md) | Ошибка 500 при сохранении чека (receipt) | :material-alert-circle:{ .text-red } **Open** |
+| [BUG-001](BUG-001.md) | Ошибка 500 при сохранении чека (receipt) | :material-check-circle:{ .text-green } **Fixed** |
 
 ### :material-monitor-dashboard: Back Office
 
