@@ -4,6 +4,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 !!! info "Last updated: 2026-02-16"
 
+
 ---
 
 ## :material-monitor-dashboard: Back Office
@@ -57,6 +58,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | # | Task | Notes |
 |---|------|-------|
 | 1 | Remove all UIBakery-related code from the Django project (authentication classes, settings, URLs, middleware, references) | Ранее пробовали подключить UIBakery, но отказались. Нужно полностью вычистить все упоминания — auth classes, settings, urls, imports, middleware. Чистый cleanup. |
+| 2 | Сделать `preferred_language` source of truth на сервере: изменить `default=''` в модели User, при первом логине записывать язык устройства на сервер, при повторном — брать с сервера | Связано с `CURRENT_TASK_Shared_Profile_Module`. Backend: `app/identity/models.py` — `preferred_language default='' blank=True`. Flutter: логика в shared `locale_provider` — если `preferred_language` пустой → system locale → PATCH на сервер. Все 5 приложений. |
 
 ---
 
