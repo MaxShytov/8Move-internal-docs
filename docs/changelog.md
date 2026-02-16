@@ -47,6 +47,39 @@ New "Company" tab on Profile screen showing real company data from the API:
 - Website, email, description
 - Admin vs Manager role display
 
+#### :material-cellphone: Supply Now — Company Logo Editing
+
+Admin users can now upload or change their company logo directly from the Profile screen:
+
+- **Camera/Gallery picker**: choose image source via bottom sheet
+- **S3 upload**: logo uploaded via presigned URL, then saved to company
+- **Instant preview**: picked image shown immediately while upload is in progress
+- **All roles see logo**: company and supplier logos display for all users
+
+#### :material-wrench: Supply Now — Swiss-Style Language Selectors
+
+Replaced country flag emojis with Swiss convention 2-letter abbreviations (EN, DE, FR, IT):
+
+- **Company document language**: picker with abbreviation badges instead of flags
+- **Personal app language**: same Swiss-style abbreviation display
+- Applies to all language selectors throughout the profile
+
+#### :material-shield-lock: Supply Now — Company Blocking Management
+
+Admin users can block/unblock their own company (self-block):
+
+- **Confirmation dialogs**: localized block/unblock confirmation with consequences explained
+- **Block toggle**: admin-only, with status badge display
+- **Full l10n**: all blocking labels/messages translated to EN, DE, FR, IT
+
+#### :material-wrench: Backend — Absolute Logo URLs
+
+Fixed `my-settings` endpoints to return absolute URLs for logos:
+
+- Client `my-settings`: `request.build_absolute_uri()` for client logo
+- Supplier `my-settings`: same fix for supplier logo
+- Fixes `CachedNetworkImage` loading on mobile (requires absolute URLs)
+
 #### :material-api: New API Endpoints
 
 | Method | Endpoint | Description |

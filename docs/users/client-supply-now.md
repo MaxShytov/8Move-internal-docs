@@ -100,19 +100,20 @@ Account and company management.
 | Name editing | First/last name with debounced auto-save (1.5s) |
 | Avatar | Upload/clear profile picture (instant save) |
 | Change password | Dialog: current password + new password + confirm. Min 8 chars, letters + numbers required |
-| Language | Switch app language (EN, DE, FR, IT) |
+| Language | Switch app language (EN, DE, FR, IT) — Swiss-style abbreviation badges |
 
 #### Company Tab Details
 
 | Function | Description |
 |----------|-------------|
+| Company logo | Admin can upload/change logo (camera or gallery), visible to all users |
 | Company name | Display name of the client organization |
 | Official name | Registered legal name |
 | VAT number | VAT registration number |
-| Fiscal number | Fiscal/tax identification number |
-| Website | Company website URL |
-| Email | Company contact email |
-| Description | Company description |
+| Address | Primary address of the company |
+| Block/unblock company | Admin can self-block company with confirmation dialog |
+| Document language | Admin can set preferred language for documents (invoices, delivery notes) |
+| Role badge | Shows user's role (Admin/Manager) per company |
 
 #### Suppliers Tab Details
 
@@ -151,7 +152,9 @@ The platform has a two-way blocking mechanism:
 | View orders & tracking | Yes | Yes |
 | Edit personal profile | Yes | Yes |
 | Edit company details | Yes | Read-only |
+| Upload/change company logo | Yes | No |
 | Block/unblock suppliers | Yes | No |
+| Block/unblock own company | Yes | No |
 | Edit company settings | Yes | No |
 | Switch current client | Yes | Yes |
 
