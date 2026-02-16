@@ -106,6 +106,27 @@ New "Addresses" tab on Profile screen for managing company delivery addresses:
 |--------|----------|-------------|
 | POST | `/api/identity/users/me/change-password/` | Change current user's password (requires current password, validates strength) |
 
+#### :material-cellphone: Supply Now — Company Card Redesign
+
+Restructured the Company tab card with Material Design section dividers and improved layout:
+
+- **VAT moved up**: VAT number now appears directly under company name
+- **Section dividers**: Addresses, Contact Info, and Settings sections with centered `─── TITLE ───` separators
+- **Tabulated address rows**: fixed-width labels for aligned address display (Primary, Billing, Registered, Default Delivery)
+- **Default delivery address**: shown first with orange shipping icon, italic hint "Can be changed during checkout", admin can pick from address list
+- **Contact Info section**: website and email with edit icon for admin users
+- **Contact info editor**: bottom sheet with website + email fields, admin-only
+- **Address comments**: shown in Addresses tab cards with italic grey text
+- **Image source pickers**: all converted from AlertDialog to bottom sheet (avatar + company logo)
+- **Purpose picker title**: bottom sheet now shows "Set Purpose" title
+- **Address count in tab**: Addresses tab label shows count when > 0
+- **Flexible labels**: replaced fixed-width with ConstrainedBox for better text accommodation
+- **InkWell touch feedback**: replaced GestureDetector with InkWell for Material Design compliance
+
+#### :material-server: Backend — Website in Client API
+
+- **`my-settings`**: added `website` field to client company response (was already on Actor model, just not exposed)
+
 ---
 
 ## 2026-02-15

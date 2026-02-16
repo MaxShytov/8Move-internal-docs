@@ -107,13 +107,19 @@ Account and company management.
 
 | Function | Description |
 |----------|-------------|
-| Company logo | Admin can upload/change logo (camera or gallery), visible to all users |
+| Company logo | Admin can upload/change logo (camera or gallery via bottom sheet), visible to all users |
 | Company name | Display name of the client organization |
 | Official name | Registered legal name |
-| VAT number | VAT registration number |
-| Address purpose slots | Shows Primary, Billing, Registered address assignments. Admin can tap to change |
-| Block/unblock company | Admin can self-block company with confirmation dialog |
+| VAT number | VAT registration number (shown directly under name) |
+| **Addresses section** | Separated by `─── ADDRESSES ───` divider with tabulated layout |
+| Default delivery address | Shown first with orange icon. Admin can pick from address list. Hint: "Can be changed during checkout" |
+| Address purpose slots | Primary, Billing, Registered with aligned labels. Admin can tap to change |
+| **Contact Info section** | Separated by `─── CONTACT INFO ───` divider |
+| Website | Company website. Admin can edit via bottom sheet |
+| Email | Company email. Admin can edit via bottom sheet |
+| **Settings section** | Separated by `─── SETTINGS ───` divider |
 | Document language | Admin can set preferred language for documents (invoices, delivery notes) |
+| Block/unblock company | Admin can self-block company with confirmation dialog |
 | Role badge | Shows user's role (Admin/Manager) per company |
 
 #### Addresses Tab Details
@@ -127,6 +133,7 @@ Account and company management.
 | Edit address | Admin can edit address (disabled if address has orders) |
 | Delete address | Admin can delete address with confirmation (disabled if address has orders) |
 | Purpose picker | Admin can set/change/clear purpose (Primary, Billing, Registered) per address |
+| Address comment | Shows comment below address text (italic grey, with comment icon) |
 | Order protection | Addresses linked to orders show lock icon, cannot be edited or deleted |
 
 #### Suppliers Tab Details
@@ -171,6 +178,8 @@ The platform has a two-way blocking mechanism:
 | Set address purpose | Yes | No |
 | Block/unblock suppliers | Yes | No |
 | Block/unblock own company | Yes | No |
+| Edit contact info (website, email) | Yes | No |
+| Set default delivery address | Yes | No |
 | Edit company settings | Yes | No |
 | Switch current client | Yes | Yes |
 

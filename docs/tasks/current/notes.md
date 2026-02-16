@@ -15,3 +15,8 @@
 - [x] Backend: order_count annotation + edit/delete protection for addresses with orders
 - [x] Backend: fix set-purpose (clear old purpose) + fix get_purpose (dict key collision)
 - [x] Localization: all address strings in EN, DE, FR, IT
+- [x] Company card redesign: section dividers (Addresses, Contact Info, Settings), VAT repositioned
+- [x] Contact info section: website + email with admin editing via bottom sheet
+- [x] Default delivery address: first in list, admin picker, checkout hint
+- [x] Address comments displayed in Addresses tab cards
+- [x] UX: image source pickers → bottom sheets, purpose picker title, InkWell, flexible labels, address count in tab
