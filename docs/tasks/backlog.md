@@ -10,7 +10,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 | # | Task | Notes |
 |---|------|-------|
-| — | — | No backlog items yet |
+| 1 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 
 ---
 
@@ -21,6 +21,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 1 | Client Company Edit (self-service) | Client admin может редактировать данные своей компании. Supplier получает уведомление об изменениях. У Supplier могут быть свои (переопределённые) названия для клиента — нужно решить, как совмещать. |
 | 2 | Billing & Registered Address editing | Дать возможность client admin редактировать Billing address и Registered address компании в Profile. Аналогично Primary address — с проверкой на наличие заказов. Зависит от задачи Client Addresses Profile. |
 | 3 | Address Form — проверка и доработка | Проверить и донастроить форму добавления/редактирования адреса (address_form_screen.dart): валидация полей, Google Places autocomplete, корректное заполнение координат, обработка ошибок, UX при редактировании существующего адреса. |
+| 4 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 
 ---
 
@@ -28,7 +29,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 | # | Task | Notes |
 |---|------|-------|
-| — | — | No backlog items yet |
+| 1 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 
 ---
 
@@ -36,7 +37,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 
 | # | Task | Notes |
 |---|------|-------|
-| — | — | No backlog items yet |
+| 1 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 
 ---
 
@@ -45,6 +46,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | # | Task | Notes |
 |---|------|-------|
 | 1 | Сжатие изображений чеков при загрузке | При загрузке (фотографировании) чеков они сохраняются в базу очень большими. Нужно сжимать до минимального размера, достаточного для просмотра, печати и распознавания (OCR). |
+| 2 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 
 !!! bug "Known bugs for this app → [Bug Tracker](bugs/index.md)"
 
