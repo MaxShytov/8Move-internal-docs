@@ -127,6 +127,21 @@ Restructured the Company tab card with Material Design section dividers and impr
 
 - **`my-settings`**: added `website` field to client company response (was already on Actor model, just not exposed)
 
+#### :material-wrench: DocuFlow — BUG-001: Receipt Save 500 Error Fixed
+
+Fixed HTTP 500 error when saving receipts in DocuFlow ([BUG-001](tasks/bugs/BUG-001.md)):
+
+- **Backend**: added `read_only_fields` to `ReceiptUpdateSerializer` — `user`, `exchange_rate`, `amount_base`, `tax_base` are now server-computed only
+- **Flutter**: removed computed fields from PATCH request — prevents type mismatch in `compute_base_amounts()`
+
+#### :material-new-box: DocuFlow — Receipt List Sort by ID
+
+Added ID-based sorting to receipt list (default: newest first):
+
+- **Backend**: added `id` to `ordering_fields`, default ordering changed to `-id`
+- **Flutter**: added "ID (newest)" / "ID (oldest)" sort options with translations in all 5 languages
+- **Default sort**: `-id` (newest receipts appear first)
+
 ---
 
 ## 2026-02-15

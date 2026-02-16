@@ -46,7 +46,7 @@ Browse and manage all receipts.
 | Filter by status | Pending, processing, approved, rejected, error |
 | Filter by category | Office supplies, travel, meals, etc. |
 | Filter by payment | Personal card, corporate card, cash |
-| Sort by date | Chronological ordering |
+| Sort options | Sort by ID (default, newest first), date, amount, tax, added date |
 
 ### Receipt Detail
 
