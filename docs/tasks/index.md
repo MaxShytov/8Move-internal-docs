@@ -66,4 +66,6 @@ See [Templates](templates/ai-chatbot.md) for ready-to-use templates for each aud
 ## Quick Links
 
 - [Current Tasks](current/index.md) — what's being worked on right now
+- [Bug Tracker](bugs/index.md) — known bugs with investigation and status
+- [Backlog](backlog.md) — planned tasks not yet in development
 - [Completed Tasks](completed.md) — archive of all finished tasks

@@ -70,6 +70,9 @@ nav:
               - SN-01 Full: tasks/current/details/BE-01-full.md
               - SN-02 Full: tasks/current/details/BE-01.1-full.md
       - Backlog: tasks/backlog.md
+      - Bug Tracker:
+          - All Bugs: tasks/bugs/index.md
+          - BUG-001 Receipt Save 500: tasks/bugs/BUG-001.md
       - Completed Tasks: tasks/completed.md
       - Templates:
           - AI Chatbot: tasks/templates/ai-chatbot.md
