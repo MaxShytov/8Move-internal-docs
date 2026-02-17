@@ -19,6 +19,7 @@ Redesigned client edit/create form using Proximity and Emphasis design principle
 - **Optional field de-emphasis**: helper text "Optional" on non-required fields
 - **Client ID in header**: merged into subtitle ("Acme Corp · #123") instead of separate bar
 - **Settings hierarchy**: Notifications, Invoicing, Sync sections use smaller `titleMedium` headers
+- **Inline logo avatar**: logo moved from separate section to 128px circular avatar next to Company Name / Official Name, with camera picker overlay (same UX as Profile avatar). Bottom sheet with Gallery / Camera / Remove options.
 
 ---
 
