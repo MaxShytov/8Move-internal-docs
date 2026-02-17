@@ -30,6 +30,12 @@
 - [x] Flutter: Business Information section moved above Contact Information
 - [x] Flutter: clientAddressesProvider now passes supplierId for delivery zone display
 - [x] Flutter: Bexio import → Data import rename (screens, providers, router)
+- [x] Backend tests: ClientPhone/Email CRUD + auto-primary (8+7 tests), RLA isolation (4 tests), serializer phones_data/emails_data (4 tests), DataImportRollback (6 tests)
+- [x] Backend tests: BexioCsvClassifier — all 8 Col6 classification types (19 tests)
+- [x] Backend tests: BexioCsvImport — normalize_country, get_field, CSV parsing, client creation pipeline (16 tests)
+- [x] Flutter tests: ClientModel, ClientAddressModel (with extensions), ClientUserLinkModel, OrderItemModel, DeliverySlotModel (5 model test files)
+- [x] Flutter tests: phone_formatter (Swiss formats), color_utils (hex parsing), formatters (currency/weight/distance/duration)
+- [x] Test coverage analysis saved to CURRENT_TASK_Test_Coverage.md
 
 ## 2026-02-16
 

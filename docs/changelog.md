@@ -110,6 +110,13 @@ Complete multi-phone/email management for clients (backend + Flutter):
 | PUT/PATCH | `/api/actors/client-emails/{id}/` | Update client email |
 | DELETE | `/api/actors/client-emails/{id}/` | Delete client email (auto-promotes primary) |
 
+#### :material-shield-lock: Test Coverage Expansion
+
+Comprehensive test suite covering new and existing functionality:
+
+- **Backend (110 tests)**: ClientPhone/Email CRUD + auto-primary logic, RLA supplier isolation, list serializer phones_data/emails_data, DataImportRollback service, BexioCsvClassifier (all Col6 classification types), BexioCsvImport (country normalization, field extraction, CSV parsing, client creation with phones/emails/addresses, dry run, duplicate email detection, import log)
+- **Flutter shared_core (216 tests)**: ClientModel, ClientAddressModel (with formattedAddress/isPrimary/isBilling/isRegistered/hasOrders extensions), ClientUserLinkModel, ClientPhoneModel, ClientEmailModel, OrderItemModel (with totalWeight calculation), DeliverySlotModel (with status/reason enums), phone formatter (Swiss formats), color utils (hex parsing), formatters (currency/weight/distance/duration/time/date)
+
 ---
 
 ## 2026-02-16
