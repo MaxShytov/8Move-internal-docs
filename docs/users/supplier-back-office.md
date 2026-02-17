@@ -83,7 +83,11 @@ Client relationship management.
 | Client detail | Company info, addresses, contacts |
 | Client addresses | Delivery addresses with delivery zone assignment |
 | Contacts | Contact persons with roles and phone numbers |
+| Multiple phones | Add/edit/delete multiple phone numbers per client (main, mobile, fax, other) with auto-primary and Swiss formatting |
+| Multiple emails | Add/edit/delete multiple email addresses per client with labels and auto-primary |
+| Contact popup | "+N more" chip in client list shows all phones/emails in a popup dialog with quick actions (copy, call, email) |
 | Create client | Register new client company |
+| Data import | Import clients from CSV with preview, dry run, and persistent import logs |
 | Communication history | Track interactions with client |
 
 ### Supplier Settings

@@ -52,6 +52,64 @@ Redesigned client edit/create form using Proximity and Emphasis design principle
 - **Backend**: added `bexio_id` field to `ClientListSerializer` via `GenericRelation` on Client → `ExternalIdentifier`, with prefetch for N+1 optimization
 - **Sync section fix**: fixed client form sync parameters parsing to read from nested `external_identifiers[]` / `sync_logs[]` response structure
 
+#### :material-new-box: Multiple Phones & Emails — Full CRUD
+
+Complete multi-phone/email management for clients (backend + Flutter):
+
+- **Backend**: `ClientPhoneSerializer` / `ClientEmailSerializer` with auto-primary logic (first phone/email auto-becomes primary; setting new primary demotes old one)
+- **Backend**: `ClientPhoneViewSet` / `ClientEmailViewSet` with RLA access control, `perform_destroy` auto-promotes next item to primary on deletion
+- **Backend**: Added `phones_data` / `emails_data` to both `ClientListSerializer` and `ClientUpdateSerializer`
+- **Backend**: Added `rla_roles_filter` to `ClientPhone` / `ClientEmail` models
+- **Flutter**: `ClientPhonesSection` / `ClientEmailsSection` — M3-style list items with type icon, formatted phone, type badge, primary star, edit/delete actions
+- **Flutter**: `ClientPhoneDialog` / `ClientEmailDialog` — add/edit dialogs with SegmentedButton for phone type, label, primary toggle
+- **Flutter**: Phone formatting — Swiss-aware: `+41 (0) 79 745-33-22`, `+41 79 745-33-22`, `079 745-33-22`
+- **Flutter**: Phones and emails sections displayed side-by-side in client edit form
+- **Flutter**: In create mode, single email+phone fields auto-create initial records after save
+
+#### :material-new-box: Contact Popup in Clients List
+
+- **"+N more" chip**: M3-style chip in Contact Information column shows count of additional phones/emails beyond primary
+- **Contact popup dialog**: clicking the chip opens a dialog listing all emails and phones with M3-style items, primary star, type badges, and quick copy/call/email actions
+- **Phone formatting in list**: primary phone now displays formatted in the clients list table
+
+#### :material-wrench: Clients List — Delivery Address Layout
+
+- **Zone left, coords right**: delivery zone badge stays left-aligned, lat/lon coordinates + map icon moved to right-aligned position
+- **Map icon next to coords**: map icon placed inline after coordinates instead of on the address line
+
+#### :material-wrench: Address Form Header
+
+- **Client name + IDs**: address form title now shows client name, client ID, and address ID (e.g., "Edit Address — Acme Corp #123, Address #456")
+- **Async client name loading**: fetches client name on init for display in header
+
+#### :material-wrench: Client Form Section Reorder
+
+- **Business Information above Contact Information**: moved fiscal/VAT fields section above the contact details section for better logical flow
+
+#### :material-wrench: Address Delivery Zone Fix
+
+- **Supplier context for zones**: `clientAddressesProvider` now passes `supplierId` to API, so delivery zone badges display correctly in the client form address section
+
+#### :material-folder-move: Rename Bexio Import → Data Import
+
+- **Backend**: `BexioImportLog` → `DataImportLog` model with migration, added `ROLLED_BACK` status
+- **Backend**: Added `DataImportRollbackService` for rolling back imports
+- **Flutter**: Renamed screens/providers from `bexio_import_*` → `data_import_*`
+- **Flutter**: Updated router path from `/clients/import-history` to `/clients/data-import-logs`
+
+#### :material-api: New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/actors/client-phones/?owner={id}` | List phones for a client |
+| POST | `/api/actors/client-phones/` | Create client phone |
+| PUT/PATCH | `/api/actors/client-phones/{id}/` | Update client phone |
+| DELETE | `/api/actors/client-phones/{id}/` | Delete client phone (auto-promotes primary) |
+| GET | `/api/actors/client-emails/?owner={id}` | List emails for a client |
+| POST | `/api/actors/client-emails/` | Create client email |
+| PUT/PATCH | `/api/actors/client-emails/{id}/` | Update client email |
+| DELETE | `/api/actors/client-emails/{id}/` | Delete client email (auto-promotes primary) |
+
 ---
 
 ## 2026-02-16

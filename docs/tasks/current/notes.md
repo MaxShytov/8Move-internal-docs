@@ -15,6 +15,21 @@
 - [x] AddressesSection widget: copy address button with localized tooltip (EN/DE/FR/IT)
 - [x] Client form: fixed sync section parsing (external_identifiers/sync_logs nested response)
 - [x] Backend: added bexio_id to ClientListSerializer via GenericRelation + prefetch
+- [x] Backend: RLA access control on ClientPhone/ClientEmail models (rla_roles_filter)
+- [x] Backend: ClientPhoneSerializer/ClientEmailSerializer with auto-primary logic
+- [x] Backend: ClientPhoneViewSet/ClientEmailViewSet with perform_destroy auto-primary promotion
+- [x] Backend: phones_data/emails_data added to ClientListSerializer for list view
+- [x] Backend: BexioImportLog → DataImportLog rename + ROLLED_BACK status + rollback service
+- [x] Flutter: ClientPhonesSection/ClientEmailsSection — M3 list items with CRUD
+- [x] Flutter: ClientPhoneDialog/ClientEmailDialog — add/edit with type picker, label, primary toggle
+- [x] Flutter: Swiss phone formatter (+41 (0) 79 745-33-22 format)
+- [x] Flutter: "+N more" contacts chip in clients list with popup showing all phones/emails
+- [x] Flutter: Phones/emails sections side-by-side in client edit form
+- [x] Flutter: Delivery address column — zone left, lat/lon + map icon right-aligned
+- [x] Flutter: Address form header with client name + IDs
+- [x] Flutter: Business Information section moved above Contact Information
+- [x] Flutter: clientAddressesProvider now passes supplierId for delivery zone display
+- [x] Flutter: Bexio import → Data import rename (screens, providers, router)
 
 ## 2026-02-16
 
