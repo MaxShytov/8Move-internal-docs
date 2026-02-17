@@ -6,7 +6,30 @@ All notable documentation and platform changes are documented here.
 
 ## 2026-02-17
 
-### Platform (Back Office)
+### Platform (Back Office + Backend)
+
+#### :material-new-box: Bexio CSV Import with Persistent Logs
+
+Full Bexio CSV client import pipeline — backend service + Flutter UI:
+
+- **Backend**: `BexioCsvImportService` with Bexio ID matching, name+postal manual review, duplicate email detection
+- **Backend**: `BexioImportLog` model with JSONField for per-row details (action, client_id, errors, manual review reasons)
+- **Backend**: Preview + Import API endpoints, ReadOnly ViewSet for import logs, management command for CLI
+- **Backend**: Phone/Email models, salutation field, industries M2M on Actor
+- **Flutter**: Import dialog with file picker, CSV preview (row count), dry run / skip geocoding options, progress bar
+- **Flutter**: Import results dialog with stats, errors, manual review, duplicate emails sections
+- **Flutter**: "Email Report" button — formats import results as text and opens default mail client via `mailto:`
+- **Flutter**: Import History screen (`/clients/import-history`) with expandable cards, lazy-loaded detail drill-down
+- **Flutter**: "View Import History" button on clients list + link from results dialog
+
+#### :material-api: New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/actors/clients/preview-bexio-csv/` | Preview CSV file (row count, headers) |
+| POST | `/api/actors/clients/import-bexio-csv/` | Import clients from Bexio CSV |
+| GET | `/api/actors/bexio-import-logs/` | List import logs (summary, no JSON) |
+| GET | `/api/actors/bexio-import-logs/{id}/` | Import log detail (full JSON fields) |
 
 #### :material-wrench: Client Form — UX Improvements (Proximity & Emphasis)
 

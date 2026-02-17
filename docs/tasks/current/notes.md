@@ -4,6 +4,13 @@
 
 - [x] Client form UX: SegmentedButton for type, merged Industry+Description into Basic Info, group dividers, red asterisks for required, "Optional" helper text, ID in header subtitle, secondary headers for settings sections
 - [x] Client form: moved logo to inline 128px avatar with camera picker (reuses Profile avatar pattern) next to Company Name / Official Name fields
+- [x] Bexio CSV Import: backend service (BexioCsvImportService) with Bexio ID matching, name+postal manual review, duplicate email detection
+- [x] Bexio CSV Import: BexioImportLog model + ReadOnly ViewSet + list/detail serializers
+- [x] Bexio CSV Import: Phone/Email models, salutation, industries M2M, data migration
+- [x] Bexio CSV Import: Flutter import dialog (file picker, preview, dry run, progress, results)
+- [x] Bexio CSV Import: Flutter import history screen with expandable cards + detail drill-down
+- [x] Bexio CSV Import: Email Report button (mailto: with formatted import results)
+- [x] Bexio CSV Import: management command `import_bexio_csv` for CLI
 
 ## 2026-02-16
 
