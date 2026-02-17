@@ -11,6 +11,10 @@
 - [x] Bexio CSV Import: Flutter import history screen with expandable cards + detail drill-down
 - [x] Bexio CSV Import: Email Report button (mailto: with formatted import results)
 - [x] Bexio CSV Import: management command `import_bexio_csv` for CLI
+- [x] Clients list: copy address button next to map pin, Bexio ID display next to client ID
+- [x] AddressesSection widget: copy address button with localized tooltip (EN/DE/FR/IT)
+- [x] Client form: fixed sync section parsing (external_identifiers/sync_logs nested response)
+- [x] Backend: added bexio_id to ClientListSerializer via GenericRelation + prefetch
 
 ## 2026-02-16
 

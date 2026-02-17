@@ -44,6 +44,14 @@ Redesigned client edit/create form using Proximity and Emphasis design principle
 - **Settings hierarchy**: Notifications, Invoicing, Sync sections use smaller `titleMedium` headers
 - **Inline logo avatar**: logo moved from separate section to 128px circular avatar next to Company Name / Official Name, with camera picker overlay (same UX as Profile avatar). Bottom sheet with Gallery / Camera / Remove options.
 
+#### :material-wrench: Clients List — Copy Address & Bexio ID
+
+- **Copy address button**: added copy-to-clipboard icon next to map pin for delivery addresses in the clients list table
+- **Copy address in detail**: added copy button in the `AddressesSection` widget (client form address list) with localized tooltip (EN/DE/FR/IT)
+- **Bexio ID display**: shows `Bexio: 1234` next to `#ID` in the client name cell when an external identifier exists
+- **Backend**: added `bexio_id` field to `ClientListSerializer` via `GenericRelation` on Client → `ExternalIdentifier`, with prefetch for N+1 optimization
+- **Sync section fix**: fixed client form sync parameters parsing to read from nested `external_identifiers[]` / `sync_logs[]` response structure
+
 ---
 
 ## 2026-02-16
