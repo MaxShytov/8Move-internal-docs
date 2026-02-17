@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-19"
+!!! info "Last updated: 2026-02-18"
 
 
 ---
@@ -77,6 +77,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 2 | Сделать `preferred_language` source of truth на сервере: изменить `default=''` в модели User, при первом логине записывать язык устройства на сервер, при повторном — брать с сервера | Связано с `CURRENT_TASK_Shared_Profile_Module`. Backend: `app/identity/models.py` — `preferred_language default='' blank=True`. Flutter: логика в shared `locale_provider` — если `preferred_language` пустой → system locale → PATCH на сервер. Все 5 приложений. |
 | 3 | Exhibitor: перенести email, phone и industry из отдельных полей в отдельные таблицы | Аналогично миграции в Clients (Actors/Contacts). Email и phone — из полей таблиц в отдельную таблицу. Industry — тоже вынести в отдельную таблицу. Связано с задачей Bexio CSV Import. |
 | 4 | Добавить валидацию и форматирование Phone, Email, Website во всех формах всех приложений | Валидация на backend (Django) и frontend (Flutter) одновременно. Phone: международный формат, автоформатирование (e.g. +41 79 123 45 67). Email: RFC-валидация. Website: проверка URL формата. Применить везде где эти поля редактируются: клиенты, контакты, поставщики, пользователи и т.д. |
+| 5 | Продумать и реализовать безопасное хранение API-ключей клиентов (Google Maps и др.) | Исследовать подходы: vault/secrets manager, шифрование в БД, env per-client. Сейчас ключи хранятся небезопасно — нужно проверить текущее состояние и спроектировать решение. |
 
 ---
 
