@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-16"
+!!! info "Last updated: 2026-02-17"
 
 
 ---
@@ -13,6 +13,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 |---|------|-------|
 | 1 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 | 2 | Profile / Suppliers: вывести информацию о поставщике в профиль + выбор текущего поставщика | По аналогии с DocuFlow (информация о покупателе в профиле). Админ может редактировать основные параметры поставщика, остальные — только просмотр. Выбор текущего поставщика аналогично выбору основного покупателя в DocuFlow. Заменяет текущий переключатель в хедере. |
+| 3 | Добавить функционал пересчёта зон доставки | Продумать в каких местах и по каким триггерам запускать пересчёт. Затрагивает Backend, Fleet Manager и Back Office. |
 
 ---
 
