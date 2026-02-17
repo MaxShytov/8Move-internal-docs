@@ -1,5 +1,9 @@
 # Working Notes
 
+## 2026-02-17
+
+- [x] Client form UX: SegmentedButton for type, merged Industry+Description into Basic Info, group dividers, red asterisks for required, "Optional" helper text, ID in header subtitle, secondary headers for settings sections
+
 ## 2026-02-16
 
 - [x] Created shared `userProfileProvider` in shared_core (state, notifier, provider with auth listener)

@@ -4,6 +4,24 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-17
+
+### Platform (Back Office)
+
+#### :material-wrench: Client Form — UX Improvements (Proximity & Emphasis)
+
+Redesigned client edit/create form using Proximity and Emphasis design principles:
+
+- **SegmentedButton** for client type (Person/Company) — replaces RadioListTile for stronger visual emphasis
+- **Merged sections**: Industry and Description moved into Basic Information (reduces card count, Proximity)
+- **Group dividers**: form sections organized into logical groups (Addresses, Settings, Users, Sync)
+- **Required field emphasis**: red asterisk via RichText label instead of plain text
+- **Optional field de-emphasis**: helper text "Optional" on non-required fields
+- **Client ID in header**: merged into subtitle ("Acme Corp · #123") instead of separate bar
+- **Settings hierarchy**: Notifications, Invoicing, Sync sections use smaller `titleMedium` headers
+
+---
+
 ## 2026-02-16
 
 ### Platform (Supply Now + Backend)
