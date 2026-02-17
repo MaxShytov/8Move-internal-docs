@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-17"
+!!! info "Last updated: 2026-02-18"
 
 
 ---
@@ -15,6 +15,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 2 | Profile / Suppliers: вывести информацию о поставщике в профиль + выбор текущего поставщика | По аналогии с DocuFlow (информация о покупателе в профиле). Админ может редактировать основные параметры поставщика, остальные — только просмотр. Выбор текущего поставщика аналогично выбору основного покупателя в DocuFlow. Заменяет текущий переключатель в хедере. |
 | 3 | Добавить функционал пересчёта зон доставки | Продумать в каких местах и по каким триггерам запускать пересчёт. Затрагивает Backend, Fleet Manager и Back Office. |
 | 4 | User Invitation Flow: менеджер приглашает пользователя клиента через email, покупатель регистрируется в Supply Now | High priority. Менеджер в Back Office находит клиента → нажимает "Invite" → вводит email → система создаёт неактивного пользователя, привязанного к клиенту, и отправляет email-приглашение. Покупатель получает письмо, скачивает Supply Now, завершает регистрацию → пользователь активируется. Менеджер видит статусы приглашений (sent, accepted, expired и т.д.). Требуется: backend (модель приглашения, отправка email, endpoint регистрации) + Back Office UI (кнопка invite, отображение статусов) + Supply Now (регистрация по приглашению). |
+| 5 | Error reporting system: автоматическая и ручная отправка ошибок разработчикам | Два режима: 1) Кнопка "Send error report" в UI при ошибке 2) Auto-report в background (opt-in настройка в профиле). Отправлять максимум данных: error message, stack trace, DioException details, request/response, screen name, user context, app version. Канал доставки — минимум Email, возможно Sentry/Slack (продумать). Нужен backend endpoint для приёма reports. |
 
 ---
 
