@@ -41,6 +41,7 @@ nav:
       - Tech Stack: architecture/tech-stack.md
       - Backend Workflows:
           - Change Password: architecture/django-backend/workflows/change-password.md
+          - Order Placement Constraints: architecture/django-backend/workflows/order-placement-constraints.md
   - Backend:
       - Getting Started: backend/getting-started.md
       - Project Structure: backend/project-structure.md
