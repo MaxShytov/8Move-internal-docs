@@ -78,6 +78,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 3 | Exhibitor: перенести email, phone и industry из отдельных полей в отдельные таблицы | Аналогично миграции в Clients (Actors/Contacts). Email и phone — из полей таблиц в отдельную таблицу. Industry — тоже вынести в отдельную таблицу. Связано с задачей Bexio CSV Import. |
 | 4 | Добавить валидацию и форматирование Phone, Email, Website во всех формах всех приложений | Валидация на backend (Django) и frontend (Flutter) одновременно. Phone: международный формат, автоформатирование (e.g. +41 79 123 45 67). Email: RFC-валидация. Website: проверка URL формата. Применить везде где эти поля редактируются: клиенты, контакты, поставщики, пользователи и т.д. |
 | 5 | Продумать и реализовать безопасное хранение API-ключей клиентов (Google Maps и др.) | Исследовать подходы: vault/secrets manager, шифрование в БД, env per-client. Сейчас ключи хранятся небезопасно — нужно проверить текущее состояние и спроектировать решение. |
+| 6 | Локализация Django Admin на все 5 языков (en, fr, de, it, es) | Переключение языка per user, перевод model labels, help texts, admin actions. Приоритет: очень низкий |
 
 ---
 
