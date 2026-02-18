@@ -33,9 +33,9 @@ flowchart TD
     EA -->|OK| F{Route capacity check}
     F -->|Overloaded| X5[❌ Slot is full]
     F -->|OK| G[Status transition: Cart → Next]
-    G --> H{Auto-approval weight check}
-    H -->|Over limit| I[⏸ SUPPLIER_MANAGER_REVIEW]
-    H -->|Within limit or no limit| J[✅ Auto-approved]
+    G --> H{Auto-approval: weight or amount over limit?}
+    H -->|Weight or amount exceeds limit| I[⏸ SUPPLIER_MANAGER_REVIEW]
+    H -->|Both within limits or not set| J[✅ Auto-approved]
     G --> K[Lock order: user_can_add_products = false]
 ```
 
@@ -75,22 +75,28 @@ Two fields on the `Unit` model control what and how much can be ordered:
 
 ### How It Works
 
-**Example: Ice product**
+**Example: Filter OC90** (price per unit: $0.60)
+
+| Unit | conversion_rate | is_orderable | min_order_quantity |
+|------|----------------:|:------------:|-------------------:|
+| Piece (pcs) | k=1 | No | 1 (default, irrelevant) |
+| Box (12 pcs) | k=12 | **Yes** | **3** |
+| Pallet (15 boxes) | k=180 | No | 1 (default, irrelevant) |
 
 ```
-Product: Ice Bags
-├── PRIMARY:   1 bag (pcs)       → is_orderable=False              (cannot order individual bags)
-├── SECONDARY: 1 box = 12 bags   → is_orderable=True, min_order_quantity=3  (min 3 boxes)
-└── TERTIARY:  1 pallet = 40 boxes → is_orderable=True, min_order_quantity=1  (min 1 pallet)
+Product: Filter OC90
+├── PRIMARY:   piece (k=1)              → is_orderable=False   (cannot order individual pieces)
+├── SECONDARY: box = 12 pieces (k=12)   → is_orderable=True, min_order_quantity=3
+└── TERTIARY:  pallet = 15 boxes (k=180) → is_orderable=False  (cannot order by pallet)
 ```
 
 **Client experience:**
 
-1. When adding Ice to order, client only sees orderable units: "Box (12 bags)" and "Pallet (40 boxes)"
-2. If client selects "Box" and enters quantity 2 → validation error: "Minimum order: 3 boxes"
-3. If client selects "Box" and enters quantity 3 → OK
+1. When adding Filter OC90 to order, client only sees orderable units: "Box (12 pcs)"
+2. If client enters quantity 2 boxes → validation error: "Minimum order: 3 boxes"
+3. If client enters quantity 3 boxes → OK (= 36 pieces)
 
-**Another example: Surgical gloves**
+**Another example: Surgical gloves** (no restrictions)
 
 ```
 Product: Surgical Gloves
@@ -167,22 +173,46 @@ Orders below the configured minimum amount cannot be placed.
 
 **Error:** `"Order amount {amount} {currency} is below minimum {min} {currency}"`
 
-### Maximum Auto-Approval Weight
+### Maximum Auto-Approval (Weight & Amount)
 
-Orders exceeding this weight require manual manager approval before proceeding.
+Orders exceeding **either** the weight or amount threshold are not blocked — they proceed but require manual manager approval (`SUPPLIER_MANAGER_REVIEW` status) instead of auto-advancing to dispatch.
+
+#### Max Auto-Approval Weight
 
 | Setting | Model | Description |
 |---------|-------|-------------|
-| Supplier default | `SupplierSettingsSelfControlled.max_auto_order_weight_kg` | Orders above this require manager approval |
+| Supplier default | `SupplierSettingsSelfControlled.max_auto_order_weight_kg` | Orders above this weight require manager approval |
 | Client override | `ClientSettingsSupplierControlled.max_auto_order_weight_kg` | Per-client override of supplier's limit |
 
 **Resolution order:** Client override → Supplier default → No limit (auto-approve all).
 
-**Logic** (in `_try_auto_approve_manager_review()`, `app/statuses/services.py`):
+#### Max Auto-Approval Amount
 
-- `max_auto_weight_kg` is `NULL` → auto-approve
-- Order weight ≤ `max_auto_weight_kg` → auto-approve
-- Order weight > `max_auto_weight_kg` → stays in `SUPPLIER_MANAGER_REVIEW` pending manual approval
+| Setting | Model | Description |
+|---------|-------|-------------|
+| Supplier default | `SupplierSettingsSelfControlled.max_auto_order_amount` | Orders above this amount require manager approval. `DecimalField(10,2)`, nullable, validated ≥ 0 |
+| Client override | `ClientSettingsSupplierControlled.max_auto_order_amount` | Per-client override of supplier's limit. Same field type |
+
+**Resolution order:** Client override → Supplier default → No limit (auto-approve all).
+
+#### Auto-Approval Logic
+
+In `_try_auto_approve_manager_review()` (`app/statuses/services.py`), **both** limits are checked independently. If **either** is exceeded, the order stays in `SUPPLIER_MANAGER_REVIEW`:
+
+```
+IF max_auto_weight is set AND order weight > max_auto_weight → HOLD for review
+IF max_auto_amount is set AND order total_sum > max_auto_amount → HOLD for review
+OTHERWISE → auto-approve (transition to next status)
+```
+
+**Examples:**
+
+| Order | max_auto_weight=50kg | max_auto_amount=$500 | Result |
+|-------|:--------------------:|:--------------------:|--------|
+| 30 kg, $200 | OK | OK | Auto-approved |
+| 60 kg, $200 | Exceeds | OK | Held for review |
+| 30 kg, $800 | OK | Exceeds | Held for review |
+| 60 kg, $800 | Exceeds | Exceeds | Held for review |
 
 ### Order Limits Resolution
 
@@ -190,9 +220,10 @@ Orders exceeding this weight require manual manager approval before proceeding.
 # app/orders/services.py — get_order_limits()
 # Priority: client-specific override > supplier default > None
 
-min_weight = client_settings.min_order_weight_kg or supplier_settings.min_order_weight_kg
-min_amount = client_settings.min_order_amount    or supplier_settings.min_order_amount
-max_auto   = client_settings.max_auto_order_weight_kg or supplier_settings.max_auto_order_weight_kg
+min_weight     = client_settings.min_order_weight_kg      or supplier_settings.min_order_weight_kg
+min_amount     = client_settings.min_order_amount         or supplier_settings.min_order_amount
+max_auto_weight = client_settings.max_auto_order_weight_kg or supplier_settings.max_auto_order_weight_kg
+max_auto_amount = client_settings.max_auto_order_amount    or supplier_settings.max_auto_order_amount
 ```
 
 ### Key Files
@@ -336,7 +367,7 @@ Order status transitions are governed by `StatusFulfillmentTransition` records:
 | Status | Meaning |
 |--------|---------|
 | `CART` | Initial cart — products can be added/modified |
-| `SUPPLIER_MANAGER_REVIEW` | Requires manual approval if weight exceeds auto-approval limit |
+| `SUPPLIER_MANAGER_REVIEW` | Requires manual approval if weight or amount exceeds auto-approval limit |
 | `Cancelled` | Terminal status |
 | `Delivered` / `Invoiced` / `Paid` | Lock orders from modification |
 
@@ -374,5 +405,7 @@ Order status transitions are governed by `StatusFulfillmentTransition` records:
  7. Route capacity       — vehicle total_capacity vs. current slot load + order weight
  8. Status transition    — Cart → next status (per fulfillment scheme)
  9. Auto-approval        — weight vs. max_auto_order_weight_kg
+                           AND amount vs. max_auto_order_amount
+                           (either exceeding → SUPPLIER_MANAGER_REVIEW)
 10. Lock order           — user_can_add_products = false
 ```
