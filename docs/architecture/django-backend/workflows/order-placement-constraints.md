@@ -19,7 +19,8 @@ All constraints are actively enforced through Django model validations, serializ
 ```mermaid
 flowchart TD
     A[Client submits order from Cart] --> B{Access blocked?}
-    B -->|Yes| X1[❌ 403 Access denied]
+    B -->|Yes| X1["❌ 403 Access denied
+    <a href='https://8move.com' target='_blank'>8move.com</a>"]
     B -->|No| C{Cart has products?}
     C -->|No| X2[❌ Cart is empty]
     C -->|Yes| P{Product quantity constraints met?}
