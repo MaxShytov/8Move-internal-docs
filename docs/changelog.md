@@ -33,9 +33,30 @@ Complete redesign of Supplier Settings page using Material Design 3 patterns:
 - ExpansionTile for advanced settings (Invoice Numbers, Weight Limits, API Keys)
 - Modern Android Settings-style look
 
-#### :material-wrench: Clients List & Addresses Improvements
+#### :material-new-box: Multiple Phones & Emails for Clients and Suppliers
 
-- Clients list screen UI improvements
+Full CRUD for multiple phone numbers and email addresses on both Client and Supplier entities:
+
+- **Backend**: `ClientPhone`/`ClientEmail` serializers + viewsets with auto-primary logic and RLA access control
+- **Backend**: `phones_data`/`emails_data` fields on client detail response
+- **Flutter**: `ClientPhonesSection`/`ClientEmailsSection` with M3 list items in client edit form
+- **Flutter**: `SupplierPhonesSection`/`SupplierEmailsSection` in Supplier Settings
+- **Flutter**: Add/Edit dialogs with phone type picker, label, primary toggle
+- **Flutter**: Swiss phone formatter for display
+
+#### :material-api: New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET/POST | `/api/actors/client-phones/?owner={id}` | List/create client phone numbers |
+| PATCH/DELETE | `/api/actors/client-phones/{id}/` | Update/delete client phone |
+| GET/POST | `/api/actors/client-emails/?owner={id}` | List/create client emails |
+| PATCH/DELETE | `/api/actors/client-emails/{id}/` | Update/delete client email |
+
+#### :material-wrench: Clients List — Copy Buttons & Column Reorder
+
+- Copy-to-clipboard buttons next to Company Name, #ID, and Bexio ID
+- Invoicing column moved before User column for better information hierarchy
 - Addresses section widget updates with copy-to-clipboard enhancements
 - New localization strings (EN, DE, FR, IT)
 

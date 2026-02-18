@@ -8,6 +8,11 @@
 - [x] Back Office: Supplier Settings screen redesign with Material Design 3 (ListTile, SwitchListTile, ExpansionTile)
 - [x] Back Office: Clients list screen improvements
 - [x] Back Office: Addresses section copy-to-clipboard enhancements + localization (EN/DE/FR/IT)
+- [x] Backend: ClientPhone/ClientEmail serializers + viewsets with auto-primary logic
+- [x] Backend: phones_data/emails_data on client detail response
+- [x] Flutter: SupplierPhonesSection/SupplierEmailsSection in Supplier Settings with CRUD dialogs
+- [x] Flutter: Supplier phone/email models, API services, Riverpod providers
+- [x] Flutter: Clients list — copy buttons next to Name, #ID, Bexio ID; Invoicing↔User column swap
 
 ## 2026-02-17
 
