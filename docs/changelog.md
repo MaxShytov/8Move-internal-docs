@@ -4,6 +4,43 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-18
+
+### Platform (Django Admin)
+
+#### :material-shield-lock: Supplier Force Delete Action
+
+Added "Force Delete" admin action for Suppliers in Django Admin that bypasses all PROTECT constraints:
+
+- Temporarily patches Django's PROTECT → CASCADE on all FK fields using `_collect_for_force_delete()` helper
+- Collects the full dependency tree via Django's `Collector`, then deletes via raw SQL in dependency order
+- Wrapped in `transaction.atomic()` — full rollback on any error
+- Shows deletion summary with counts per model type
+- 13 unit tests covering: empty queryset, no-dependencies, products, orders, invoices, depots, full chain, bulk delete, isolation, rollback, PROTECT restoration
+
+#### :material-wrench: Product Admin — Unit FK Filtering
+
+Added `ProductInlineMixin` to filter unit dropdowns in Barcode, QRCode, and ProductPrice inlines to only show units belonging to the current product. Moved logic from `ProductInlineFormSet` to admin-level `formfield_for_foreignkey`.
+
+### Platform (Back Office)
+
+#### :material-new-box: Supplier Settings Screen Redesign
+
+Complete redesign of Supplier Settings page using Material Design 3 patterns:
+
+- ListTile-based layout with section groups replacing old card-based form
+- SwitchListTile for toggles, bottom sheet pickers for selections
+- ExpansionTile for advanced settings (Invoice Numbers, Weight Limits, API Keys)
+- Modern Android Settings-style look
+
+#### :material-wrench: Clients List & Addresses Improvements
+
+- Clients list screen UI improvements
+- Addresses section widget updates with copy-to-clipboard enhancements
+- New localization strings (EN, DE, FR, IT)
+
+---
+
 ## 2026-02-17
 
 ### Platform (Back Office + Backend)

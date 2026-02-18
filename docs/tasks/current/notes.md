@@ -1,5 +1,14 @@
 # Working Notes
 
+## 2026-02-18
+
+- [x] Django Admin: Force Delete action for Suppliers — bypasses PROTECT constraints via Collector patching + raw SQL deletion
+- [x] Django Admin: 13 unit tests for force_delete_suppliers (products, orders, invoices, depots, full chain, rollback, isolation, PROTECT restoration)
+- [x] Django Admin: ProductInlineMixin — filter unit FK in Barcode/QRCode/ProductPrice inlines to current product only
+- [x] Back Office: Supplier Settings screen redesign with Material Design 3 (ListTile, SwitchListTile, ExpansionTile)
+- [x] Back Office: Clients list screen improvements
+- [x] Back Office: Addresses section copy-to-clipboard enhancements + localization (EN/DE/FR/IT)
+
 ## 2026-02-17
 
 - [x] Client form UX: SegmentedButton for type, merged Industry+Description into Basic Info, group dividers, red asterisks for required, "Optional" helper text, ID in header subtitle, secondary headers for settings sections

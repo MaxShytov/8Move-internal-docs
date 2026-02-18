@@ -34,6 +34,7 @@ The Platform Admin has full access to the 8Move system through the Django Admin 
 | Bank accounts | IBAN, BIC, currency, account holder (for invoices) |
 | Supplier settings | Currency, lead times, VAT mode, invoicing period |
 | Block supplier | `SupplierSettingsPlatformControlled.is_blocked` |
+| Force delete supplier | Bulk action — deletes supplier with ALL dependent data (orders, invoices, products, depots, etc.) bypassing PROTECT constraints. Use with caution. |
 
 ### Client Management
 
