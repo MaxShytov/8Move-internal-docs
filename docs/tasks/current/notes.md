@@ -3,6 +3,22 @@
 ## 2026-02-20
 
 - [x] Back Office: Replace industry FilterChip selector with multi-select dropdown dialog in client form
+- [x] Backend: ProductImage model with is_primary, sort_order, alt_text + partial unique constraint
+- [x] Backend: Schema migration (0006) + data migration (0007) for existing product images
+- [x] Backend: ProductImageSerializer with S3ImageField, backward-compatible images field in ProductSerializer
+- [x] Backend: ProductImageViewSet with set-primary and reorder actions, nested router
+- [x] Backend: Order serializers updated for backward compat with new product images
+- [x] Backend: ProductImageInline in admin with image preview
+- [x] Flutter: ProductImageModel (freezed) + Product model updated with productImages field
+- [x] Flutter: Products API service — 6 new image endpoints
+- [x] Flutter: ProductImagesSection widget with grid view, upload, set primary, delete
+- [x] Flutter: Product form integration — images section for edit, simple uploader for create
+- [x] Flutter: Product images localization strings in EN/DE/FR/IT
+- [x] Back Office: Products list full rework with improved layout, filtering, stats
+- [x] Back Office: M3 polish — consistent card headers, theme tokens in ImageUploadField
+- [x] Back Office: Individual prices pagination (10 per page)
+- [x] Back Office: Category price dialog unit-aware display, product unit dialog ordering constraints
+- [x] Backend: Seed data updates for pricing, products, secondary units
 
 ## 2026-02-18
 

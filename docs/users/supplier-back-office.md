@@ -29,7 +29,7 @@ Full product catalog management.
 | Function | Description |
 |----------|-------------|
 | Product list | View all products with filters (active, category, search) |
-| Create product | Name, article code, description, images |
+| Create product | Name, article code, description, multiple images with primary designation |
 | Units | Primary, secondary, tertiary packaging (e.g., piece, box of 12, pallet) |
 | Conversion rates | How many base units per packaging unit |
 | Weight | Weight per unit (kg) for delivery capacity control |

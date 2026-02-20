@@ -29,6 +29,10 @@ Authorization: Token <your-token>
 | `/api/actors/client-phones/{id}/` | GET, PUT, PATCH, DELETE | Retrieve/update/delete client phone |
 | `/api/actors/client-emails/` | GET, POST | List/create client email addresses (filter by `owner`) |
 | `/api/actors/client-emails/{id}/` | GET, PUT, PATCH, DELETE | Retrieve/update/delete client email |
+| `/api/products/products/{id}/images/` | GET, POST | List/add product images |
+| `/api/products/products/{id}/images/{imageId}/` | PATCH, DELETE | Update/delete product image |
+| `/api/products/products/{id}/images/{imageId}/set-primary/` | POST | Set image as primary |
+| `/api/products/products/{id}/images/reorder/` | POST | Bulk reorder product images |
 
 ## Response Format
 

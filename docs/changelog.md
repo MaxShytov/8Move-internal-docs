@@ -6,7 +6,46 @@ All notable documentation and platform changes are documented here.
 
 ## 2026-02-20
 
-### Platform (Back Office)
+### Platform (Back Office + Backend)
+
+#### :material-new-box: Multiple Product Images
+
+Full-stack feature: products now support multiple images with a primary designation.
+
+**Backend:**
+
+- New `ProductImage` model with FK to Product, `is_primary` flag, `sort_order`, `alt_text`
+- Partial unique constraint: at most one primary image per product
+- Schema migration + data migration (existing single `Product.images` → `ProductImage` records)
+- `ProductImageViewSet` with `set-primary` and `reorder` actions
+- Backward-compatible: `images` field in API still returns primary image URL (string), new `product_images` field returns full array
+
+**Flutter:**
+
+- `ProductImagesSection` widget: responsive grid of thumbnails with primary badge, set-primary, delete
+- S3 upload with progress indicator
+- Edit mode: dedicated images section; Create mode: simple single uploader
+- Localized in EN, DE, FR, IT
+
+#### :material-api: New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products/products/{id}/images/` | List all images for a product |
+| POST | `/api/products/products/{id}/images/` | Add image to product |
+| PATCH | `/api/products/products/{id}/images/{imageId}/` | Update image metadata |
+| DELETE | `/api/products/products/{id}/images/{imageId}/` | Delete image |
+| POST | `/api/products/products/{id}/images/{imageId}/set-primary/` | Set image as primary |
+| POST | `/api/products/products/{id}/images/reorder/` | Bulk reorder images |
+
+#### :material-wrench: Products List Rework & M3 Polish
+
+- Products list: full rework with improved layout, filtering, and stats
+- Material Design 3 polish: consistent `titleMedium/w600` card headers across all product sections
+- Theme tokens in `ImageUploadField` (no more hardcoded colors)
+- Individual prices: client-side pagination (10 per page)
+- Category price dialog: unit-aware price display
+- Product unit dialog: ordering constraints (min_order_quantity, is_orderable)
 
 #### :material-wrench: Client Form — Industry Multi-Select Dialog
 
