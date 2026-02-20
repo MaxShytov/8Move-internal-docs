@@ -4,6 +4,20 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-20
+
+### Platform (Back Office)
+
+#### :material-wrench: Client Form — Industry Multi-Select Dialog
+
+Replaced inline FilterChip industry selector with a dropdown-style multi-select dialog:
+
+- `InputDecorator` with dropdown arrow shows selected industries as compact chips
+- Tapping opens `_IndustryMultiSelectDialog` with checkbox list for all industries
+- Confirm/cancel actions, M3-styled header — consistent with other dialogs in the app
+
+---
+
 ## 2026-02-18
 
 ### Platform (Django Admin)

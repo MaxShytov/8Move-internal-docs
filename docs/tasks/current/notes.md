@@ -1,5 +1,9 @@
 # Working Notes
 
+## 2026-02-20
+
+- [x] Back Office: Replace industry FilterChip selector with multi-select dropdown dialog in client form
+
 ## 2026-02-18
 
 - [x] Django Admin: Force Delete action for Suppliers — bypasses PROTECT constraints via Collector patching + raw SQL deletion
