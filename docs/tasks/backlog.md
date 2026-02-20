@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-18"
+!!! info "Last updated: 2026-02-20"
 
 
 ---
@@ -17,6 +17,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 4 | User Invitation Flow: менеджер приглашает пользователя клиента через email, покупатель регистрируется в Supply Now | High priority. Менеджер в Back Office находит клиента → нажимает "Invite" → вводит email → система создаёт неактивного пользователя, привязанного к клиенту, и отправляет email-приглашение. Покупатель получает письмо, скачивает Supply Now, завершает регистрацию → пользователь активируется. Менеджер видит статусы приглашений (sent, accepted, expired и т.д.). Требуется: backend (модель приглашения, отправка email, endpoint регистрации) + Back Office UI (кнопка invite, отображение статусов) + Supply Now (регистрация по приглашению). |
 | 5 | Error reporting system: автоматическая и ручная отправка ошибок разработчикам | Два режима: 1) Кнопка "Send error report" в UI при ошибке 2) Auto-report в background (opt-in настройка в профиле). Отправлять максимум данных: error message, stack trace, DioException details, request/response, screen name, user context, app version. Канал доставки — минимум Email, возможно Sentry/Slack (продумать). Нужен backend endpoint для приёма reports. |
 | 6 | Notification system overhaul: multi-recipient order notifications с per-user channel preferences | Сейчас `order_notification_recipient` — один FK на SupplierUserLink. Нужно: 1) M2M вместо FK — множественный выбор получателей в Settings, 2) Per-user notification preferences: email, in-app (колокольчик в системе), browser push — каждый юзер настраивает свои каналы, 3) In-app notification center (bell icon + unread count), 4) Browser push via Web Push API / FCM. Backend: переделать `preferences.models`, `notifications/signals.py`, `NotificationService`. Flutter: UI настроек в Settings, notification bell widget. Текущий механизм работает только через email и только на одного получателя. |
+| 7 | Добавить разделы в Supplier Settings: Зоны доставки, Типы цен, Единицы измерения, Индустрии, Автомобили, Водители | 6 новых CRUD-разделов в настройках поставщика. Каждый раздел — управление справочником (список, создание, редактирование, удаление). |
 
 ---
 
