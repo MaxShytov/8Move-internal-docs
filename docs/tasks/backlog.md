@@ -81,6 +81,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 5 | Продумать и реализовать безопасное хранение API-ключей клиентов (Google Maps и др.) | Исследовать подходы: vault/secrets manager, шифрование в БД, env per-client. Сейчас ключи хранятся небезопасно — нужно проверить текущее состояние и спроектировать решение. |
 | 6 | Локализация Django Admin на все 5 языков (en, fr, de, it, es) | Переключение языка per user, перевод model labels, help texts, admin actions. Приоритет: очень низкий |
 | 7 | Автоматический поиск и загрузка логотипов клиентов по домену/названию компании | По аналогии с HubSpot. Варианты: Clearbit Logo API (бесплатный, по домену), Google Places API, favicon fallback. Backend: сервис обогащения данных клиента — при создании/редактировании клиента с website автоматически подтягивать логотип и сохранять в S3. Низкий приоритет. |
+| 8 | Оптимизация изображений: thumbnails и resize при загрузке в S3 | Сейчас изображения загружаются as-is (после ImagePicker compress ~300-500KB) и отдаются в полном размере везде — даже для 44px аватарок в списках. ~100x overhead по трафику. Нужно: генерация thumbnails при загрузке (e.g. 100px, 300px, original), serve через CloudFront/CDN с автоматическим выбором размера. Варианты: Lambda@Edge resize on-the-fly, предгенерация при upload, или imgproxy. |
 
 ---
 
