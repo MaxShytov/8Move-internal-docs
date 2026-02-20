@@ -55,6 +55,21 @@ Replaced inline FilterChip industry selector with a dropdown-style multi-select 
 - Tapping opens `_IndustryMultiSelectDialog` with checkbox list for all industries
 - Confirm/cancel actions, M3-styled header — consistent with other dialogs in the app
 
+#### :material-new-box: Product List — Inline Price Editing
+
+Edit icons next to base price and category prices in the products list allow editing prices without navigating to the product form:
+
+- `_PriceEditIcon` widget with `GestureDetector` (opaque hit test to prevent row tap propagation)
+- `BasePriceDialog` — new dialog for creating/editing base price with price input + unit dropdown
+- `CategoryPriceDialog` reused for category price editing with pre-filled data from provider
+- Icons shown even when no price is set (dash `—`), enabling quick price creation
+
+#### :material-wrench: Product Form — Default Units & Refresh
+
+- New individual prices and barcodes now default to the product's base unit instead of requiring manual selection
+- Refresh button in product form header to reload all sections (units, prices, images, barcodes, QR codes)
+- `main_category_null` filter added to backend and Flutter for filtering products without a main category
+
 ---
 
 ## 2026-02-18

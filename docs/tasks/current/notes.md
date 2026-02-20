@@ -19,6 +19,14 @@
 - [x] Back Office: Individual prices pagination (10 per page)
 - [x] Back Office: Category price dialog unit-aware display, product unit dialog ordering constraints
 - [x] Backend: Seed data updates for pricing, products, secondary units
+- [x] Back Office: Inline price editing in products list — edit icons next to base price and category prices
+- [x] Back Office: BasePriceDialog widget for creating/editing base price from product list
+- [x] Back Office: CategoryPriceDialog reuse for editing category prices from list
+- [x] Back Office: Default base unit for new individual prices and barcodes
+- [x] Back Office: Refresh button in product form header to reload all sections
+- [x] Backend: main_category_null filter for products without main category
+- [x] Flutter tests: BasePriceDialog (9 tests), PriceEditIcon (6 tests), ProductsFilter (5 tests)
+- [x] Flutter tests: Test helpers — MockPricingApiService, MockProductsApiService, MockSuppliersApiService, TestData factory
 
 ## 2026-02-18
 

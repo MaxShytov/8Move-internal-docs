@@ -38,6 +38,7 @@ Full product catalog management.
 | Tax rate | Per-product VAT assignment |
 | Categories | Hierarchical categories with images |
 | Category prices | Price overrides per category |
+| Inline price editing | Edit base price and category prices directly from the product list via edit icons (no need to open product form) |
 | Barcodes | EAN-13, QR, UPC/EAN-128, Code39 |
 | Activate/Deactivate | Control product visibility in client apps |
 
