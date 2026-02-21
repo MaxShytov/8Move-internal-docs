@@ -2,6 +2,19 @@
 
 ## 2026-02-21
 
+- [x] Backend: get_price() extended to return (price, currency, actual_unit, is_individual, regular_price)
+- [x] Backend: _get_regular_price() helper for strikethrough display when individual pricing applies
+- [x] Backend: New product filters — has_image, has_base_price, base_unit_null, price_category, price_category_null
+- [x] Backend: Updated order serializers for new get_price() return format
+- [x] Back Office: Products list — frozen Name column with subtle divider for horizontal scrolling
+- [x] Back Office: Products list — client price column with individual/regular price strikethrough display
+- [x] Back Office: Products list — ClientPriceDialog for inline individual price editing
+- [x] Back Office: Products list — advanced filter sheet (image, base price, base unit, price category)
+- [x] Back Office: Category tree — "No category" filter with uncategorized products count badge
+- [x] Back Office: Orders list — redesigned compact columns (status, client+#, address+zone+maps, slot, date, total+weight)
+- [x] Back Office: Orders list — auto-filter by current supplier, removed debug prints
+- [x] Shared UI: MapsConfigError enum + context-aware Google Maps error messages (no supplier link / no keys / fetch error)
+- [x] Back Office: Localization updates in DE/EN/FR/IT for new filter labels and client price strings
 - [x] Backend: Interactive Leaflet.js map preview in DeliveryZone admin (full-width, dynamic CDN load, zone color, popups)
 
 ## 2026-02-20

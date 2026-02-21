@@ -6,6 +6,38 @@ All notable documentation and platform changes are documented here.
 
 ## 2026-02-21
 
+### Platform (Back Office + Backend)
+
+#### :material-new-box: Product List — Client Prices, Frozen Columns & Advanced Filters
+
+**Backend:**
+
+- `get_price()` now returns individual price detection with `is_individual` flag and `regular_price` for strikethrough display
+- New product filters: `has_image`, `has_base_price`, `base_unit_null`, `price_category`, `price_category_null`
+
+**Flutter:**
+
+- Products list: frozen Name column stays pinned when scrolling horizontally through price columns
+- Client price column: select a client to see their specific prices, with individual price highlighted and regular price shown as strikethrough
+- Client price dialog: inline editing of individual prices per client
+- Advanced filter bottom sheet: filter by image, base price, base unit, and price category
+- "No category" filter in category tree sidebar with count badge
+
+#### :material-wrench: Orders List — Redesigned Compact Layout
+
+- Redesigned columns: Status → Client (name + order # + ID) → Delivery Address (with copy + Google Maps link) → Dispatch Slot → Date → Total (with weight)
+- Zone color badges on delivery addresses
+- Auto-filter by current supplier when selected in header
+- Removed debug print statements
+
+#### :material-wrench: Google Maps — Context-Aware Error Messages
+
+Replaced generic "Configuration Google Maps manquante" with specific messages:
+
+- **No supplier link:** "Compte non associé à un fournisseur" — instructs user to contact admin
+- **No API keys:** "Clés API non configurées" — instructs user to ask company admin
+- **Fetch error:** "Erreur de chargement" — suggests checking internet connection
+
 ### Platform (Django Admin)
 
 #### :material-shield-lock: Delivery Zone — Interactive Map Preview
