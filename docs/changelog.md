@@ -4,6 +4,16 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-21
+
+### Platform (Django Admin)
+
+#### :material-shield-lock: Delivery Zone — Interactive Map Preview
+
+Added an interactive Leaflet.js map directly in the DeliveryZone admin change form. The map renders zone polygons with the zone's display color on OpenStreetMap tiles, supports zoom/pan, and shows feature info on click. The fieldset is now open by default for quick visual verification. Copy GeoJSON and Open geojson.io buttons are still available.
+
+---
+
 ## 2026-02-20
 
 ### Platform (Back Office + Backend)

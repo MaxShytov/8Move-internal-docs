@@ -1,5 +1,9 @@
 # Working Notes
 
+## 2026-02-21
+
+- [x] Backend: Interactive Leaflet.js map preview in DeliveryZone admin (full-width, dynamic CDN load, zone color, popups)
+
 ## 2026-02-20
 
 - [x] Back Office: Replace industry FilterChip selector with multi-select dropdown dialog in client form

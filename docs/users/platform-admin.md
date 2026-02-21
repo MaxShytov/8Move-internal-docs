@@ -73,7 +73,7 @@ The Platform Admin has full access to the 8Move system through the Django Admin 
 
 | Function | Description |
 |----------|-------------|
-| Delivery zones | Canton, city, postal code, or GeoJSON polygon boundaries |
+| Delivery zones | Canton, city, postal code, or GeoJSON polygon boundaries. Interactive Leaflet map preview with zone polygons directly in admin. |
 | Dispatch slots | Scheduled departure times (by weekday or interval) |
 | Operating calendar | Working hours per weekday per supplier |
 | Exception calendar | Holidays, closed days, modified hours |
