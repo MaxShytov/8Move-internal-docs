@@ -2,6 +2,16 @@
 
 ## 2026-02-21
 
+- [x] Backend: ReassignDeliveryZonesService — reuses admin panel assign_delivery_zone() logic
+- [x] Backend: DataImportLog.operation_type field (bexio_csv_import / reassign_zones) + migration
+- [x] Backend: ClientAddressDeliveryZone.is_manual field + migration
+- [x] Backend: Zone reassignment rollback in DataImportRollbackService
+- [x] Backend: POST /api/actors/clients/reassign-delivery-zones/ endpoint
+- [x] Back Office: "Import" → "Bulk" rename with 3 menu items (Import CSV, Reassign Zones, History)
+- [x] Back Office: Reassign zones dialog with include_manual checkbox, results dialog
+- [x] Back Office: History screen — operation type badges, context-aware row log and rollback
+- [x] Back Office: 20 new localization strings in EN/DE/FR/IT for bulk zone operations
+- [x] Shared Core: reassignDeliveryZones() API method in clients_api_service.dart
 - [x] Backend: get_price() extended to return (price, currency, actual_unit, is_individual, regular_price)
 - [x] Backend: _get_regular_price() helper for strikethrough display when individual pricing applies
 - [x] Backend: New product filters — has_image, has_base_price, base_unit_null, price_category, price_category_null

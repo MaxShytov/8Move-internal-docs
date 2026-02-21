@@ -88,7 +88,7 @@ Client relationship management.
 | Multiple emails | Add/edit/delete multiple email addresses per client with labels and auto-primary |
 | Contact popup | "+N more" chip in client list shows all phones/emails in a popup dialog with quick actions (copy, call, email) |
 | Create client | Register new client company |
-| Data import | Import clients from CSV with preview, dry run, and persistent import logs |
+| Bulk operations | Import clients from Bexio CSV (preview, dry run, logs), reassign delivery zones for all client addresses (with manual zone protection), view operation history with rollback support |
 | Communication history | Track interactions with client |
 
 ### Supplier Settings

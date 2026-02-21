@@ -33,6 +33,7 @@ Authorization: Token <your-token>
 | `/api/products/products/{id}/images/{imageId}/` | PATCH, DELETE | Update/delete product image |
 | `/api/products/products/{id}/images/{imageId}/set-primary/` | POST | Set image as primary |
 | `/api/products/products/{id}/images/reorder/` | POST | Bulk reorder product images |
+| `/api/actors/clients/reassign-delivery-zones/` | POST | Reassign delivery zones for all client addresses of a supplier |
 
 ## Response Format
 

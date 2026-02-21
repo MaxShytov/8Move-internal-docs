@@ -8,6 +8,37 @@ All notable documentation and platform changes are documented here.
 
 ### Platform (Back Office + Backend)
 
+#### :material-new-box: Bulk Delivery Zone Reassignment
+
+Full-stack feature: reassign delivery zones for all client addresses of a supplier, with history tracking and rollback support.
+
+**Backend:**
+
+- `ReassignDeliveryZonesService` — reuses existing `assign_delivery_zone()` logic from admin panel
+- `DataImportLog.operation_type` field to distinguish between Bexio CSV imports and zone reassignments
+- `ClientAddressDeliveryZone.is_manual` field to track manually assigned zones (skipped by default during reassignment)
+- Zone reassignment rollback: restores previous zone assignments or removes newly created ones
+- Email notification with import report on completion
+
+**Flutter:**
+
+- Clients list: "Import" button renamed to "Bulk" with 3 menu items: Import Bexio CSV, Reassign Delivery Zones, History
+- Reassign dialog with "Include manually assigned zones" checkbox and confirmation
+- Results dialog showing assigned/changed/unchanged/skipped/no_coords/no_address stats
+- History screen: operation type badges (blue for zone reassignment, teal for CSV import), context-aware row log rendering and rollback messages
+- Localized in EN, DE, FR, IT
+
+#### :material-api: New API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/actors/clients/reassign-delivery-zones/` | Reassign delivery zones for all client addresses of a supplier |
+
+#### :material-database: New Migrations
+
+- `actors.0040` — Add `operation_type` field to `DataImportLog`
+- `actors.0041` — Add `is_manual` field to `ClientAddressDeliveryZone`
+
 #### :material-new-box: Product List — Client Prices, Frozen Columns & Advanced Filters
 
 **Backend:**
