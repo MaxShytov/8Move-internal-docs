@@ -81,6 +81,16 @@ nav:
           - Developers: tasks/templates/developers.md
           - Platform Admins: tasks/templates/admins.md
           - End Users: tasks/templates/users.md
+  - Back Office:
+      - Обзор: back-office/index.md
+      - Быстрый старт: back-office/quick-start.md
+      - Дашборд: back-office/dashboard.md
+      - Заказы: back-office/orders.md
+      - Счета: back-office/invoices.md
+      - Продукты: back-office/products.md
+      - Клиенты: back-office/clients.md
+      - Пользователи: back-office/users.md
+      - Настройки поставщика: back-office/settings.md
   - Features:
       - Supply Now:
           - Change Password:
