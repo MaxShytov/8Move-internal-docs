@@ -23,6 +23,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 10 | Address geocoding & normalization: кнопка пересчёта адреса в форме | Кнопка "Пересчитать адрес" в форме адреса клиента/поставщика — по введённым данным через Google Maps Geocoding API автозаполнение city, canton, postal code, formatted address, координат. Массовый пересчёт существующих адресов. Требует backend (см. Backend #10). |
 | 11 | Row click → detail side panel вместо прямого перехода в edit | Клик по строке в таблице (Products, Clients, Orders) открывает боковую панель (drawer справа) с просмотром информации + кнопка "Edit" для перехода в форму редактирования. Объём информации зависит от сущности: Products — краткая сводка, Orders — больше деталей и т.д. Затрагивает все основные списки. |
 | 12 | Создание заказа из списка Products: кнопка "Add to Order" рядом с ценой клиента | Пользователь выбирает клиента в списке товаров → рядом с ценой клиента появляется кнопка "Add to Order". При нажатии: 1) если есть открытый заказ для этого клиента — добавляем товар в него, 2) если нет — создаём новый заказ. Использует существующий механизм выбора клиента в Products list. |
+| 13 | Unit order step/multiplier: кратность заказа для единиц измерения | UI для задания и отображения кратности (order_step) на единице измерения товара. Например: шины кратно 2 или 4. При заказе количество округляется/валидируется до ближайшего кратного. Отображение кратности в форме товара и при создании заказа. Требует backend (см. Backend #11). |
 
 ---
 
@@ -89,6 +90,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 8 | Оптимизация изображений: thumbnails и resize при загрузке в S3 | Сейчас изображения загружаются as-is (после ImagePicker compress ~300-500KB) и отдаются в полном размере везде — даже для 44px аватарок в списках. ~100x overhead по трафику. Нужно: генерация thumbnails при загрузке (e.g. 100px, 300px, original), serve через CloudFront/CDN с автоматическим выбором размера. Варианты: Lambda@Edge resize on-the-fly, предгенерация при upload, или imgproxy. |
 | 9 | Supplier default currency: добавить поле валюты в модель поставщика | Добавить `currency` (FK → Currency) в Supplier / SupplierSettings. Валюта поставщика используется по умолчанию при создании цен, заказов, инвойсов. Отдавать через API. См. Back Office #9 для UI-части. |
 | 10 | Address geocoding & normalization: сервис пересчёта и нормализации адресов | Сервис geocoding через Google Maps Geocoding API — по введённому адресу автозаполнение/корректировка city, canton/state, postal code, formatted address, координат. Endpoint для пересчёта одного адреса + management command для массового пересчёта существующих. См. Back Office #10 для UI-части. |
+| 11 | Unit order step/multiplier: добавить поле кратности в модель Unit | Добавить поле `order_step` (PositiveInteger, default=1) в модель Unit. Валидация: количество в заказе должно быть кратно order_step. Отдавать через API. См. Back Office #13 для UI-части. |
 
 ---
 
