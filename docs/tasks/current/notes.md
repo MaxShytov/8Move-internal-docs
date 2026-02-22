@@ -1,5 +1,18 @@
 # Working Notes
 
+## 2026-02-22
+
+- [x] Back Office: Order Products Bulk Edit dialog — compound ProductTableCell column (image + name + article + category)
+- [x] Back Office: Order Products Bulk Edit dialog — client name + price category badge + individual prices count in header
+- [x] Back Office: Order Products Bulk Edit dialog — unit warnings with color-coded badges and tooltips
+- [x] Back Office: Order Products Bulk Edit dialog — orderable unit switcher dropdown (loads units per product in parallel)
+- [x] Back Office: Order Products Bulk Edit dialog — enhanced price cell with individual/strikethrough, min order info
+- [x] Back Office: Currency formatting — consistent "521.40 CHF" format everywhere (CurrencyDisplay.formatCurrency)
+- [x] Back Office: Fixed model extensions (OrderProduct, BackOfficeOrder, ProductPrice, IndividualPrice) to use currency code
+- [x] Back Office: Order summary card, delivery tab, optional card, form header — all use currencyCode now
+- [x] Backend: ClientViewSet.get_serializer_class() — retrieve action now uses ClientListSerializer (returns price_category_name)
+- [x] Back Office: New reusable widgets — ProductTableCell, AddressTableCell
+
 ## 2026-02-21
 
 - [x] Backend: ReassignDeliveryZonesService — reuses admin panel assign_delivery_zone() logic

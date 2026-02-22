@@ -56,7 +56,8 @@ Order management from clients.
 | Weight | Total order weight (auto-calculated) |
 | Lock order | Prevent modifications on completed orders |
 | Totals | HT (before VAT), tax, TTC (with VAT) |
-| Bulk edit | Edit multiple orders simultaneously |
+| Bulk edit products | Rich product table with image/name/article, unit warnings, orderable unit switcher, client price category, individual price highlighting |
+| Currency display | Consistent "521.40 CHF" format across all order screens |
 
 ### Invoices
 

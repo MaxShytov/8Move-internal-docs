@@ -4,6 +4,31 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-22
+
+### Platform (Back Office + Backend)
+
+#### :material-wrench: Order Products Bulk Edit — Redesigned Dialog
+
+Complete redesign of the "Edit Order Products" dialog to match the Products list table:
+
+- **Compound product cell:** image + name + article + status dot + category badge in one column (reuses `ProductTableCell`)
+- **Client context in header:** client name chip with price category badge (e.g. "Bulk Wholesales") and individual prices count
+- **Unit warnings:** color-coded badges (red critical, orange informational) with tooltips, matching Products list
+- **Orderable unit switcher:** dropdown next to quantity input when product has multiple orderable units
+- **Enhanced price column:** individual prices highlighted in deep purple with strikethrough regular price, min order info
+- Column order: Name → Unit → Quantity → Price → Total
+
+#### :material-wrench: Currency Formatting — Consistent Format
+
+Fixed currency display inconsistency across entire Back Office app. All monetary values now use `"521.40 CHF"` format (was `"Fr521.40"` using locale symbol in order forms). Centralized through `CurrencyDisplay.formatCurrency()` and `Formatters.formatPrice()`.
+
+#### :material-wrench: Backend — Client Detail API Fix
+
+`GET /api/actors/clients/{id}/` now returns `price_category_name` and `individual_prices_count` fields. Previously the retrieve action used `ClientUpdateSerializer` which did not include these fields.
+
+---
+
 ## 2026-02-21
 
 ### Platform (Back Office + Backend)
