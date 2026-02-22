@@ -20,6 +20,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 7 | Добавить разделы в Supplier Settings: Зоны доставки, Типы цен, Единицы измерения, Индустрии, Автомобили, Водители | 6 новых CRUD-разделов в настройках поставщика. Каждый раздел — управление справочником (список, создание, редактирование, удаление). |
 | 8 | Delivery zone assignment map — интерактивная карта назначения зон доставки клиентам | На форме редактирования зон доставки показывать карту с клиентами: зелёные — с установленной зоной, красные — без зоны. Дать возможность назначать/менять зону прямо из карты (клик по клиенту → выбор зоны). |
 | 9 | Supplier default currency: добавить выбор валюты поставщика в Settings | UI для выбора валюты в настройках поставщика. Валюта должна использоваться по умолчанию при создании цен, заказов, инвойсов. Требует backend-задачу (см. Backend #9). |
+| 10 | Address geocoding & normalization: кнопка пересчёта адреса в форме | Кнопка "Пересчитать адрес" в форме адреса клиента/поставщика — по введённым данным через Google Maps Geocoding API автозаполнение city, canton, postal code, formatted address, координат. Массовый пересчёт существующих адресов. Требует backend (см. Backend #10). |
 
 ---
 
@@ -85,6 +86,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 7 | Автоматический поиск и загрузка логотипов клиентов по домену/названию компании | По аналогии с HubSpot. Варианты: Clearbit Logo API (бесплатный, по домену), Google Places API, favicon fallback. Backend: сервис обогащения данных клиента — при создании/редактировании клиента с website автоматически подтягивать логотип и сохранять в S3. Низкий приоритет. |
 | 8 | Оптимизация изображений: thumbnails и resize при загрузке в S3 | Сейчас изображения загружаются as-is (после ImagePicker compress ~300-500KB) и отдаются в полном размере везде — даже для 44px аватарок в списках. ~100x overhead по трафику. Нужно: генерация thumbnails при загрузке (e.g. 100px, 300px, original), serve через CloudFront/CDN с автоматическим выбором размера. Варианты: Lambda@Edge resize on-the-fly, предгенерация при upload, или imgproxy. |
 | 9 | Supplier default currency: добавить поле валюты в модель поставщика | Добавить `currency` (FK → Currency) в Supplier / SupplierSettings. Валюта поставщика используется по умолчанию при создании цен, заказов, инвойсов. Отдавать через API. См. Back Office #9 для UI-части. |
+| 10 | Address geocoding & normalization: сервис пересчёта и нормализации адресов | Сервис geocoding через Google Maps Geocoding API — по введённому адресу автозаполнение/корректировка city, canton/state, postal code, formatted address, координат. Endpoint для пересчёта одного адреса + management command для массового пересчёта существующих. См. Back Office #10 для UI-части. |
 
 ---
 
