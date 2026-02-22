@@ -23,6 +23,11 @@ Complete redesign of the "Edit Order Products" dialog to match the Products list
 
 Fixed currency display inconsistency across entire Back Office app. All monetary values now use `"521.40 CHF"` format (was `"Fr521.40"` using locale symbol in order forms). Centralized through `CurrencyDisplay.formatCurrency()` and `Formatters.formatPrice()`.
 
+#### :material-wrench: Min Order Quantity Enforcement & Unit Conversion Fix
+
+- **Min order validation:** When user enters quantity below minimum for the selected unit, quantity is auto-increased to the minimum with an orange snackbar notification. Enforced on Enter/Tab, blur, and unit switch.
+- **Total calculation fix:** Totals now correctly account for unit conversion rates when ordering in non-base units (e.g. ordering in boxes when price is per piece).
+
 #### :material-wrench: Backend — Client Detail API Fix
 
 `GET /api/actors/clients/{id}/` now returns `price_category_name` and `individual_prices_count` fields. Previously the retrieve action used `ClientUpdateSerializer` which did not include these fields.
