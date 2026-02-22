@@ -28,6 +28,7 @@
 - [x] Backend: ClientViewSet.get_serializer_class() — retrieve action now uses ClientListSerializer (returns price_category_name)
 - [x] Back Office: New reusable widgets — ProductTableCell, AddressTableCell
 - [x] Back Office: Bulk edit dialog — min order quantity enforcement (auto-increase + snackbar on Enter/Tab, blur, unit switch)
+- [x] Back Office: Products list — pin/unpin category panel (sidebar ↔ dropdown chip with searchable dialog)
 - [x] Back Office: Bulk edit dialog — fix total calculation for non-base units (unit conversion rate ratio)
 
 ## 2026-02-21

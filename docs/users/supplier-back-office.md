@@ -37,7 +37,7 @@ Full product catalog management.
 | Base unit | Reference unit for pricing and conversions |
 | PLU codes | Auto-generated codes for weighable items (fractional quantities) |
 | Tax rate | Per-product VAT assignment |
-| Categories | Hierarchical categories with images |
+| Categories | Hierarchical categories with images. Panel can be pinned as sidebar or unpinned to dropdown chip |
 | Category prices | Price overrides per category |
 | Inline price editing | Edit base price and category prices directly from the product list via edit icons (no need to open product form) |
 | Barcodes | EAN-13, QR, UPC/EAN-128, Code39 |

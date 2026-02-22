@@ -20,6 +20,14 @@ Each task has a unique ID with a prefix indicating the area:
 
 ---
 
+## 2026
+
+| ID | Date | Task | App |
+|----|------|------|-----|
+| BO-01 | 2026-02-22 | Products Category Panel — Pin/Unpin Toggle | Back Office |
+
+---
+
 ## 2025
 
 | ID | Date | Task | App |

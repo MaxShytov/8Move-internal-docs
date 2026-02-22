@@ -52,6 +52,9 @@ Fixed currency display inconsistency across entire Back Office app. All monetary
 - **Min order validation:** When user enters quantity below minimum for the selected unit, quantity is auto-increased to the minimum with an orange snackbar notification. Enforced on Enter/Tab, blur, and unit switch.
 - **Total calculation fix:** Totals now correctly account for unit conversion rates when ordering in non-base units (e.g. ordering in boxes when price is per piece).
 
+#### :material-new-box: Products — Pin/Unpin Category Panel
+Category panel on the products list can now be toggled between a pinned left sidebar and a compact dropdown chip in the toolbar row. When unpinned, clicking the chip opens a searchable category selector dialog with "All Categories", "No category", category tree, "Add Category", and "Pin as sidebar" actions. Pin state persists across sessions via SharedPreferences.
+
 #### :material-wrench: Backend — Client Detail API Fix
 
 `GET /api/actors/clients/{id}/` now returns `price_category_name` and `individual_prices_count` fields. Previously the retrieve action used `ClientUpdateSerializer` which did not include these fields.
