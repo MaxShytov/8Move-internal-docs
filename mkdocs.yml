@@ -28,7 +28,7 @@ theme:
     - search.highlight
     - content.code.copy
     - content.code.annotate
-  logo: assets/images/8move-icon.png
+  logo: assets/images/8move-logo.png
   favicon: assets/images/8move-icon.png
   icon:
     repo: fontawesome/brands/github
