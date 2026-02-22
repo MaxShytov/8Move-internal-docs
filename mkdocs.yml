@@ -28,6 +28,8 @@ theme:
     - search.highlight
     - content.code.copy
     - content.code.annotate
+  logo: assets/images/8move-icon.png
+  favicon: assets/images/8move-icon.png
   icon:
     repo: fontawesome/brands/github
 
