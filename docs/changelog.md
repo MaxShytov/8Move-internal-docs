@@ -4,6 +4,21 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-23
+
+### Platform (Back Office + Backend)
+
+#### :material-new-box: Orders — Kanban Board View
+Added a horizontal Kanban board to the orders list screen. Orders are grouped by status into scrollable columns (Created Cart, Ordered, In Fulfillment, Delivered, Cancelled, etc.). Each column shows order count, total sum, and compact cards with order number, date, client avatar, address, delivery zone, slot/ETA, weight, and total. A segmented List/Kanban view switcher in the toolbar allows toggling between table and board views. Kanban fetches up to 200 orders via a dedicated provider.
+
+#### :material-new-box: Supplier Users — Redesigned List & Edit Screen
+Redesigned supplier users management with an improved list screen, new edit screen at `/users/:id/edit`, and user avatar display from S3. Backend serializer now includes `user_avatar` field and optimized queryset with `select_related`.
+
+#### :material-wrench: Supplier Selector — Persistence Fix
+Fixed a race condition where the saved supplier was not restored after login. `DashboardLayout` now performs both an immediate check and a `ref.listen` transition check for already-loaded supplier data, ensuring the saved supplier from SharedPreferences is reliably restored.
+
+---
+
 ## 2026-02-22
 
 ### Platform (Back Office + Backend)

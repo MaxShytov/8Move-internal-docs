@@ -49,7 +49,8 @@ Order management from clients.
 
 | Function | Description |
 |----------|-------------|
-| Order list | Filter by status, client, date, delivery zone |
+| Order list | Filter by status, client, date, delivery zone. List and Kanban board view modes |
+| Kanban board | Horizontal board with columns per status, order cards with client, address, zone, ETA, weight, total |
 | Order detail | Items, quantities, prices, tax breakdown |
 | Status tracking | Multi-step workflow with status history |
 | Delivery zone | Auto-assigned based on delivery address |
@@ -118,7 +119,8 @@ Team management.
 
 | Function | Description |
 |----------|-------------|
-| User list | All users linked to supplier |
+| User list | All users linked to supplier with avatar, role, email |
+| User detail | Edit screen at `/users/:id/edit` with role management |
 | Roles | Admin (full access), Manager (operational), Courier (delivery) |
 | Create user | Add team members with role assignment |
 

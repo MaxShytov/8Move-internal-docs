@@ -1,5 +1,14 @@
 # Working Notes
 
+## 2026-02-23
+
+- [x] Back Office: Orders Kanban board — kanban_board_widget, kanban_order_card, kanbanOrdersProvider, view switcher
+- [x] Back Office: Supplier users list redesign + new supplier_user_edit_screen + avatar support
+- [x] Backend: SupplierUserLinkSerializer — user_avatar field (S3 URL), select_related optimization
+- [x] Back Office: Supplier users router — /users/:id/edit route
+- [x] Back Office: Fix supplier persistence — restoreFromSuppliers + immediate check in DashboardLayout
+- [x] Back Office: Localization updates (EN/DE/FR/IT) for kanban board strings
+
 ## 2026-02-22
 
 - [x] Backend: Make fulfillment_scheme read-only in SupplierSettingsSelfControlledSerializer and ClientSettingsSupplierControlledSerializer
