@@ -25,6 +25,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 12 | Создание заказа из списка Products: кнопка "Add to Order" рядом с ценой клиента | Пользователь выбирает клиента в списке товаров → рядом с ценой клиента появляется кнопка "Add to Order". При нажатии: 1) если есть открытый заказ для этого клиента — добавляем товар в него, 2) если нет — создаём новый заказ. Использует существующий механизм выбора клиента в Products list. |
 | 13 | Unit order step/multiplier: кратность заказа для единиц измерения | UI для задания и отображения кратности (order_step) на единице измерения товара. Например: шины кратно 2 или 4. При заказе количество округляется/валидируется до ближайшего кратного. Отображение кратности в форме товара и при создании заказа. Требует backend (см. Backend #11). |
 | 14 | Unified Actor edit form: единая переиспользуемая форма для Suppliers и Clients | Сейчас формы Supplier и Client — отдельные экраны. Нужно создать один универсальный компонент формы Actor, который переиспользуется для обоих типов. Детали полей и секций будут уточнены отдельно. |
+| 15 | Multilingual data audit: определить какие поля поставщик должен вводить на нескольких языках | Провести анализ моделей — какие данные должны поддерживать мультиязычный ввод (Supplier.description, Product.name, и т.д.). Результат — список полей + подход к реализации (django-modeltranslation, JSON field, отдельные таблицы). См. Backend #12 для реализации на бэкенде. |
 
 ---
 
@@ -92,6 +93,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 9 | Supplier default currency: добавить поле валюты в модель поставщика | Добавить `currency` (FK → Currency) в Supplier / SupplierSettings. Валюта поставщика используется по умолчанию при создании цен, заказов, инвойсов. Отдавать через API. См. Back Office #9 для UI-части. |
 | 10 | Address geocoding & normalization: сервис пересчёта и нормализации адресов | Сервис geocoding через Google Maps Geocoding API — по введённому адресу автозаполнение/корректировка city, canton/state, postal code, formatted address, координат. Endpoint для пересчёта одного адреса + management command для массового пересчёта существующих. См. Back Office #10 для UI-части. |
 | 11 | Unit order step/multiplier: добавить поле кратности в модель Unit | Добавить поле `order_step` (PositiveInteger, default=1) в модель Unit. Валидация: количество в заказе должно быть кратно order_step. Отдавать через API. См. Back Office #13 для UI-части. |
+| 12 | Multilingual data support: мультиязычный ввод данных поставщиком | Реализовать хранение и API для мультиязычных полей (Supplier.description, Product.name и др.). Подход определить после аудита (django-modeltranslation, JSON field, отдельные таблицы). Языки: en, de, fr, it. См. Back Office #15 для UI-части и аудита полей. |
 
 ---
 
