@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-21"
+!!! info "Last updated: 2026-02-22"
 
 
 ---
@@ -19,6 +19,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 6 | Notification system overhaul: multi-recipient order notifications с per-user channel preferences | Сейчас `order_notification_recipient` — один FK на SupplierUserLink. Нужно: 1) M2M вместо FK — множественный выбор получателей в Settings, 2) Per-user notification preferences: email, in-app (колокольчик в системе), browser push — каждый юзер настраивает свои каналы, 3) In-app notification center (bell icon + unread count), 4) Browser push via Web Push API / FCM. Backend: переделать `preferences.models`, `notifications/signals.py`, `NotificationService`. Flutter: UI настроек в Settings, notification bell widget. Текущий механизм работает только через email и только на одного получателя. |
 | 7 | Добавить разделы в Supplier Settings: Зоны доставки, Типы цен, Единицы измерения, Индустрии, Автомобили, Водители | 6 новых CRUD-разделов в настройках поставщика. Каждый раздел — управление справочником (список, создание, редактирование, удаление). |
 | 8 | Delivery zone assignment map — интерактивная карта назначения зон доставки клиентам | На форме редактирования зон доставки показывать карту с клиентами: зелёные — с установленной зоной, красные — без зоны. Дать возможность назначать/менять зону прямо из карты (клик по клиенту → выбор зоны). |
+| 9 | Supplier default currency: добавить выбор валюты поставщика в Settings | UI для выбора валюты в настройках поставщика. Валюта должна использоваться по умолчанию при создании цен, заказов, инвойсов. Требует backend-задачу (см. Backend #9). |
 
 ---
 
@@ -83,6 +84,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 6 | Локализация Django Admin на все 5 языков (en, fr, de, it, es) | Переключение языка per user, перевод model labels, help texts, admin actions. Приоритет: очень низкий |
 | 7 | Автоматический поиск и загрузка логотипов клиентов по домену/названию компании | По аналогии с HubSpot. Варианты: Clearbit Logo API (бесплатный, по домену), Google Places API, favicon fallback. Backend: сервис обогащения данных клиента — при создании/редактировании клиента с website автоматически подтягивать логотип и сохранять в S3. Низкий приоритет. |
 | 8 | Оптимизация изображений: thumbnails и resize при загрузке в S3 | Сейчас изображения загружаются as-is (после ImagePicker compress ~300-500KB) и отдаются в полном размере везде — даже для 44px аватарок в списках. ~100x overhead по трафику. Нужно: генерация thumbnails при загрузке (e.g. 100px, 300px, original), serve через CloudFront/CDN с автоматическим выбором размера. Варианты: Lambda@Edge resize on-the-fly, предгенерация при upload, или imgproxy. |
+| 9 | Supplier default currency: добавить поле валюты в модель поставщика | Добавить `currency` (FK → Currency) в Supplier / SupplierSettings. Валюта поставщика используется по умолчанию при создании цен, заказов, инвойсов. Отдавать через API. См. Back Office #9 для UI-части. |
 
 ---
 
