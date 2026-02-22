@@ -31,7 +31,7 @@ cd django_project
 | 8080 | Back Office | max@trident.software |
 | 8081 | Fleet Planner | max@trident.software |
 | 8082 | Driver Pro | dvbn777drc@gmail.com |
-| 8090 | Supply Now | Claire (Auberge du Lac, multi-client) |
+| 8090 | Supply Now | Claire (Auberge du Lac, multi-client) / James pub |
 | 8091 | DocuFlow | max@trident.software |
 
 ---
@@ -69,6 +69,15 @@ flutter run -d chrome --web-port 8090 \
 ```
 
 > Claire — admin в Auberge du Lac, manager в Le Petit Délice и Hôtel Edelweiss. Для тестирования multi-client.
+
+**James pub** (single-client):
+
+```bash
+flutter run -d chrome --web-port 8090 \
+  --dart-define=API_BASE_URL=http://localhost:8000 \
+  --dart-define=AUTO_LOGIN_EMAIL=james.pub@supplynow.ch \
+  --dart-define=AUTO_LOGIN_PASSWORD=Password123
+```
 
 ---
 
