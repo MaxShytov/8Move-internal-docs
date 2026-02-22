@@ -8,6 +8,30 @@ All notable documentation and platform changes are documented here.
 
 ### Platform (Back Office + Backend)
 
+#### :material-new-box: Fulfillment Scheme — Auto-Managed Default
+Fulfillment scheme is no longer user-editable. New suppliers automatically get "Ship Now, Pay Later" as the default scheme. The dropdown has been removed from both the supplier settings form and the client settings form. Scheme is now managed exclusively through signals and backend logic.
+
+#### :material-new-box: Dashboard — Collapsible Sidebar Navigation
+Replaced the persistent drawer with an animated collapsible sidebar on desktop. Uses NavigationRail pattern with smooth expand/collapse animation (240px expanded, 64px collapsed). Mobile retains bottom sheet drawer.
+
+#### :material-new-box: Profile Settings — Supplier Selector
+Added a Settings tab to the user profile screen with supplier picker and multi-supplier mode toggle (superuser only). Users can switch between suppliers they have access to.
+
+#### :material-new-box: Supplier Settings — Company Branding & Details
+Expanded supplier settings form with company name, official name, description, fiscal number, VAT number fields. Added logo upload with S3 integration and image picker (gallery/camera). Removed fulfillment scheme selector (now auto-managed).
+
+#### :material-new-box: User Management — Supplier & Client Users Split
+Restructured user management from a single "Users" screen into separate "Supplier Users" and "Client Users" views. Legacy user form/list screens removed. Client user links API now supports filtering by supplier, searching across user/client data, and pagination.
+
+#### :material-wrench: Order Products Card — Flex Layout Redesign
+Converted Table-based product list to flex Row layout for better responsiveness. Product article and category name now displayed alongside product name in order lines.
+
+#### :material-server: Backend — Thread-Local User Tracking
+Added `CurrentUserMiddleware` and `SimpleJWTAuthenticationWithThreadLocal` for consistent audit trail. API requests now properly log who created/modified orders via `OrderStatusHistory.created_by`.
+
+#### :material-server: Backend — Order API Improvements
+Refactored order number generation to skip invalid formats. Added price unit conversion and enriched product details (article, category) to `OrderProductsSerializer`. Optimized queries with `select_related`/`prefetch_related`.
+
 #### :material-wrench: Order Products Bulk Edit — Redesigned Dialog
 
 Complete redesign of the "Edit Order Products" dialog to match the Products list table:

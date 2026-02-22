@@ -2,6 +2,21 @@
 
 ## 2026-02-22
 
+- [x] Backend: Make fulfillment_scheme read-only in SupplierSettingsSelfControlledSerializer and ClientSettingsSupplierControlledSerializer
+- [x] Backend: Default new suppliers to "Ship Now, Pay Later" scheme in signals.py
+- [x] Backend: Add CurrentUserMiddleware and SimpleJWTAuthenticationWithThreadLocal for audit trail
+- [x] Backend: Refactor order number generation, add price unit conversion to OrderProductsSerializer
+- [x] Backend: Add supplier filtering and search to ClientUserLink API
+- [x] Back Office: Redesign dashboard with collapsible sidebar navigation (NavigationRail pattern)
+- [x] Back Office: Add settings tab to profile with supplier picker and multi-supplier toggle
+- [x] Back Office: Expand supplier settings form with branding (logo, company details, fiscal/VAT numbers)
+- [x] Back Office: Remove fulfillment scheme selector from supplier settings and client form
+- [x] Back Office: Restructure user management into supplier_users and client_users
+- [x] Back Office: Redesign order products card with flex layout, show article and category
+- [x] Back Office: Add 8move branding assets (icon, logo SVG)
+- [x] Back Office: Add multi-supplier mode provider and preferences storage
+- [x] Back Office: Add fiscalNumber and vatNumber to SupplierModel
+- [x] Back Office: Add client users list screen and filters
 - [x] Back Office: Order Products Bulk Edit dialog — compound ProductTableCell column (image + name + article + category)
 - [x] Back Office: Order Products Bulk Edit dialog — client name + price category badge + individual prices count in header
 - [x] Back Office: Order Products Bulk Edit dialog — unit warnings with color-coded badges and tooltips

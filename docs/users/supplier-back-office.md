@@ -21,6 +21,7 @@ Main screen with key metrics and recent activity.
 - Orders summary (today, pending, completed)
 - Revenue overview
 - Recent updates feed (changelog)
+- Collapsible sidebar navigation (desktop: 240px expanded / 64px collapsed, mobile: bottom sheet drawer)
 
 ### Products
 
@@ -143,7 +144,18 @@ Personal profile management accessible via avatar click on dashboard header.
 | Phone | Read-only display |
 | Change password | Dialog with current/new/confirm fields, validation |
 | Language | Selector with supported locales (EN, DE, FR, IT) |
+| Settings tab | Supplier picker (switch between accessible suppliers), multi-supplier mode toggle (superuser only) |
 | Logout | Confirmation dialog, clears session |
+
+### Client Users
+
+Client user management (separate from supplier users).
+
+| Function | Description |
+|----------|-------------|
+| Client users list | All client users linked to supplier's clients with search/filters |
+| Filtering | Filter by supplier, search across user email, name, client name |
+| Pagination | Page-based pagination with configurable page size |
 
 ---
 
