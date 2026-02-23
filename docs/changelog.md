@@ -20,6 +20,9 @@ Kanban column headers now show two rows: status name + count badge (row 1), tota
 #### :material-new-box: Supplier Users — Redesigned List & Edit Screen
 Redesigned supplier users management with an improved list screen, new edit screen at `/users/:id/edit`, and user avatar display from S3. Backend serializer now includes `user_avatar` field and optimized queryset with `select_related`.
 
+#### :material-cellphone: Supply Now — Swiss Red Theme
+Changed the entire Supply Now app color palette from green to Swiss flag-inspired red tones. Updated theme core (light/dark color palettes) and all hardcoded color values across 19 screen and widget files including auth, home, orders, cart, checkout, profile, categories, and suppliers.
+
 #### :material-wrench: Supplier Selector — Persistence Fix
 Fixed a race condition where the saved supplier was not restored after login. `DashboardLayout` now performs both an immediate check and a `ref.listen` transition check for already-loaded supplier data, ensuring the saved supplier from SharedPreferences is reliably restored.
 

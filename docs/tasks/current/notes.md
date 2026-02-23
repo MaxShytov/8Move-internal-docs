@@ -16,6 +16,7 @@
 - [x] Back Office: Orders — kanban card redesign (avatar, zone/address, copy/map, dispatch slot, ETA/ATA)
 - [x] Back Office: Orders — kanban column headers (name+count, weight+sum)
 - [x] Backend: Orders API — added fulfillment_scheme to filterset_fields, status supports in lookup
+- [x] Supply Now: Changed app theme from green to Swiss red color palette (light_colors, dark_colors + 19 files with hardcoded colors)
 
 ## 2026-02-22
 
