@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-23"
+!!! info "Last updated: 2026-02-24"
 
 
 ---
@@ -27,6 +27,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 14 | Unified Actor edit form: единая переиспользуемая форма для Suppliers и Clients | Сейчас формы Supplier и Client — отдельные экраны. Нужно создать один универсальный компонент формы Actor, который переиспользуется для обоих типов. Детали полей и секций будут уточнены отдельно. |
 | 15 | Multilingual data audit: определить какие поля поставщик должен вводить на нескольких языках | Провести анализ моделей — какие данные должны поддерживать мультиязычный ввод (Supplier.description, Product.name, и т.д.). Результат — список полей + подход к реализации (django-modeltranslation, JSON field, отдельные таблицы). См. Backend #12 для реализации на бэкенде. |
 | 16 | Аудит и доработка экрана Profile: проанализировать текущий экран, добавить недостающие поля, полноценное редактирование | Только фронтенд — работать с полями, уже доступными в API. **Основные поля:** `id` (int, PK), `email` (string?, уникальный), `username` (string?, уникальный), `first_name` (string?), `last_name` (string?), `phone` (string?, уникальный), `avatar` (string?, URL S3), `description` (string?, max 256), `is_active` (bool), `is_superuser` (bool), `date_joined` (datetime), `current_client` (int?, FK), `preferred_language` (string, default 'en'). **Вложенный объект driver_profile:** `id` (int), `supplier_id` (int), `supplier_name` (string), `driver_license_number` (string?), `is_active` (bool). **Write-only при создании:** supplier, client. **Не экспонируются через API (не включать):** timezone, default_exhibition, email_signature, is_staff, groups, user_permissions. |
+| 17 | Support all fulfillment schemes in Orders (beyond "Ship Now, Pay Later") | Сейчас в Back Office обработана только схема "Ship Now, Pay Later". Нужно добавить поддержку остальных схем: разные наборы статусов, переходы, Kanban-колонки, фильтры. Backend уже поддерживает все схемы — доработка только на стороне Flutter. |
 
 ---
 
