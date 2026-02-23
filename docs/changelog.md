@@ -34,6 +34,9 @@ Product cards and product detail screen now display minimum order quantity infor
 #### :material-cellphone: Supply Now — Product & Category UI Improvements
 Category item widgets and product item widgets redesigned. Back Office product units section and product table cell updated.
 
+#### :material-wrench: Back Office — Fix Product List Crash
+Fixed a rendering crash on the Products List screen caused by `LayoutBuilder` being used inside `IntrinsicHeight` (frozen column rows in DataTableWidget). Removed `LayoutBuilder` from `ProductTableCell` — text overflow is handled by `Flexible` + `TextOverflow.ellipsis` instead.
+
 #### :material-server: Django i18n — German & Italian Translations 100%
 Completed all German (DE) and Italian (IT) translations for the Django backend. DE: 1124/1124 entries (was ~60%). IT: 1123/1123 entries (was ~30%). All `.mo` files compiled and ready.
 

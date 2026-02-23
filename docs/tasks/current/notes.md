@@ -24,6 +24,7 @@
 - [x] Django i18n: German (DE) translations 100% — 1124/1124 entries filled, .mo compiled
 - [x] Django i18n: Italian (IT) translations 100% — 1123/1123 entries filled, .mo compiled
 - [x] Supply Now: New l10n keys (minOrder, perUnit, minimumOrder)
+- [x] Back Office: Fix product list crash — removed LayoutBuilder from ProductTableCell (incompatible with IntrinsicHeight in frozen table rows)
 
 ## 2026-02-22
 
