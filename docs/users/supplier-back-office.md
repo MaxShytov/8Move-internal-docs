@@ -49,8 +49,9 @@ Order management from clients.
 
 | Function | Description |
 |----------|-------------|
-| Order list | Filter by status, client, date, delivery zone. List and Kanban board view modes |
-| Kanban board | Horizontal board with columns per status, order cards with client, address, zone, ETA, weight, total |
+| Order list | Filter by status (multi-select), client, date, delivery zone. List and Kanban board view modes. View mode and filters persist across sessions |
+| Kanban board | Horizontal board with columns per status (ordered by fulfillment scheme workflow), order cards with client avatar, address + copy/map, zone, dispatch slot, ETA/ATA, weight, total |
+| Fulfillment scheme | Orders filtered by "Ship Now, Pay Later" scheme. Kanban shows only scheme statuses in workflow order |
 | Order detail | Items, quantities, prices, tax breakdown |
 | Status tracking | Multi-step workflow with status history |
 | Delivery zone | Auto-assigned based on delivery address |

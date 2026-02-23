@@ -11,6 +11,12 @@ All notable documentation and platform changes are documented here.
 #### :material-new-box: Orders — Kanban Board View
 Added a horizontal Kanban board to the orders list screen. Orders are grouped by status into scrollable columns (Created Cart, Ordered, In Fulfillment, Delivered, Cancelled, etc.). Each column shows order count, total sum, and compact cards with order number, date, client avatar, address, delivery zone, slot/ETA, weight, and total. A segmented List/Kanban view switcher in the toolbar allows toggling between table and board views. Kanban fetches up to 200 orders via a dedicated provider.
 
+#### :material-new-box: Orders — Fulfillment Scheme Filter & Persistent Settings
+Fulfillment scheme filter added to orders list, locked to "Ship Now, Pay Later" (temporary). Kanban columns now display only statuses from the selected scheme in correct workflow order. Multi-select status filter allows choosing multiple statuses simultaneously (uses `status__in` API lookup). View mode (List/Kanban) and filter settings (status, delivery zone, assignment) persist across sessions via SharedPreferences and restore on page navigation. Orders data auto-refreshes every time the user navigates to the Orders page.
+
+#### :material-wrench: Orders — Kanban Card & Column Redesign
+Kanban column headers now show two rows: status name + count badge (row 1), total weight + total sum (row 2). Order cards redesigned with: order number + date on same line, client avatar with initials, delivery zone tag + address with copy/map action icons (Google Maps in new tab), dispatch slot line, and ETA/ATA with late-delivery highlighting. Scheme name badge hidden when scheme filter is active.
+
 #### :material-new-box: Supplier Users — Redesigned List & Edit Screen
 Redesigned supplier users management with an improved list screen, new edit screen at `/users/:id/edit`, and user avatar display from S3. Backend serializer now includes `user_avatar` field and optimized queryset with `select_related`.
 

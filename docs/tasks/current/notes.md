@@ -8,6 +8,14 @@
 - [x] Back Office: Supplier users router — /users/:id/edit route
 - [x] Back Office: Fix supplier persistence — restoreFromSuppliers + immediate check in DashboardLayout
 - [x] Back Office: Localization updates (EN/DE/FR/IT) for kanban board strings
+- [x] Back Office: Orders — fulfillment scheme filter locked to "Ship Now, Pay Later"
+- [x] Back Office: Orders — kanban columns ordered by scheme's status workflow (statusOrders sorted by sortOrder)
+- [x] Back Office: Orders — multi-select status filter (Set<String>, status__in API lookup)
+- [x] Back Office: Orders — persistent view mode + filters via PreferencesStorage (SharedPreferences)
+- [x] Back Office: Orders — auto-refresh data on page navigation (invalidate providers in initState)
+- [x] Back Office: Orders — kanban card redesign (avatar, zone/address, copy/map, dispatch slot, ETA/ATA)
+- [x] Back Office: Orders — kanban column headers (name+count, weight+sum)
+- [x] Backend: Orders API — added fulfillment_scheme to filterset_fields, status supports in lookup
 
 ## 2026-02-22
 
