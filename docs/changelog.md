@@ -26,6 +26,17 @@ Changed the entire Supply Now app color palette from green to Swiss flag-inspire
 #### :material-wrench: Supplier Selector — Persistence Fix
 Fixed a race condition where the saved supplier was not restored after login. `DashboardLayout` now performs both an immediate check and a `ref.listen` transition check for already-loaded supplier data, ensuring the saved supplier from SharedPreferences is reliably restored.
 
+### Platform (Supply Now + Back Office + Backend)
+
+#### :material-new-box: Supply Now — Min Order Info on Product Cards
+Product cards and product detail screen now display minimum order quantity information. Backend `UiAppProductSerializer` calculates min order info with unit conversion and exposes it via the API. New `MinOrderInfoModel` and `minOrderFormat` utility in Flutter.
+
+#### :material-cellphone: Supply Now — Product & Category UI Improvements
+Category item widgets and product item widgets redesigned. Back Office product units section and product table cell updated.
+
+#### :material-server: Django i18n — German & Italian Translations 100%
+Completed all German (DE) and Italian (IT) translations for the Django backend. DE: 1124/1124 entries (was ~60%). IT: 1123/1123 entries (was ~30%). All `.mo` files compiled and ready.
+
 ---
 
 ## 2026-02-22

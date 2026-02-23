@@ -17,6 +17,13 @@
 - [x] Back Office: Orders — kanban column headers (name+count, weight+sum)
 - [x] Backend: Orders API — added fulfillment_scheme to filterset_fields, status supports in lookup
 - [x] Supply Now: Changed app theme from green to Swiss red color palette (light_colors, dark_colors + 19 files with hardcoded colors)
+- [x] Backend: UiAppProductSerializer — min_order_info with unit conversion, prefetch units__classifier
+- [x] Supply Now: MinOrderInfoModel + minOrderFormat utility for product cards
+- [x] Supply Now: Category item widget and product item widget UI improvements
+- [x] Back Office: Product units section widget + product table cell redesign
+- [x] Django i18n: German (DE) translations 100% — 1124/1124 entries filled, .mo compiled
+- [x] Django i18n: Italian (IT) translations 100% — 1123/1123 entries filled, .mo compiled
+- [x] Supply Now: New l10n keys (minOrder, perUnit, minimumOrder)
 
 ## 2026-02-22
 
