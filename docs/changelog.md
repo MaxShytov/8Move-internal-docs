@@ -4,6 +4,23 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-24
+
+### Platform (Supply Now + Backend)
+
+#### :material-new-box: Supply Now — Orders Tab Filtering & Status Chips
+Changed active orders logic: Active Orders tab now shows Ordered, Supplier Manager Review, Client Confirmation Required, and In Fulfillment statuses. Added horizontal scrollable status filter chips with multi-select support — chips are dynamic (only show statuses present in the current list), color-coded to match status badges, and include a reset option. All order statuses now have distinct badge colors.
+
+#### :material-wrench: Backend — Fix Cart 500 Error (UnboundLocalError)
+Fixed a 500 error when adding items to cart caused by Python 3.12 scoping issue: `*_` tuple unpacking in `CartOrderProductsSerializer.create()` shadowed the module-level `_` (gettext_lazy), causing `UnboundLocalError` when validation tried to use `_()`. Changed to `*_rest`.
+
+### Platform (Back Office)
+
+#### :material-new-box: Back Office — No-Access Blocking Screen
+Added a blocking screen for users who authenticate but have no supplier access (no `SupplierUserLink`). Shows contact information for Trident Software (email with mailto link, phone with call/WhatsApp/SMS options, copy-to-clipboard buttons). Router now holds users on splash while suppliers load, preventing dashboard flash. Localized in EN/FR/DE/IT.
+
+---
+
 ## 2026-02-23
 
 ### Platform (Back Office + Backend)

@@ -1,5 +1,18 @@
 # Working Notes
 
+## 2026-02-24
+
+- [x] Backend: Change active orders filter — Ordered, SUPPLIER_MANAGER_REVIEW, CLIENT_CONFIRMATION_REQUIRED, In_Fulfillment
+- [x] Backend: Fix UnboundLocalError in CartOrderProductsSerializer — `*_` → `*_rest` (Python 3.12 scoping)
+- [x] Backend: seed305 James Pub orders (Ordered, SUPPLIER_MANAGER_REVIEW, In_Fulfillment, Invoiced, Paid)
+- [x] Supply Now: Update isActive extension to match new active statuses
+- [x] Supply Now: Add status filter chips — multi-select, dynamic, reset, color-coded
+- [x] Supply Now: Order status badge — all statuses with distinct colors (Ordered, CLIENT_CONFIRMATION_REQUIRED, Invoiced, Paid, Completed)
+- [x] Supply Now: Localization (EN/FR/DE/IT) — statusOrdered, statusClientConfirmation, statusInvoiced, statusPaid, statusCompleted
+- [x] Back Office: No-access blocking screen for users without SupplierUserLink
+- [x] Back Office: Router — splash-based loading guard (prevent dashboard flash while suppliers load)
+- [x] Back Office: Localization (EN/FR/DE/IT) — noAccess* strings (9 keys)
+
 ## 2026-02-23
 
 - [x] Back Office: Orders Kanban board — kanban_board_widget, kanban_order_card, kanbanOrdersProvider, view switcher
