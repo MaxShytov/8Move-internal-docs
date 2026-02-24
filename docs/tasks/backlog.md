@@ -45,6 +45,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 4 | Пересмотреть UI и перевести на Atomic Design System (atoms → molecules → organisms) | Полный аудит текущих виджетов, расширить shared_ui package по принципам Atomic Design с соблюдением Flutter best practices. Заменить существующие компоненты на атомарные. Средний приоритет. |
 | 5 | Регистрация на сайте Supply Now | Детали будут описаны позже. Нет зависимостей от других задач. |
 | 6 | Включить нотификации для пользователя — push, in-app и email | Три канала уведомлений: push-уведомления, in-app нотификации (bell icon + unread count), email. Требует бэкенд-инфраструктуру для отправки и настройки предпочтений пользователя по каналам. Связано с Back Office #6 (Notification system overhaul). |
+| 7 | Протестировать функционал Share на экране товара | Проверить работу кнопки Share (share_plus) на Android и iOS: корректность текста (название, цена, поставщик), отображение WhatsApp и других мессенджеров в системном диалоге, поведение на разных версиях ОС. |
 
 ---
 
