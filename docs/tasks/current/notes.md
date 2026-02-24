@@ -53,6 +53,26 @@ status_filter_chips.dart — виджет горизонтальных чипс�
 product_image_gallery.dart — галерея изображений товара со свайпом
 seed305_james_pub_orders.py — seed-скрипт для тестовых данных
 
+## 2026-02-25
+
+- [x] Backend: LegalDocument model in common app (document_type unique, title/content translated EN/DE/FR/IT via modeltranslation)
+- [x] Backend: LegalDocumentAdmin with CKEditor 5 + TabbedTranslationAdmin for multilingual HTML editing
+- [x] Backend: LegalDocumentViewSet (AllowAny, lookup by document_type) + LegalDocumentSerializer
+- [x] Backend: /api/common/legal/ endpoint (list + retrieve by type: terms, privacy)
+- [x] Backend: seed_legal_documents management command — seeds T&C and Privacy Policy in all 4 languages
+- [x] Supply Now: LegalDocumentModel (freezed) + legalDocumentProvider (FutureProvider.family)
+- [x] Supply Now: Rewrite terms_conditions_screen and privacy_policy_screen — API-loaded HTML via flutter_widget_from_html_core, hardcoded fallback
+- [x] Supply Now: Settings screen redesign — info cards (company, developer), "Powered by 8move" section with link
+- [x] Supply Now: Trident Software logo in settings (SVG asset)
+- [x] Supply Now: Navigation bar — 8move logo replaces home icon (colored inactive, white active)
+- [x] Supply Now: ConvexAppBar icon sizing — OverflowBox for colored logo (42px), FractionallySizedBox for white logo (80%)
+- [x] Supply Now: AppTab class extended with activeIcon and skipInactiveColorFilter fields
+- [x] Supply Now: Product favorites — ProductFavorite model, toggle endpoint, FavoriteIconButton widget, favorites tab
+- [x] Supply Now: Product grid/list items — favorite button, image border radius, price formatting improvements
+- [x] Supply Now: New color tokens — surfaceContainerHighest, onSurfaceVariant, outlineVariant (light + dark)
+- [x] Supply Now: New text styles — titleLarge, labelLarge (light + dark)
+- [x] Supply Now: Localization (EN/DE/FR/IT) — legal documents, favorites, settings, powered by
+
 ## 2026-02-24
 
 - [x] Supply Now: Product detail M3 redesign — SliverAppBar, pricing card, specs table, unit toggle, availability chip, bottom action bar

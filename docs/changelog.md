@@ -4,6 +4,34 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-25
+
+### Platform (Supply Now + Backend)
+
+#### :material-new-box: Backend — Legal Documents API (T&C, Privacy Policy)
+New `LegalDocument` model in `common` app with CKEditor 5 rich text editing and `modeltranslation` support (EN/DE/FR/IT). Admin uses `TabbedTranslationAdmin` for per-language content tabs. Public API endpoint at `/api/common/legal/{type}/` returns localized HTML content based on `Accept-Language` header. Includes seed management command for initial content. Only two document types: `terms` and `privacy`.
+
+#### :material-new-box: Supply Now — Legal Documents from API
+Terms & Conditions and Privacy Policy screens now load HTML content from the backend API instead of hardcoded text. Uses `flutter_widget_from_html_core` to render CKEditor HTML as native Flutter widgets. Content auto-updates when the user changes language (provider watches `localeProvider`). Falls back to hardcoded content when API is unavailable.
+
+#### :material-new-box: Supply Now — Profile Screen Redesign
+Complete refactor of the monolithic profile screen into modular widgets: `ProfileHeaderWidget`, `ProfileTabMenu`, `ProfileTabFavorites`, `ProfileTabNotifications`, `ProfileMenuItem`, `ProfileMenuSection`. New sub-screens: `CompanyDetailScreen`, `DeliveryAddressesScreen`, `PersonalInfoScreen`, `SuppliersSettingsScreen`. Settings screen extracted with language picker, app version, T&C/Privacy links.
+
+#### :material-new-box: Supply Now — 8move & Trident Branding
+Navigation bar home icon replaced with 8move compass logo — colored when inactive, white on active circle. Settings screen shows Trident Software logo with contact info (email, phone) and "Powered by 8move" section with clickable link to 8move.com. Multiple logo assets added (color PNG, white PNG, SVG).
+
+#### :material-wrench: Supply Now — UI Overflow Fixes
+Fixed RenderFlex overflow errors in product grid items (aspect ratio 0.62→0.58, reduced padding), home screen category scroll (height increase, text wrapping), and recent product cards (Expanded/Flexible wrappers). Supplier logos now display with transparent background and `BoxFit.contain`.
+
+#### :material-api: New API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/common/legal/` | List all published legal documents |
+| GET | `/api/common/legal/terms/` | Get Terms & Conditions (localized) |
+| GET | `/api/common/legal/privacy/` | Get Privacy Policy (localized) |
+
+---
+
 ## 2026-02-24
 
 ### Platform (Supply Now + Backend)
