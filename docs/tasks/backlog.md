@@ -111,6 +111,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | # | Task | Notes |
 |---|------|-------|
 | 1 | Интеграция docs_internal с Jira: двусторонняя синхронизация задач | При добавлении/обновлении задачи в docs_internal (backlog.md, current tasks) — автоматическое создание и обновление Jira issues через GitHub Actions + Jira REST API. В markdown-документах — ссылка на Jira issue со статусом и worklogs. **Открытые вопросы:** 1) Механизм двусторонней синхронизации — как обрабатывать изменения со стороны Jira (webhook → PR в docs_internal? или только docs→Jira?), 2) Структура Jira — один проект на всё или отдельный проект на каждое приложение (Back Office, Supply Now, Fleet Manager, Driver Pro, DocuFlow), 3) Маппинг статусов Jira ↔ docs_internal (backlog → To Do, current task → In Progress, done → Done?), 4) Как хранить Jira issue ID в markdown — в YAML frontmatter или inline. **Реализация:** GitHub Actions триггер на push в docs_internal, парсинг diff в backlog.md/current tasks, Jira REST API для CRUD операций. Jira API token хранить в GitHub Secrets. |
+| 2 | Browser navigation (back/forward) audit для всех Flutter web-приложений | Проверить и починить работу кнопок "назад/вперёд" в браузере во всех web-приложениях (Back Office, Fleet Manager). Включая сохранение и восстановление состояния фильтров при навигации. Затрагивает go_router и URL query parameters. |
 
 ---
 
