@@ -78,6 +78,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 |---|------|-------|
 | 1 | Унифицировать экраны авторизации (Login, Register, Forgot/Reset Password) в shared_ui для всех Flutter-приложений | Единый дизайн, логика, переводы. Каждое приложение передаёт свой логотип/иконку. Бэкенд: убедиться что все приложения используют одни API-эндпоинты авторизации. Перед началом — проанализировать текущие реализации во всех приложениях и выбрать лучшую как основу. |
 | 2 | Привести FrontEnd всех Flutter-приложений в соответствие с дизайном Figma | Аудит всех 5 приложений (Back Office, Supply Now, Fleet Manager, Driver Pro, DocuFlow) — сравнить текущий UI с макетами Figma, выявить расхождения и привести в соответствие. Ссылка на Figma будет добавлена позже. |
+| 3 | Унифицировать экран Profile во всех Flutter-приложениях: единый layout и стиль | Привести экран Profile к единому виду во всех 5 приложениях (Back Office, Supply Now, Fleet Manager, Driver Pro, DocuFlow). Единый layout, стиль, расположение полей, кнопки, отступы. Создать shared виджет/шаблон Profile в shared_ui и переиспользовать во всех приложениях. Связано с Back Office #16 (аудит экрана Profile). |
 
 ---
 
