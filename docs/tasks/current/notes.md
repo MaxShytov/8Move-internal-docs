@@ -1,7 +1,70 @@
 # Working Notes
 
+
+1. Supply Now — Страница товара (Product Screen)
+Файлы: product_screen.dart, product_action_button.dart, product_provider.dart, providers.dart, product_model.dart
+
+Галерея изображений — если у товара несколько изображений, показывается ProductImageGallery (свайп) вместо одиночной картинки
+Две цены — отображаются цена за базовую единицу (Fr 35.00/kg) и цена за единицу заказа (Fr 350.00/pkg). Анимированная стрелка указывает на активную цену
+Выбор единицы измерения — под quantity selector показываются чипсы с orderable units. Если несколько — ChoiceChip для переключения
+Минимальное количество — кнопка "−" не позволяет опуститься ниже минимума для выбранной единицы
+Сумма — под кнопкой "Add to bag" отображается итог (price × conversion × qty)
+Orderable units из API — бэкенд теперь отдаёт orderable_units прямо в продукте, Flutter парсит их в ProductModel
+productsApiProvider — новый провайдер для ProductsApiService
+selectedUnitIdProvider — shared state между экраном и action button
+2. Supply Now — Главная страница
+Файл: home_content_screen.dart
+
+Убрана ссылка "See all" рядом с "Categories" (была нерабочая)
+3. Supply Now — Заказы (Orders)
+Файлы: orders_screen.dart, orders_provider.dart, order_status_badge.dart, client_order_model.dart, status_filter_chips.dart (новый)
+
+Фильтрация по статусу — новый виджет StatusFilterChips с горизонтальными чипсами для фильтрации заказов по статусу
+Расширены статусы — добавлены Ordered, CLIENT_CONFIRMATION_REQUIRED, Invoiced, Paid, Completed с цветами и переводами
+Обновлена логика "active" — активные заказы теперь включают Ordered, SUPPLIER_MANAGER_REVIEW, CLIENT_CONFIRMATION_REQUIRED, In_Fulfillment (вместо In_Delivery)
+Рефакторинг — _getStatusConfig вынесен в глобальную функцию getStatusConfig() для переиспользования в чипсах
+4. Backend — Заказы
+Файлы: orders/views.py, orders/serializers.py, orders/models.py
+
+Удаление из корзины — UiAppCartViewSet.destroy() теперь пересчитывает total_sum и total_weight заказа после удаления товара
+Fix calc_total_sum — исправлен баг с walrus operator (new_total := ...), когда total=0 считался falsy
+Обновлён фильтр active — бэкенд тоже использует новый набор статусов для status_type=active
+Fix unpacking — *_ заменён на *_rest в нескольких местах (избегает конфликт с gettext)
+5. Backend — Продукты
+Файл: products/serializers.py
+
+orderable_units — новое поле в UiAppProductSerializer, возвращает список orderable units прямо в продукте
+product_images — новое поле, возвращает все URL изображений товара (отсортированные по primary + sort_order)
+6. Back Office — DataTable
+Файл: data_table_widget.dart
+
+Fix crash — замена IntrinsicHeight + OverflowBox на UnconstrainedBox + SizedBox (исправляет RenderBox assertion failure)
+Разделитель — вместо отдельного Container(width:1) между frozen/scrollable колонками используется Border(right:) на frozen контейнере
+7. Shared Core
+Файл: dio_client.dart
+
+Accept-Language — всегда отправляется header, дефолт 'en' если локаль ещё не загрузилась
+8. Локализация
+Файлы: app_en.arb, app_de.arb, app_fr.arb, app_it.arb + generated files
+
+Новые ключи: statusOrdered, statusClientConfirmation, statusInvoiced, statusPaid, statusCompleted
+9. Новые файлы
+status_filter_chips.dart — виджет горизонтальных чипсов для фильтрации заказов
+product_image_gallery.dart — галерея изображений товара со свайпом
+seed305_james_pub_orders.py — seed-скрипт для тестовых данных
+
 ## 2026-02-24
 
+- [x] Supply Now: Product detail M3 redesign — SliverAppBar, pricing card, specs table, unit toggle, availability chip, bottom action bar
+- [x] Supply Now: Share button (share_plus), favorite toggle, M3 color tokens, Outfit + DM Sans fonts
+- [x] Supply Now: All units display — SegmentedButton shows orderable + non-orderable units, snackbar for blocked units
+- [x] Supply Now: Next delivery date in availability chip (dispatch slots + delivery zone lookup)
+- [x] Supply Now: Quantity selector flicker fix — replaced sync-in-build with ref.listen
+- [x] Supply Now: Price defaults to first orderable unit when price unit is non-orderable
+- [x] Backend: all_units field in UiAppProductSerializer (all units, not just orderable)
+- [x] Backend: next_delivery_date field — delivery zone lookup with address fallback (primary → billing → registered)
+- [x] Backend: ProductFavorite model + toggle-favorite endpoint + is_favorite on product response
+- [x] Supply Now: Localization (EN/DE/FR/IT) — specifications, availability, unitNotOrderable, nextDelivery, share, etc.
 - [x] Backend: Change active orders filter — Ordered, SUPPLIER_MANAGER_REVIEW, CLIENT_CONFIRMATION_REQUIRED, In_Fulfillment
 - [x] Backend: Fix UnboundLocalError in CartOrderProductsSerializer — `*_` → `*_rest` (Python 3.12 scoping)
 - [x] Backend: seed305 James Pub orders (Ordered, SUPPLIER_MANAGER_REVIEW, In_Fulfillment, Invoiced, Paid)

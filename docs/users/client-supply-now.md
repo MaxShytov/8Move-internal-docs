@@ -33,10 +33,12 @@ Product catalog browsing.
 |----------|-------------|
 | Category view | Products grouped by supplier categories |
 | Product list | Products with images, prices, units |
-| Product detail | Full description, images, unit options |
-| Unit selection | Choose packaging level (piece, box, pallet) |
-| Price display | Price per selected unit with VAT indication |
-| Add to cart | Select quantity and unit, add to shopping cart |
+| Product detail | M3-style detail screen with image gallery, pricing card, specifications, availability chip with next delivery date |
+| Favorites | Toggle favorite (heart icon) on product cards and detail screen; favorited products persist per client |
+| Unit selection | M3 SegmentedButton to choose packaging level (piece, box, pallet); non-orderable units shown but blocked with explanation |
+| Price display | Pricing card with primary price per unit and secondary price (e.g., per kg); defaults to orderable unit |
+| Specifications | Net weight, supplier reference, and product details shown in specs section |
+| Add to cart | Bottom action bar with quantity selector, total price display, total weight, and "Add to bag" button |
 
 ### QR Code & NFC
 

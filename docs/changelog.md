@@ -8,6 +8,21 @@ All notable documentation and platform changes are documented here.
 
 ### Platform (Supply Now + Backend)
 
+#### :material-new-box: Supply Now — Product Detail M3 Redesign
+Complete redesign of the product detail screen following Material Design 3 guidelines. New layout includes: SliverAppBar with scroll-based title fade, product info section with category/supplier, pricing card with primary and secondary prices, min order banner, M3 SegmentedButton for unit selection (replaces ChoiceChips), availability chip with next delivery date, description section, and specifications table (net weight, supplier ref). Bottom action bar redesigned with quantity selector, total price display, and total weight. Uses Outfit + DM Sans fonts with new M3 color tokens.
+
+#### :material-new-box: Supply Now — Product Favorites
+Added favorite toggle (heart icon) to product detail app bar and product list cards. New `ProductFavorite` model in backend with unique constraint per client+product. Toggle endpoint at `/api/ui-app/products/products/{id}/toggle-favorite/`. Favorite state persisted in `is_favorite` field on product API response.
+
+#### :material-new-box: Supply Now — All Units Display (Orderable + Non-Orderable)
+SegmentedButton now shows all units for a product (both orderable and non-orderable). Non-orderable units are visually present but tapping them shows a snackbar explaining ordering is only possible in the orderable units. Price defaults to the first orderable unit when the price unit is non-orderable. Backend returns new `all_units` field alongside `orderable_units`.
+
+#### :material-new-box: Supply Now — Next Delivery Date
+Product detail screen now shows the next available delivery date in the availability chip. Backend calculates the date from the client's delivery zone and supplier's dispatch slots (checks 30 days ahead). Falls back through primary → billing → registered address to find the client's delivery zone.
+
+#### :material-wrench: Supply Now — Quantity Selector Flicker Fix
+Fixed visual flicker on +/- buttons in the product detail bottom bar. The quantity number would briefly revert before updating. Root cause was a sync-in-build pattern conflicting with Riverpod state updates. Replaced with targeted `ref.listen` that only syncs when a cart item first appears.
+
 #### :material-new-box: Supply Now — Orders Tab Filtering & Status Chips
 Changed active orders logic: Active Orders tab now shows Ordered, Supplier Manager Review, Client Confirmation Required, and In Fulfillment statuses. Added horizontal scrollable status filter chips with multi-select support — chips are dynamic (only show statuses present in the current list), color-coded to match status badges, and include a reset option. All order statuses now have distinct badge colors.
 
