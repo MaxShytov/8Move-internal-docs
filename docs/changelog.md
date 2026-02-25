@@ -51,6 +51,9 @@ Removed unique constraint on phone number in the identity model to allow multipl
 #### :material-wrench: Supply Now — Favorites List Redesign
 Replaced the 2-column grid layout (`ProductGridItemWidget`) in the Favorites tab with a vertical list layout (`ProductItemWidget`) matching the home page product list design. Each favorite is now shown as a horizontal row with product image, name, price, min order info, favorite button, and cart controls.
 
+#### :material-wrench: Supply Now — Cart Buttons & Snackbar Consistency
+Unified cart add/remove buttons across all product views (favorites, product detail, shared widget) with the home page design. Add button: solid primary-colored square (was pale white with pink border). Quantity stepper: separate minus/quantity/plus with animated delete icon at min quantity (was green pill). "Added to cart" snackbar: neutral surface color with rounded corners (was pale pink `lightGreen` background).
+
 ---
 
 ## 2026-02-24

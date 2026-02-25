@@ -85,6 +85,8 @@ seed305_james_pub_orders.py — seed-скрипт для тестовых дан
 - [x] Supply Now: ~30 new l10n keys (EN/FR) — complement, NPA, locality, delivery instructions, tags, address sections, validation messages, mode switch
 - [x] Supply Now: Swiss canton dropdown (26 cantons + FL) with full French names
 - [x] Supply Now: Favorites tab — replaced 2-column grid (ProductGridItemWidget) with vertical list (ProductItemWidget) matching home page layout
+- [x] Supply Now: Cart buttons unified — solid primary add button, quantity stepper with delete icon, row-based layout (was Stack+Positioned with pale green pill)
+- [x] Supply Now: "Added to cart" snackbar — neutral surface color with rounded corners (was pale pink lightGreen in product_item_widget and product_action_button)
 
 ## 2026-02-24
 
