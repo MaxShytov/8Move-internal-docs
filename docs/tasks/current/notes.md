@@ -81,6 +81,9 @@ seed305_james_pub_orders.py — seed-скрипт для тестовых дан
 - [x] Supply Now: Cart & home screen improvements, navigation bar updates
 - [x] Backend: Remove phone unique constraint in identity model (migration 0013)
 - [x] Supply Now: Localization (EN/DE/FR/IT) — address summary chips, default badge, map controls
+- [x] Supply Now: Address form M3 redesign — dual-mode input (smart search + manual), selected address card, map preview, tag chips, default switch, sticky bottom bar
+- [x] Supply Now: ~30 new l10n keys (EN/FR) — complement, NPA, locality, delivery instructions, tags, address sections, validation messages, mode switch
+- [x] Supply Now: Swiss canton dropdown (26 cantons + FL) with full French names
 
 ## 2026-02-24
 
