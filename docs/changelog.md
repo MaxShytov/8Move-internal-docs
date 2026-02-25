@@ -30,6 +30,21 @@ Fixed RenderFlex overflow errors in product grid items (aspect ratio 0.62→0.58
 | GET | `/api/common/legal/terms/` | Get Terms & Conditions (localized) |
 | GET | `/api/common/legal/privacy/` | Get Privacy Policy (localized) |
 
+#### :material-new-box: Supply Now — Addresses Screen M3 Redesign
+Complete redesign of the delivery addresses screen with rich address cards: Google Maps Static API previews with zoom controls (+/-), purpose tags (Primary/Billing/Registered) as colored chips, summary chips row (total/delivery/billing counts), delivery zone display, comment/instructions section, and action buttons (Edit, Set as Primary, Delete). Each map is a self-contained `StatefulWidget` with independent zoom state. Addresses with existing orders show Edit/Delete buttons but display a warning message instead of allowing modification. "Default" badge overlay on primary address map. Expand button opens address in Google Maps app. Fallback mock map images when API key unavailable.
+
+#### :material-wrench: Supply Now — Language Settings Sync
+Fixed inconsistency between Settings screen (showed "System") and Personal Info screen (showed "English") for the language display. Both now show the same value. Settings screen now also saves language preference to the backend when changed.
+
+#### :material-wrench: Supply Now — Personal Info Phone Field Redesign
+Redesigned phone number input with country code selector and separate NSN field. Improved error handling with DioException support.
+
+#### :material-wrench: Supply Now — Cart & Home Screen Improvements
+Cart summary widget refactoring, cart item widget improvements, home content screen enhancements with better layout, and navigation bar updates.
+
+#### :material-database: Backend — Remove Phone Unique Constraint
+Removed unique constraint on phone number in the identity model to allow multiple users with the same phone number.
+
 ---
 
 ## 2026-02-24

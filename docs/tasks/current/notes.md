@@ -72,6 +72,15 @@ seed305_james_pub_orders.py — seed-скрипт для тестовых дан
 - [x] Supply Now: New color tokens — surfaceContainerHighest, onSurfaceVariant, outlineVariant (light + dark)
 - [x] Supply Now: New text styles — titleLarge, labelLarge (light + dark)
 - [x] Supply Now: Localization (EN/DE/FR/IT) — legal documents, favorites, settings, powered by
+- [x] Supply Now: Addresses screen M3 redesign — map previews (Google Static API + fallback), zoom controls, purpose tags, summary chips, action buttons
+- [x] Supply Now: MapPreviewWidget — added zoom parameter for static map URL
+- [x] Supply Now: _AddressMapPreview — self-contained StatefulWidget for independent zoom per card
+- [x] Supply Now: Edit/delete protection — always show buttons, SnackBar warning when address has orders
+- [x] Supply Now: Language sync — Settings and Personal Info now show same value, Settings saves to backend
+- [x] Supply Now: Personal info phone field redesign — country code selector, DioException handling
+- [x] Supply Now: Cart & home screen improvements, navigation bar updates
+- [x] Backend: Remove phone unique constraint in identity model (migration 0013)
+- [x] Supply Now: Localization (EN/DE/FR/IT) — address summary chips, default badge, map controls
 
 ## 2026-02-24
 
