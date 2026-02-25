@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-24"
+!!! info "Last updated: 2026-02-25"
 
 
 ---
@@ -28,6 +28,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 15 | Multilingual data audit: определить какие поля поставщик должен вводить на нескольких языках | Провести анализ моделей — какие данные должны поддерживать мультиязычный ввод (Supplier.description, Product.name, и т.д.). Результат — список полей + подход к реализации (django-modeltranslation, JSON field, отдельные таблицы). См. Backend #12 для реализации на бэкенде. |
 | 16 | Аудит и доработка экрана Profile: проанализировать текущий экран, добавить недостающие поля, полноценное редактирование | Только фронтенд — работать с полями, уже доступными в API. **Основные поля:** `id` (int, PK), `email` (string?, уникальный), `username` (string?, уникальный), `first_name` (string?), `last_name` (string?), `phone` (string?, уникальный), `avatar` (string?, URL S3), `description` (string?, max 256), `is_active` (bool), `is_superuser` (bool), `date_joined` (datetime), `current_client` (int?, FK), `preferred_language` (string, default 'en'). **Вложенный объект driver_profile:** `id` (int), `supplier_id` (int), `supplier_name` (string), `driver_license_number` (string?), `is_active` (bool). **Write-only при создании:** supplier, client. **Не экспонируются через API (не включать):** timezone, default_exhibition, email_signature, is_staff, groups, user_permissions. |
 | 17 | Support all fulfillment schemes in Orders (beyond "Ship Now, Pay Later") | Сейчас в Back Office обработана только схема "Ship Now, Pay Later". Нужно добавить поддержку остальных схем: разные наборы статусов, переходы, Kanban-колонки, фильтры. Backend уже поддерживает все схемы — доработка только на стороне Flutter. |
+| 22 | Onboarding flow for suppliers: welcome screens, step-by-step profile setup wizard, and contextual tooltips | 3 компонента: 1) Welcome carousel при первом входе, 2) Пошаговая настройка (company info, logo, settings), 3) Контекстные подсказки по ключевым функциям (заказы, товары, клиенты). Backend: флаг onboarding_completed на модели user/supplier. |
 | 18 | Реализовать систему свойств и вариантов товаров (properties & variants) | Расширение карточки товара: добавить свойства (цвет, размер и т.д.) и варианты. Фильтрация товаров по свойствам. Требует backend-работы (модели, API) + UI в Back Office. |
 | 19 | Добавить страну производства (country of origin) в карточку товара | Поле "Страна производства" в форме товара, отображение в списке и фильтрация. Требует backend (модель, API). |
 | 20 | Добавить поле SKU (артикул) в карточку товара | Поле SKU в форме товара, отображение в списке, поиск/фильтрация по SKU. Требует backend (модель, API). |
@@ -46,6 +47,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 5 | Регистрация на сайте Supply Now | Детали будут описаны позже. Нет зависимостей от других задач. |
 | 6 | Включить нотификации для пользователя — push, in-app и email | Три канала уведомлений: push-уведомления, in-app нотификации (bell icon + unread count), email. Требует бэкенд-инфраструктуру для отправки и настройки предпочтений пользователя по каналам. Связано с Back Office #6 (Notification system overhaul). |
 | 7 | Протестировать функционал Share на экране товара | Проверить работу кнопки Share (share_plus) на Android и iOS: корректность текста (название, цена, поставщик), отображение WhatsApp и других мессенджеров в системном диалоге, поведение на разных версиях ОС. |
+| 8 | Onboarding flow for clients: welcome screens, step-by-step profile setup wizard, and contextual tooltips | 3 компонента: 1) Welcome carousel при первом входе, 2) Пошаговая настройка (company info, delivery address, preferences), 3) Контекстные подсказки по ключевым функциям (каталог, корзина, заказы). Backend: флаг onboarding_completed на модели user/client. |
 
 ---
 
