@@ -2,7 +2,7 @@
 
 Ideas and planned tasks that are not yet in active development. When a task moves to active work, create a task card in [Current Tasks](current/index.md) and remove it from here.
 
-!!! info "Last updated: 2026-02-25"
+!!! info "Last updated: 2026-02-26"
 
 
 ---
@@ -33,6 +33,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 19 | Добавить страну производства (country of origin) в карточку товара | Поле "Страна производства" в форме товара, отображение в списке и фильтрация. Требует backend (модель, API). |
 | 20 | Добавить поле SKU (артикул) в карточку товара | Поле SKU в форме товара, отображение в списке, поиск/фильтрация по SKU. Требует backend (модель, API). |
 | 21 | Учёт остатков / доступности товара на складе (stock management) | Хранение количества товара на складе или как минимум статуса доступности (в наличии / нет / под заказ). Отображение в карточке товара и списке, фильтрация. Требует backend (модели, API) + UI в Back Office. |
+| 23 | Анимация логотипа 8Move на кнопку главной страницы | Добавить анимацию логотипа 8Move на кнопку навигации к главной странице (dashboard). |
 
 ---
 
@@ -50,6 +51,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 8 | Onboarding flow for clients: welcome screens, step-by-step profile setup wizard, and contextual tooltips | 3 компонента: 1) Welcome carousel при первом входе, 2) Пошаговая настройка (company info, delivery address, preferences), 3) Контекстные подсказки по ключевым функциям (каталог, корзина, заказы). Backend: флаг onboarding_completed на модели user/client. |
 | 9 | Управление пользователями клиента: список, приглашение, активация/деактивация | Client admin видит список пользователей своей компании. Возможность приглашать новых пользователей (email), активировать/деактивировать существующих. Связано с Back Office #4 (User Invitation Flow). Требует backend API. |
 | 10 | Пересмотреть механизм редактирования адресов: смена тега (delivery, registered, invoicing) | Проверить и доработать возможность изменения типа/тега адреса (delivery, registered, invoicing) на существующем адресе. Убедиться что логика корректна при смене тега, включая валидацию и ограничения. |
+| 11 | Протестировать работу с несколькими компаниями (multi-company) | Проверить переключение между компаниями клиента: корректность данных (каталог, цены, заказы, адреса), UI переключателя, edge cases (пользователь привязан к нескольким клиентам). |
 
 ---
 
