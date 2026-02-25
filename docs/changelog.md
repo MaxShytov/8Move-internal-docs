@@ -48,6 +48,9 @@ Cart summary widget refactoring, cart item widget improvements, home content scr
 #### :material-database: Backend — Remove Phone Unique Constraint
 Removed unique constraint on phone number in the identity model to allow multiple users with the same phone number.
 
+#### :material-wrench: Supply Now — Favorites List Redesign
+Replaced the 2-column grid layout (`ProductGridItemWidget`) in the Favorites tab with a vertical list layout (`ProductItemWidget`) matching the home page product list design. Each favorite is now shown as a horizontal row with product image, name, price, min order info, favorite button, and cart controls.
+
 ---
 
 ## 2026-02-24

@@ -84,6 +84,7 @@ seed305_james_pub_orders.py — seed-скрипт для тестовых дан
 - [x] Supply Now: Address form M3 redesign — dual-mode input (smart search + manual), selected address card, map preview, tag chips, default switch, sticky bottom bar
 - [x] Supply Now: ~30 new l10n keys (EN/FR) — complement, NPA, locality, delivery instructions, tags, address sections, validation messages, mode switch
 - [x] Supply Now: Swiss canton dropdown (26 cantons + FL) with full French names
+- [x] Supply Now: Favorites tab — replaced 2-column grid (ProductGridItemWidget) with vertical list (ProductItemWidget) matching home page layout
 
 ## 2026-02-24
 
