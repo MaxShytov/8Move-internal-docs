@@ -48,6 +48,8 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 6 | Включить нотификации для пользователя — push, in-app и email | Три канала уведомлений: push-уведомления, in-app нотификации (bell icon + unread count), email. Требует бэкенд-инфраструктуру для отправки и настройки предпочтений пользователя по каналам. Связано с Back Office #6 (Notification system overhaul). |
 | 7 | Протестировать функционал Share на экране товара | Проверить работу кнопки Share (share_plus) на Android и iOS: корректность текста (название, цена, поставщик), отображение WhatsApp и других мессенджеров в системном диалоге, поведение на разных версиях ОС. |
 | 8 | Onboarding flow for clients: welcome screens, step-by-step profile setup wizard, and contextual tooltips | 3 компонента: 1) Welcome carousel при первом входе, 2) Пошаговая настройка (company info, delivery address, preferences), 3) Контекстные подсказки по ключевым функциям (каталог, корзина, заказы). Backend: флаг onboarding_completed на модели user/client. |
+| 9 | Управление пользователями клиента: список, приглашение, активация/деактивация | Client admin видит список пользователей своей компании. Возможность приглашать новых пользователей (email), активировать/деактивировать существующих. Связано с Back Office #4 (User Invitation Flow). Требует backend API. |
+| 10 | Пересмотреть механизм редактирования адресов: смена тега (delivery, registered, invoicing) | Проверить и доработать возможность изменения типа/тега адреса (delivery, registered, invoicing) на существующем адресе. Убедиться что логика корректна при смене тега, включая валидацию и ограничения. |
 
 ---
 
