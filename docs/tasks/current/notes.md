@@ -53,6 +53,33 @@ status_filter_chips.dart — виджет горизонтальных чипс�
 product_image_gallery.dart — галерея изображений товара со свайпом
 seed305_james_pub_orders.py — seed-скрипт для тестовых данных
 
+## 2026-02-26
+
+- [x] Backend: `set_purpose` — removed clearing logic, multiple purposes now coexist on addresses
+- [x] Backend: `clear_single_purpose` endpoint — `POST /api/actors/clients-addresses/{id}/clear-purpose/{purpose}/`
+- [x] Backend: `purposes` list field in ClientAddressSerializer (alongside backward-compatible `purpose`)
+- [x] Supply Now: `ClientCompanyModel` (freezed) — official name, fiscal/VAT, self_settings, invoicing_settings, isBlocked computed
+- [x] Supply Now: `ClientSelfSettings` — blocked, preferred language, default delivery address, notification recipient
+- [x] Supply Now: `ClientInvoicingSettings` — period, payment terms, delivery method, order weight/amount constraints
+- [x] Supply Now: `OrderNotificationRecipientDetails` — id, userName, email
+- [x] Supply Now: `SupplierPhoneModel`, `SupplierEmailModel`, `FulfillmentSchemeModel` — new data models
+- [x] Supply Now: Enhanced `SupplierSettingsModel` — description, fiscal/VAT, phones, emails, fulfillment scheme, weekly/monthly day
+- [x] Supply Now: Orders screen redesign — search bar, grouped-by-date display, summary cards
+- [x] Supply Now: `OrdersState` — searchQuery, searchedOrders, groupedOrders, statusCounts, summaryOrderCount, summaryTotalAmount
+- [x] Supply Now: `OrdersNotifier` — updateSearch(), clearSearch(), tab switching clears filters/search
+- [x] Supply Now: Company detail screen with full client company info
+- [x] Supply Now: Supplier settings detail screen with phones, emails, fulfillment scheme
+- [x] Supply Now: Multi-purpose addresses — `purposes` list field, `.contains()` extension methods
+- [x] Supply Now: ETA/ATA timezone fix — `.toLocal()` before display, standardized date formatting
+- [x] Supply Now: Removed "Client since" from profile header, subtitle = location only
+- [x] Supply Now: Removed Favorites tab from navigation bar (5 tabs: Home, Scan, Cart, Orders, Profile)
+- [x] Supply Now: Localization updates (EN/FR) — orders search, grouping, summary, company detail, supplier detail
+- [x] Shared Core: `ClientAddressModel` — `purposes` list field, updated extension methods (isPrimary, isBilling, isRegistered use .contains())
+- [x] Tests: `client_company_model_test.dart` — 16 tests (fromJson, toJson, defaults, equality, isBlocked)
+- [x] Tests: `supplier_settings_model_test.dart` — 11 tests (FulfillmentScheme, Phone, Email, SupplierSettings)
+- [x] Tests: `orders_state_test.dart` — 36 tests (defaults, copyWith, currentOrders, filteredOrders, searchedOrders, groupedOrders, statusCounts, summary, availableStatuses, computed booleans)
+- [x] Tests: Updated `client_address_model_test.dart` — purposes list tests (multiple, single, empty, default)
+
 ## 2026-02-25
 
 - [x] Backend: LegalDocument model in common app (document_type unique, title/content translated EN/DE/FR/IT via modeltranslation)

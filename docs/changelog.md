@@ -4,6 +4,41 @@ All notable documentation and platform changes are documented here.
 
 ---
 
+## 2026-02-26
+
+### Platform (Supply Now + Backend)
+
+#### :material-new-box: Supply Now — Orders Screen Redesign
+Complete overhaul of the orders screen with search bar, grouped-by-date display, and summary cards. Orders are grouped by delivery date (descending) with date headers. New search functionality filters by order number, supplier name, or order ID (case-insensitive). Summary section shows total order count and total amount. Tab switching between Active and All orders clears filters and search. Status filter chips work in combination with search for precise filtering.
+
+#### :material-new-box: Supply Now — Company Detail Screen
+New company detail screen showing full client company information: official name, fiscal number, VAT number, email, website, primary address, platform block status, self-settings (blocked status, preferred language, default delivery address, notification recipient), and invoicing settings (period, payment terms, delivery method, min/max order constraints). New data models: `ClientCompanyModel`, `ClientSelfSettings`, `ClientInvoicingSettings`, `OrderNotificationRecipientDetails`.
+
+#### :material-new-box: Supply Now — Supplier Settings Detail Screen
+Enhanced supplier settings screen with complete supplier information: description, fiscal/VAT numbers, website, country, phone numbers (with type and primary indicator), email addresses (with label and primary indicator), fulfillment scheme, and ordering period (weekly day / monthly day). New data models: `SupplierPhoneModel`, `SupplierEmailModel`, `FulfillmentSchemeModel`.
+
+#### :material-wrench: Supply Now — Multi-Purpose Addresses
+Addresses can now have multiple purposes simultaneously (primary, billing, registered). Backend `set-purpose` endpoint no longer clears other addresses' purposes — it only adds the new purpose. New `clear-purpose/{purpose}` endpoint removes a single purpose without affecting others. Frontend updated: `purposes` list field replaces single `purpose` field, extension methods use `.contains()` for purpose checks.
+
+#### :material-wrench: Supply Now — ETA/ATA Timezone & Date Formatting
+Fixed timezone handling for ETA (Estimated Time of Arrival) and ATA (Actual Time of Arrival) — times now convert to local timezone before display. Date formatting standardized across order detail and order list screens. Status translations improved for all order statuses. Removed Track Driver button (feature not yet available).
+
+#### :material-wrench: Supply Now — Profile Header Cleanup
+Removed "Client since [year]" text from profile header. Subtitle now shows only the location.
+
+#### :material-wrench: Supply Now — Navigation Bar Update
+Removed Favorites tab from the bottom navigation bar. Navigation now has 5 tabs: Home, Scan, Cart, Orders, Profile.
+
+#### :material-new-box: Supply Now — Unit Tests (63 new tests)
+Added comprehensive test coverage for Supply Now models and state logic: `ClientCompanyModel` (16 tests), `SupplierSettingsModel` (11 tests), `OrdersState` (36 tests covering search, filtering, grouping, status counts, summary calculations). Updated `ClientAddressModel` tests in shared_core with new `purposes` list coverage.
+
+#### :material-api: New/Changed API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/actors/clients-addresses/{id}/clear-purpose/{purpose}/` | Clear a single purpose from an address |
+
+---
+
 ## 2026-02-25
 
 ### Platform (Supply Now + Backend)
