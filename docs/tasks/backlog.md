@@ -110,6 +110,7 @@ Ideas and planned tasks that are not yet in active development. When a task move
 | 10 | Address geocoding & normalization: сервис пересчёта и нормализации адресов | Сервис geocoding через Google Maps Geocoding API — по введённому адресу автозаполнение/корректировка city, canton/state, postal code, formatted address, координат. Endpoint для пересчёта одного адреса + management command для массового пересчёта существующих. См. Back Office #10 для UI-части. |
 | 11 | Unit order step/multiplier: добавить поле кратности в модель Unit | Добавить поле `order_step` (PositiveInteger, default=1) в модель Unit. Валидация: количество в заказе должно быть кратно order_step. Отдавать через API. См. Back Office #13 для UI-части. |
 | 12 | Multilingual data support: мультиязычный ввод данных поставщиком | Реализовать хранение и API для мультиязычных полей (Supplier.description, Product.name и др.). Подход определить после аудита (django-modeltranslation, JSON field, отдельные таблицы). Языки: en, de, fr, it. См. Back Office #15 для UI-части и аудита полей. |
+| 13 | Multi-backend архитектура: отдельные инстансы Django для разных поставщиков | Каждый поставщик работает на своём отдельном инстансе Django (отдельная БД, отдельный деплой). Затрагивает инфраструктуру, деплой, маршрутизацию запросов. |
 
 ---
 
