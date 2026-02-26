@@ -29,8 +29,17 @@ Removed "Client since [year]" text from profile header. Subtitle now shows only 
 #### :material-wrench: Supply Now — Navigation Bar Update
 Removed Favorites tab from the bottom navigation bar. Navigation now has 5 tabs: Home, Scan, Cart, Orders, Profile.
 
-#### :material-new-box: Supply Now — Unit Tests (63 new tests)
-Added comprehensive test coverage for Supply Now models and state logic: `ClientCompanyModel` (16 tests), `SupplierSettingsModel` (11 tests), `OrdersState` (36 tests covering search, filtering, grouping, status counts, summary calculations). Updated `ClientAddressModel` tests in shared_core with new `purposes` list coverage.
+#### :material-new-box: Supply Now — Orders Screen: Weight, Formatting & Action Banners
+Orders screen enhanced with order weight display: total weight shown in the summary bar alongside amount, and per-order weight in each card's meta row (e.g., `⚖ 33 kg  📦 3 items`). Prices now use thousands separator (`6,633.00`). Summary bar reformatted to `Fr 7,419.50` style. Action banners added per card for `CLIENT_CONFIRMATION_REQUIRED` (amber, Review button) and `SUPPLIER_MANAGER_REVIEW` (purple, informational).
+
+#### :material-new-box: Supply Now — Orders Infinite Scroll (All Tab)
+The "All Orders" tab now uses infinite scroll: loads 20 orders at a time and automatically fetches the next page when the user scrolls to 80% of the list. Uses `SliverList.builder` for lazy rendering (cards are only built when scrolled into view). A loading indicator appears at the bottom during fetch. The "Active" tab continues to load all orders at once (typically <20 active orders). Pull-to-refresh resets and reloads from the first page.
+
+#### :material-wrench: Back Office — Orders Auto-Refresh
+The orders screen (list and kanban views) now automatically refreshes every 30 seconds, keeping order data fresh without manual intervention. The timer is properly cancelled when the screen is disposed.
+
+#### :material-new-box: Supply Now — Unit Tests (67 tests)
+Added comprehensive test coverage for Supply Now models and state logic: `ClientCompanyModel` (16 tests), `SupplierSettingsModel` (11 tests), `OrdersState` (42 tests covering search, filtering, grouping, status counts, summary calculations, pagination fields `allHasMore`/`isLoadingMore`), `ClientOrderModel` (18 tests covering serialization, equality, `deliveryPhase`, `isActive`). Updated `ClientAddressModel` tests in shared_core with new `purposes` list coverage.
 
 #### :material-api: New/Changed API Endpoints
 | Method | Endpoint | Description |

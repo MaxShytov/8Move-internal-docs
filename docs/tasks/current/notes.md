@@ -1,5 +1,19 @@
 # Working Notes
 
+## 2026-02-26
+
+- [x] Supply Now: orders screen redesign — grouped by date, search, status filter chips with counts, summary bar
+- [x] Supply Now: ClientOrderModel — added totalWeight field (mapped from total_weight JSON)
+- [x] Supply Now: order cards — weight in meta row, thousands separator in price, removed supplier row
+- [x] Supply Now: action banners per card for CLIENT_CONFIRMATION_REQUIRED and SUPPLIER_MANAGER_REVIEW
+- [x] Supply Now: orders API — getOrders() now returns totalCount for pagination
+- [x] Supply Now: infinite scroll for All tab — loadMoreOrders(), allHasMore, isLoadingMore, SliverList.builder
+- [x] Supply Now: seeded weight_kg for Unit 145 (5kg) and Unit 149 (2kg), recalculated 41 orders
+- [x] Supply Now: l10n — added 31 missing translations in DE and IT (address form keys)
+- [x] Supply Now: 67 unit tests (orders_state + client_order_model)
+- [x] Back Office: orders auto-refresh every 30s with proper timer disposal
+
+---
 
 1. Supply Now — Страница товара (Product Screen)
 Файлы: product_screen.dart, product_action_button.dart, product_provider.dart, providers.dart, product_model.dart

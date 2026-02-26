@@ -79,7 +79,13 @@ Order history and tracking.
 
 | Function | Description |
 |----------|-------------|
-| Order list | All orders with status and date filters |
+| Order list | Two tabs: Active (all at once) and All (infinite scroll, 20 per page) |
+| Search | Filter by order number, supplier name, or order ID (client-side) |
+| Status filter chips | Filter by status with count badges; combinable with search |
+| Date grouping | Orders grouped by delivery date (descending), with date headers |
+| Summary bar | Total order count, total amount (e.g., `Fr 7,419.50`), and total weight when available |
+| Order card | Accent stripe by status, price with thousands separator, weight + item count in meta row |
+| Action banners | Amber banner for `CLIENT_CONFIRMATION_REQUIRED` (Review button), purple for `SUPPLIER_MANAGER_REVIEW` |
 | Order detail | Items, quantities, prices, status, delivery info |
 | Status history | Track order through workflow states |
 | Driver tracking | Real-time map with driver location |
