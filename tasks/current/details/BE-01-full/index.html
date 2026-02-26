@@ -1,0 +1,5147 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Internal documentation for the 8Move project">
+      
+      
+      
+        <link rel="canonical" href="https://maxshytov.github.io/8Move-internal-docs/tasks/current/details/BE-01-full/">
+      
+      
+        <link rel="prev" href="../../supply-now/SN-02/">
+      
+      
+        <link rel="next" href="../BE-01.1-full/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/8move-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>SN-01 Full - 8Move Internal Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#be-01-full-task-details" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="8Move Internal Docs" class="md-header__button md-logo" aria-label="8Move Internal Docs" data-md-component="logo">
+      
+  <img src="../../../../assets/images/8move-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            8Move Internal Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SN-01 Full
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MaxShytov/8Move-internal-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    8Move-internal-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../backend/getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../flutter/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Flutter Apps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../users/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Users & Roles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../api/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tasks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../back-office/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Back Office
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../features/supply-now/change-password/user-guide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Features
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../support/chatbot/change-password/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Support
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../guides/development-workflow/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="8Move Internal Docs" class="md-nav__button md-logo" aria-label="8Move Internal Docs" data-md-component="logo">
+      
+  <img src="../../../../assets/images/8move-logo.png" alt="logo">
+
+    </a>
+    8Move Internal Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MaxShytov/8Move-internal-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    8Move-internal-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/tech-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/django-backend/workflows/change-password/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Password
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../architecture/django-backend/workflows/order-placement-constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Order Placement Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../backend/project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter Apps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter Apps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../flutter/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../flutter/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../users/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users & Roles
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Users & Roles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../users/platform-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../users/supplier-back-office/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplier — Back Office
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../users/client-supply-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client — Supply Now
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../users/driver-driver-pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver — Driver Pro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../users/delivery-manager-fleet-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Manager — Fleet Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../users/employee-docuflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Employee — DocuFlow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../run-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current Tasks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Current Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back Office
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back Office
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../back-office/BO-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BO-01 Supplier Client Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supply Now
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supply Now
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supply-now/SN-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-01 Multi-Supplier Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supply-now/SN-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-02 Client Company Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_4" id="__nav_7_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Full Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-01 Full
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-01 Full
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarifying-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarifying Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similar-implementations-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Similar Implementations (Benchmarks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refined-task-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refined Task Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-data-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Data Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seed-clientsupplierlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seed ClientSupplierLink (кто с кем связан)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-test-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Test Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Test Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supplier-users-backoffice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplier Users (для BackOffice)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-users-supply-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client Users (для Supply Now)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-users-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Users (для Admin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-test-scenario-client-with-0-suppliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Test Scenario: Client with 0 Suppliers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-launch-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Launch Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Launch Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supply-now-client-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supply Now (Client App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supply Now (Client App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hotel-edelweiss-aline-dupuis-admin-5-8084" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hôtel Edelweiss — Aline Dupuis, admin, 5 поставщиков — порт 8084
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotel-edelweiss-mathieu-perrin-manager-8085" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hôtel Edelweiss — Mathieu Perrin, manager — порт 8085
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-petit-delice-3-8086" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le Petit Délice — 3 поставщика — порт 8086
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrotop-1-8087" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ElectroTop — 1 поставщик (минимум) — порт 8087
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#julien-morel-3-8088" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Julien Morel — 3 поставщика (частное лицо) — порт 8088
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecole-romande-4-8089" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        École Romande — 4 поставщика — порт 8089
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claire-3-multi-client-8090" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claire — 3 компании (multi-client) — порт 8090
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backoffice-supplier-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackOffice (Supplier App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BackOffice (Supplier App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpine-frais-sarl-6-8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alpine Frais Sàrl — 6 клиентов — порт 8080
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technolivraison-sa-3-8081" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TechnoLivraison SA — 3 клиента — порт 8081
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cafe-mont-leman-sarl-8082" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Café Mont Léman Sàrl — порт 8082
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-glacons-suiss-sa-8083" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le Glaçons Suiss SA — порт 8083
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-panel-django-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Panel (Django Admin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-test-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Test Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Test Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-supply-now-mobile-client-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Supply Now (Mobile — Client App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Supply Now (Mobile — Client App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A1. Множественные поставщики
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2. Один поставщик
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A3. Три поставщика (частное лицо)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-edge-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A4. Ноль поставщиков (edge case)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-backoffice-mobile-supplier-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. BackOffice (Mobile — Supplier App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. BackOffice (Mobile — Supplier App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1-alpine-frais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B1. Alpine Frais — видит своих клиентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2-technolivraison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B2. TechnoLivraison — видит своих клиентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B3. Изоляция продуктов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B4. Изоляция заказов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B5. Поставщик НЕ видит других поставщиков клиента
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-admin-panel-django-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Admin Panel (Django Admin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. Admin Panel (Django Admin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-clientsupplierlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C1. ClientSupplierLink — полный обзор
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-supplier-detail-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2. Supplier detail — inline клиенты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-client-detail-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C3. Client detail — inline поставщики
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-platform-admin-superuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4. Platform admin (не superuser)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-blocking-is_blocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Blocking (is_blocked)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="D. Blocking (is_blocked)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D1. Поставщик блокирует клиента
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D2. Клиент блокирует поставщика
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-tests-plan-django-testcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Tests Plan (Django TestCase)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Tests Plan (Django TestCase)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-file-appactorsteststest_rla_multi_supplierpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test File: app/actors/tests/test_rla_multi_supplier.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-issues-found-during-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potential Issues Found During Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BE-01.1-full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-02 Full
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../bugs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Tracker
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bug Tracker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bugs/BUG-001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BUG-001 Receipt Save 500
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../completed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Completed Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/ai-chatbot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Chatbot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/admins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Admins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../templates/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End Users
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../back-office/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back Office
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back Office
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Быстрый старт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборд
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заказы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Счета
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Продукты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Клиенты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользователи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../back-office/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройки поставщика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supply Now
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supply Now
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_1" id="__nav_9_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Password
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Change Password
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../features/supply-now/change-password/user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../features/supply-now/change-password/admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot KB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chatbot KB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../support/chatbot/change-password/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Password
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/development-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../guides/docs-local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Docs Locally
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Definition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Original Request
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clarifying-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clarifying Questions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similar-implementations-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Similar Implementations (Benchmarks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refined-task-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refined Task Description
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-data-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Matrix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Data Matrix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seed-clientsupplierlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seed ClientSupplierLink (кто с кем связан)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-test-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Test Users
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Test Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supplier-users-backoffice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supplier Users (для BackOffice)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client-users-supply-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client Users (для Supply Now)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-users-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Users (для Admin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missing-test-scenario-client-with-0-suppliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Test Scenario: Client with 0 Suppliers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-launch-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Launch Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Launch Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Port Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supply-now-client-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supply Now (Client App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supply Now (Client App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hotel-edelweiss-aline-dupuis-admin-5-8084" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hôtel Edelweiss — Aline Dupuis, admin, 5 поставщиков — порт 8084
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotel-edelweiss-mathieu-perrin-manager-8085" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hôtel Edelweiss — Mathieu Perrin, manager — порт 8085
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-petit-delice-3-8086" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le Petit Délice — 3 поставщика — порт 8086
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrotop-1-8087" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ElectroTop — 1 поставщик (минимум) — порт 8087
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#julien-morel-3-8088" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Julien Morel — 3 поставщика (частное лицо) — порт 8088
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecole-romande-4-8089" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        École Romande — 4 поставщика — порт 8089
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claire-3-multi-client-8090" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claire — 3 компании (multi-client) — порт 8090
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backoffice-supplier-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackOffice (Supplier App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BackOffice (Supplier App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alpine-frais-sarl-6-8080" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alpine Frais Sàrl — 6 клиентов — порт 8080
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technolivraison-sa-3-8081" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TechnoLivraison SA — 3 клиента — порт 8081
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cafe-mont-leman-sarl-8082" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Café Mont Léman Sàrl — порт 8082
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-glacons-suiss-sa-8083" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le Glaçons Suiss SA — порт 8083
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-panel-django-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Admin Panel (Django Admin)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manual-test-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Test Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Test Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-supply-now-mobile-client-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Supply Now (Mobile — Client App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A. Supply Now (Mobile — Client App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A1. Множественные поставщики
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A2. Один поставщик
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A3. Три поставщика (частное лицо)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a4-edge-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A4. Ноль поставщиков (edge case)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-backoffice-mobile-supplier-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. BackOffice (Mobile — Supplier App)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. BackOffice (Mobile — Supplier App)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b1-alpine-frais" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B1. Alpine Frais — видит своих клиентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b2-technolivraison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B2. TechnoLivraison — видит своих клиентов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B3. Изоляция продуктов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B4. Изоляция заказов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B5. Поставщик НЕ видит других поставщиков клиента
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-admin-panel-django-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Admin Panel (Django Admin)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C. Admin Panel (Django Admin)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1-clientsupplierlink" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C1. ClientSupplierLink — полный обзор
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2-supplier-detail-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2. Supplier detail — inline клиенты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3-client-detail-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C3. Client detail — inline поставщики
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4-platform-admin-superuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4. Platform admin (не superuser)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-blocking-is_blocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Blocking (is_blocked)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="D. Blocking (is_blocked)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D1. Поставщик блокирует клиента
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D2. Клиент блокирует поставщика
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-tests-plan-django-testcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Tests Plan (Django TestCase)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Tests Plan (Django TestCase)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-file-appactorsteststest_rla_multi_supplierpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test File: app/actors/tests/test_rla_multi_supplier.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-issues-found-during-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Potential Issues Found During Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="be-01-full-task-details">BE-01: Full Task Details<a class="headerlink" href="#be-01-full-task-details" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg></span> Back to <a href="../../BE-01/">summary card</a></p>
+</blockquote>
+<h2 id="task-definition">Task Definition<a class="headerlink" href="#task-definition" title="Permanent link">&para;</a></h2>
+<h3 id="original-request">Original Request<a class="headerlink" href="#original-request" title="Permanent link">&para;</a></h3>
+<p>У меня была идея, что один покупатель (пользователь с одним e-mail) может работать одновременно с несколькими поставщиками, через таблицу Linked Suppliers (ClientSupplierLink).
+Теперь нужно это перепроверить, по идее это должно быть видно в приложении:
+1. Supply Now - тут пользователь должен видеть всех поставщиков, с которыми он может быть связан. Их может быть любое количество от 0 до бесконечности.
+2. BackOffice - это приложение для поставщика. Соответственно поставщик, может видеть только своих клиентов и не может видеть других поставщиков клиента.
+3. Admin панель - это приложение для администраторов платформы. Тут для каждого клиента можем видеть поставщиков, с которым он связан. И для каждого поставщика можем видеть всех клиентов, с которым он связан.</p>
+<p>Нужно спланировать проверку этого функционала. Подготовить список пользователей для проверки.</p>
+<h3 id="clarifying-questions">Clarifying Questions<a class="headerlink" href="#clarifying-questions" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Какой тип проверки нужен? — <strong>Оба варианта</strong>: ручное тестирование через UI (чек-лист) + автоматические тесты (Django TestCase)</li>
+<li>Нужно ли создавать тестовых пользователей? — В тестовой базе есть seed пользователи, если их недостаточно — подправить Seed</li>
+<li>Какие сценарии беспокоят? — <strong>Все</strong>: изоляция данных, множественные связи, блокировка связей</li>
+</ol>
+<h3 id="similar-implementations-benchmarks">Similar Implementations (Benchmarks)<a class="headerlink" href="#similar-implementations-benchmarks" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ClientSupplierLink model</strong>: <code>app/actors/models.py:290-313</code> — ключевая модель many-to-many связи клиентов и поставщиков</li>
+<li><strong>RLA filtering (Supplier)</strong>: <code>app/actors/models.py:105-115</code> — фильтрация поставщиков: через SupplierUserLink + ClientSupplierLink</li>
+<li><strong>RLA filtering (Client)</strong>: <code>app/actors/models.py:159-173</code> — фильтрация клиентов: через ClientUserLink + SupplierUserLink (через ClientSupplierLink)</li>
+<li><strong>RLA filtering (Product)</strong>: <code>app/products/models.py:111-112</code> — использует <code>rla_default_by_supplier_field</code></li>
+<li><strong>RLA filtering (Order)</strong>: <code>app/orders/models.py:171-179</code> — фильтрация ТОЛЬКО по supplier links (потенциальная проблема для client users!)</li>
+<li><strong>Admin inlines</strong>: <code>app/actors/admin.py:185-202</code> (ClientInSupplierInline), <code>app/actors/admin.py:328-351</code> (SupplierInClientInline)</li>
+<li><strong>Seed data</strong>: <code>app/common/management/commands/seed030_user_links_with_role.py:97-128</code> — создание ClientSupplierLink записей</li>
+<li><strong>Base RLA methods</strong>: <code>app/common/models.py:65-114</code> — rla_default_by_client_field, rla_default_by_supplier_field</li>
+<li><strong>RLA Manager</strong>: <code>app/common/managers.py:4-17</code> — superuser и platform admin видят всё</li>
+</ul>
+<h3 id="refined-task-description">Refined Task Description<a class="headerlink" href="#refined-task-description" title="Permanent link">&para;</a></h3>
+<p><strong>Task Title</strong>: Multi-Supplier Client Access Verification</p>
+<p><strong>Description</strong>:
+Проверить, что архитектура multi-supplier (один клиент — множество поставщиков через ClientSupplierLink) корректно работает во всех трёх приложениях: Supply Now (мобильное для клиентов), BackOffice (мобильное для поставщиков), Admin (Django admin для платформы). Проверка включает изоляцию данных, множественные связи и механизм блокировки.</p>
+<p><strong>Use Cases</strong>:
+1. <strong>Клиент видит всех своих поставщиков (Supply Now)</strong>: Пользователь-клиент (например, Hôtel Edelweiss) открывает Supply Now и видит список всех 5 поставщиков, с которыми связан
+2. <strong>Поставщик видит только своих клиентов (BackOffice)</strong>: Пользователь-поставщик (Alpine Frais) входит в BackOffice и видит только своих 6 клиентов, не видит клиентов TechnoLivraison
+3. <strong>Изоляция продуктов и заказов</strong>: Продукты поставщика A не видны поставщику B; заказы фильтруются по поставщику
+4. <strong>Блокировка связи</strong>: Если поставщик заблокировал клиента (is_blocked), клиент не может делать заказы
+5. <strong>Платформенный админ видит всё</strong>: В Django admin видны все связи, все клиенты, все поставщики</p>
+<p><strong>Technical Considerations</strong>:
+- <code>ClientSupplierLink</code> НЕ имеет собственного <code>rla_roles_filter()</code> — возвращает пустой queryset по умолчанию (потенциальная проблема)
+- <code>Order.rla_roles_filter</code> фильтрует ТОЛЬКО по <code>supplier__supplieruserlink__user</code> — клиенты могут не видеть свои заказы
+- RLA Manager даёт полный доступ superuser и platform admin (обход фильтров)
+- Блокировка реализована в двух моделях: <code>ClientSettingsSupplierControlled.is_blocked</code> (поставщик блокирует клиента) и <code>SupplierSettingsClientControlled.is_blocked</code> (клиент блокирует поставщика)</p>
+<h3 id="complexity-assessment">Complexity Assessment<a class="headerlink" href="#complexity-assessment" title="Permanent link">&para;</a></h3>
+<p><strong>Complexity</strong>: Medium
+<strong>Estimated effort</strong>: 4-6 hours</p>
+<p><strong>Risk factors</strong>:
+- Risk 1: Order RLA может не показывать заказы клиентским пользователям (нужна проверка)
+- Risk 2: ClientSupplierLink без rla_roles_filter — API endpoint может возвращать пустые данные для неадминов
+- Risk 3: Блокировка is_blocked может не учитываться во всех местах (заказы, продукты, UI)</p>
+<hr />
+<h2 id="test-data-matrix">Test Data Matrix<a class="headerlink" href="#test-data-matrix" title="Permanent link">&para;</a></h2>
+<h3 id="seed-clientsupplierlink">Seed ClientSupplierLink (кто с кем связан)<a class="headerlink" href="#seed-clientsupplierlink" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Клиент</th>
+<th>Alpine Frais</th>
+<th>TechnoLivraison</th>
+<th>Café Mont Léman</th>
+<th>Le Glaçons Suiss</th>
+<th>Swiss Timepieces</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Le Petit Délice</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+</tr>
+<tr>
+<td>Auberge du Lac</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Hôtel Edelweiss</strong></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+</tr>
+<tr>
+<td>ElectroTop</td>
+<td></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>École Romande</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+</tr>
+<tr>
+<td>Julien Morel</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+</tr>
+<tr>
+<td>Sophie Bernard</td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-test-users">Key Test Users<a class="headerlink" href="#key-test-users" title="Permanent link">&para;</a></h3>
+<h4 id="supplier-users-backoffice">Supplier Users (для BackOffice)<a class="headerlink" href="#supplier-users-backoffice" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Email</th>
+<th>Supplier</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Marc Dupont</td>
+<td>marc.dupont_alpine_frais_sarl@trident.software</td>
+<td>Alpine Frais Sàrl</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>Etienne Lambert</td>
+<td>etienne.lambert_techno_livraison_sa@trident.software</td>
+<td>TechnoLivraison SA</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>Julien Favre</td>
+<td>julien.favre_8move@trident.software</td>
+<td>Café Mont Léman Sàrl</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>Milan Thomas</td>
+<td>milan@leglaconsuisse.ch</td>
+<td>Le Glaçons Suiss SA</td>
+<td>admin</td>
+</tr>
+</tbody>
+</table>
+<h4 id="client-users-supply-now">Client Users (для Supply Now)<a class="headerlink" href="#client-users-supply-now" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Email</th>
+<th>Client</th>
+<th>Role</th>
+<th>Linked Suppliers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aline Dupuis</strong></td>
+<td>aline.dupuis_edelweiss-hotel@trident.software</td>
+<td><strong>Hôtel Edelweiss</strong></td>
+<td>admin</td>
+<td><strong>5 поставщиков</strong> (макс.)</td>
+</tr>
+<tr>
+<td>Luca Meier</td>
+<td>info_lepetitdelice@trident.software</td>
+<td>Le Petit Délice</td>
+<td>admin</td>
+<td>3 поставщика</td>
+</tr>
+<tr>
+<td>Luc Blanc</td>
+<td>luc.blanc_electrotop@trident.software</td>
+<td>ElectroTop</td>
+<td>admin</td>
+<td>1 поставщик (мин.)</td>
+</tr>
+<tr>
+<td>Julien Ziegler</td>
+<td>julien_proton@trident.software</td>
+<td>Julien Morel (private)</td>
+<td>admin</td>
+<td>3 поставщика</td>
+</tr>
+</tbody>
+</table>
+<h4 id="platform-users-admin">Platform Users (для Admin)<a class="headerlink" href="#platform-users-admin" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Email</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice Anderson</td>
+<td>alice.admin_8move@trident.software</td>
+<td>platform admin</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>admin</td>
+<td>superuser</td>
+</tr>
+</tbody>
+</table>
+<h3 id="missing-test-scenario-client-with-0-suppliers">Missing Test Scenario: Client with 0 Suppliers<a class="headerlink" href="#missing-test-scenario-client-with-0-suppliers" title="Permanent link">&para;</a></h3>
+<p><strong>В seed нет клиента без поставщиков!</strong> Нужно добавить в seed или создать вручную.</p>
+<hr />
+<h2 id="quick-launch-commands">Quick Launch Commands<a class="headerlink" href="#quick-launch-commands" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Пароль для ВСЕХ пользователей</p>
+<p><code>Password123</code></p>
+<p>Скопируйте нужную команду и вставьте в терминал. Приложение откроется в Chrome и автоматически залогинится под выбранным пользователем.</p>
+</div>
+<h3 id="port-allocation">Port Allocation<a class="headerlink" href="#port-allocation" title="Permanent link">&para;</a></h3>
+<p>Каждому пользователю назначен отдельный порт, чтобы можно было запускать несколько приложений одновременно.</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>App</th>
+<th>User</th>
+<th>Client/Supplier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8080</td>
+<td>BackOffice</td>
+<td>Marc Dupont</td>
+<td>Alpine Frais Sàrl</td>
+</tr>
+<tr>
+<td>8081</td>
+<td>BackOffice</td>
+<td>Etienne Lambert</td>
+<td>TechnoLivraison SA</td>
+</tr>
+<tr>
+<td>8082</td>
+<td>BackOffice</td>
+<td>Julien Favre</td>
+<td>Café Mont Léman Sàrl</td>
+</tr>
+<tr>
+<td>8083</td>
+<td>BackOffice</td>
+<td>Milan Thomas</td>
+<td>Le Glaçons Suiss SA</td>
+</tr>
+<tr>
+<td>8084</td>
+<td>Supply Now</td>
+<td>Aline Dupuis</td>
+<td>Hôtel Edelweiss (admin, 5 suppliers)</td>
+</tr>
+<tr>
+<td>8085</td>
+<td>Supply Now</td>
+<td>Mathieu Perrin</td>
+<td>Hôtel Edelweiss (manager)</td>
+</tr>
+<tr>
+<td>8086</td>
+<td>Supply Now</td>
+<td>Luca Meier</td>
+<td>Le Petit Délice (3 suppliers)</td>
+</tr>
+<tr>
+<td>8087</td>
+<td>Supply Now</td>
+<td>Luc Blanc</td>
+<td>ElectroTop (1 supplier)</td>
+</tr>
+<tr>
+<td>8088</td>
+<td>Supply Now</td>
+<td>Julien Ziegler</td>
+<td>Julien Morel (3 suppliers)</td>
+</tr>
+<tr>
+<td>8089</td>
+<td>Supply Now</td>
+<td>Julie Renaud</td>
+<td>École Romande (4 suppliers)</td>
+</tr>
+<tr>
+<td>8090</td>
+<td>Supply Now</td>
+<td>Claire (multi)</td>
+<td>3 компании: Auberge du Lac (admin), Le Petit Délice, Hôtel Edelweiss</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="supply-now-client-app">Supply Now (Client App)<a class="headerlink" href="#supply-now-client-app" title="Permanent link">&para;</a></h3>
+<p><strong>Запускать из:</strong> <code>cd mobile/apps/supply_now</code></p>
+<h4 id="hotel-edelweiss-aline-dupuis-admin-5-8084">Hôtel Edelweiss — Aline Dupuis, admin, 5 поставщиков — порт 8084<a class="headerlink" href="#hotel-edelweiss-aline-dupuis-admin-5-8084" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8084</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>aline.dupuis_edelweiss-hotel@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="hotel-edelweiss-mathieu-perrin-manager-8085">Hôtel Edelweiss — Mathieu Perrin, manager — порт 8085<a class="headerlink" href="#hotel-edelweiss-mathieu-perrin-manager-8085" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8085</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>mathieu.perrin_edelweiss-hotel@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="le-petit-delice-3-8086">Le Petit Délice — 3 поставщика — порт 8086<a class="headerlink" href="#le-petit-delice-3-8086" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8086</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>info_lepetitdelice@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="electrotop-1-8087">ElectroTop — 1 поставщик (минимум) — порт 8087<a class="headerlink" href="#electrotop-1-8087" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8087</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>luc.blanc_electrotop@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="julien-morel-3-8088">Julien Morel — 3 поставщика (частное лицо) — порт 8088<a class="headerlink" href="#julien-morel-3-8088" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8088</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>julien_proton@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="ecole-romande-4-8089">École Romande — 4 поставщика — порт 8089<a class="headerlink" href="#ecole-romande-4-8089" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8089</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>julie.renaud_ecoleromande@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="claire-3-multi-client-8090">Claire — 3 компании (multi-client) — порт 8090<a class="headerlink" href="#claire-3-multi-client-8090" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8090</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>claire_aubergedulac@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<blockquote>
+<p>Admin в Auberge du Lac, manager в Le Petit Délice и Hôtel Edelweiss. Для тестирования выбора компании при логине.</p>
+</blockquote>
+<h3 id="backoffice-supplier-app">BackOffice (Supplier App)<a class="headerlink" href="#backoffice-supplier-app" title="Permanent link">&para;</a></h3>
+<p><strong>Запускать из:</strong> <code>cd mobile/apps/back_office</code></p>
+<h4 id="alpine-frais-sarl-6-8080">Alpine Frais Sàrl — 6 клиентов — порт 8080<a class="headerlink" href="#alpine-frais-sarl-6-8080" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8080</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>marc.dupont_alpine_frais_sarl@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="technolivraison-sa-3-8081">TechnoLivraison SA — 3 клиента — порт 8081<a class="headerlink" href="#technolivraison-sa-3-8081" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8081</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>etienne.lambert_techno_livraison_sa@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="cafe-mont-leman-sarl-8082">Café Mont Léman Sàrl — порт 8082<a class="headerlink" href="#cafe-mont-leman-sarl-8082" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8082</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>julien.favre_8move@trident.software<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h4 id="le-glacons-suiss-sa-8083">Le Glaçons Suiss SA — порт 8083<a class="headerlink" href="#le-glacons-suiss-sa-8083" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>flutter<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>chrome<span class="w"> </span>--web-port<span class="w"> </span><span class="m">8083</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">API_BASE_URL</span><span class="o">=</span>http://localhost:8000<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_EMAIL</span><span class="o">=</span>milan@leglaconsuisse.ch<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span>--dart-define<span class="o">=</span><span class="nv">AUTO_LOGIN_PASSWORD</span><span class="o">=</span>Password123
+</span></code></pre></div>
+<h3 id="admin-panel-django-admin">Admin Panel (Django Admin)<a class="headerlink" href="#admin-panel-django-admin" title="Permanent link">&para;</a></h3>
+<ul>
+<li>URL: http://localhost:8000/admin/</li>
+<li>Superuser: <code>admin</code> / <code>Password123</code></li>
+<li>Platform Admin: <code>alice.admin_8move@trident.software</code> / <code>Password123</code></li>
+</ul>
+<hr />
+<h2 id="manual-test-checklist">Manual Test Checklist<a class="headerlink" href="#manual-test-checklist" title="Permanent link">&para;</a></h2>
+<h3 id="a-supply-now-mobile-client-app">A. Supply Now (Mobile — Client App)<a class="headerlink" href="#a-supply-now-mobile-client-app" title="Permanent link">&para;</a></h3>
+<h4 id="a1">A1. Множественные поставщики<a class="headerlink" href="#a1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>aline.dupuis_edelweiss-hotel@trident.software</code> (Hôtel Edelweiss)</li>
+<li>[ ] Видны ровно 5 поставщиков: Alpine Frais, TechnoLivraison, Café Mont Léman, Le Glaçons Suiss, Swiss Timepieces</li>
+<li>[ ] Каждого поставщика можно выбрать</li>
+<li>[ ] Продукты отображаются для каждого поставщика отдельно</li>
+</ul>
+<h4 id="a2">A2. Один поставщик<a class="headerlink" href="#a2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>luc.blanc_electrotop@trident.software</code> (ElectroTop)</li>
+<li>[ ] Виден ровно 1 поставщик: TechnoLivraison</li>
+<li>[ ] Нет доступа к продуктам других поставщиков</li>
+</ul>
+<h4 id="a3">A3. Три поставщика (частное лицо)<a class="headerlink" href="#a3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>julien_proton@trident.software</code> (Julien Morel — private)</li>
+<li>[ ] Видны ровно 3 поставщика: Alpine Frais, Café Mont Léman, Le Glaçons Suiss</li>
+</ul>
+<h4 id="a4-edge-case">A4. Ноль поставщиков (edge case)<a class="headerlink" href="#a4-edge-case" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] <strong>Нужен тест-юзер без связей</strong> (добавить в seed)</li>
+<li>[ ] Корректное сообщение "нет доступных поставщиков" или пустой список</li>
+</ul>
+<h3 id="b-backoffice-mobile-supplier-app">B. BackOffice (Mobile — Supplier App)<a class="headerlink" href="#b-backoffice-mobile-supplier-app" title="Permanent link">&para;</a></h3>
+<h4 id="b1-alpine-frais">B1. Alpine Frais — видит своих клиентов<a class="headerlink" href="#b1-alpine-frais" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>marc.dupont_alpine_frais_sarl@trident.software</code></li>
+<li>[ ] Видны 6 клиентов: Julien Morel, Le Petit Délice, Auberge du Lac, Hôtel Edelweiss, École Romande, Sophie Bernard</li>
+<li>[ ] НЕ видны клиенты других поставщиков (ElectroTop)</li>
+</ul>
+<h4 id="b2-technolivraison">B2. TechnoLivraison — видит своих клиентов<a class="headerlink" href="#b2-technolivraison" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>etienne.lambert_techno_livraison_sa@trident.software</code></li>
+<li>[ ] Видны 3 клиента: Hôtel Edelweiss, ElectroTop, École Romande</li>
+<li>[ ] НЕ видны: Le Petit Délice, Auberge du Lac, Julien Morel, Sophie Bernard</li>
+</ul>
+<h4 id="b3">B3. Изоляция продуктов<a class="headerlink" href="#b3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Продукты Alpine Frais НЕ видны в BackOffice TechnoLivraison</li>
+<li>[ ] Продукты TechnoLivraison НЕ видны в BackOffice Alpine Frais</li>
+</ul>
+<h4 id="b4">B4. Изоляция заказов<a class="headerlink" href="#b4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Заказы от Hôtel Edelweiss для Alpine Frais НЕ видны в BackOffice TechnoLivraison</li>
+<li>[ ] Каждый поставщик видит только свои заказы</li>
+</ul>
+<h4 id="b5">B5. Поставщик НЕ видит других поставщиков клиента<a class="headerlink" href="#b5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] В карточке Hôtel Edelweiss (BackOffice Alpine Frais) НЕ показаны другие поставщики этого клиента (TechnoLivraison, Café Mont Léman, etc.)</li>
+</ul>
+<h3 id="c-admin-panel-django-admin">C. Admin Panel (Django Admin)<a class="headerlink" href="#c-admin-panel-django-admin" title="Permanent link">&para;</a></h3>
+<h4 id="c1-clientsupplierlink">C1. ClientSupplierLink — полный обзор<a class="headerlink" href="#c1-clientsupplierlink" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>admin</code> / <code>Password123</code> (superuser)</li>
+<li>[ ] В разделе ClientSupplierLink видны ВСЕ связи</li>
+<li>[ ] Можно фильтровать по client и supplier</li>
+<li>[ ] Можно искать по имени</li>
+</ul>
+<h4 id="c2-supplier-detail-inline">C2. Supplier detail — inline клиенты<a class="headerlink" href="#c2-supplier-detail-inline" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Открыть Alpine Frais Sàrl → видны inline ClientSupplierLink записи</li>
+<li>[ ] Показаны 6 связанных клиентов</li>
+<li>[ ] Видно поле is_blocked_by_client</li>
+</ul>
+<h4 id="c3-client-detail-inline">C3. Client detail — inline поставщики<a class="headerlink" href="#c3-client-detail-inline" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Открыть Hôtel Edelweiss → видны inline ClientSupplierLink записи</li>
+<li>[ ] Показаны 5 связанных поставщиков</li>
+<li>[ ] Видны настройки: period, weekly_day, monthly_day</li>
+</ul>
+<h4 id="c4-platform-admin-superuser">C4. Platform admin (не superuser)<a class="headerlink" href="#c4-platform-admin-superuser" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] Логин: <code>alice.admin_8move@trident.software</code></li>
+<li>[ ] Также видит всё (platform admin bypass в RLA Manager)</li>
+</ul>
+<h3 id="d-blocking-is_blocked">D. Blocking (is_blocked)<a class="headerlink" href="#d-blocking-is_blocked" title="Permanent link">&para;</a></h3>
+<h4 id="d1">D1. Поставщик блокирует клиента<a class="headerlink" href="#d1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] В Admin: для связи Alpine Frais ↔ Hôtel Edelweiss установить is_blocked = True (в ClientSettingsSupplierControlled)</li>
+<li>[ ] В Supply Now (Aline Dupuis): проверить, виден ли Alpine Frais в списке поставщиков</li>
+<li>[ ] Ожидание: Alpine Frais не должен быть доступен для заказов</li>
+<li>[ ] Вернуть is_blocked = False</li>
+</ul>
+<h4 id="d2">D2. Клиент блокирует поставщика<a class="headerlink" href="#d2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>[ ] В Admin: для связи Alpine Frais ↔ Hôtel Edelweiss установить is_blocked = True (в SupplierSettingsClientControlled)</li>
+<li>[ ] В Supply Now (Aline Dupuis): проверить доступность Alpine Frais</li>
+<li>[ ] Ожидание: Alpine Frais не должен быть доступен для заказов</li>
+<li>[ ] Вернуть is_blocked = False</li>
+</ul>
+<hr />
+<h2 id="automated-tests-plan-django-testcase">Automated Tests Plan (Django TestCase)<a class="headerlink" href="#automated-tests-plan-django-testcase" title="Permanent link">&para;</a></h2>
+<h3 id="test-file-appactorsteststest_rla_multi_supplierpy">Test File: <code>app/actors/tests/test_rla_multi_supplier.py</code><a class="headerlink" href="#test-file-appactorsteststest_rla_multi_supplierpy" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">TestMultiSupplierRLA</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Tests for multi-supplier client access via RLA filtering.&quot;&quot;&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nd">@classmethod</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setUpTestData</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="c1"># Create: 3 suppliers (S1, S2, S3)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="c1"># Create: 3 clients (C1 with 3 suppliers, C2 with 1 supplier, C3 with 0 suppliers)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="c1"># Create: Users for each supplier and client</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="c1"># Create: ClientSupplierLink records</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="c1"># --- Supplier RLA Tests ---</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_supplier_user_sees_only_own_supplier</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Supplier user (S1) should see only S1, not S2 or S3.&quot;&quot;&quot;</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_client_user_sees_all_linked_suppliers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Client user (C1) should see S1, S2, S3 (all linked suppliers).&quot;&quot;&quot;</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_client_user_with_one_supplier_sees_only_one</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Client user (C2) should see only S2.&quot;&quot;&quot;</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_client_user_with_no_suppliers_sees_none</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Client user (C3) should see no suppliers.&quot;&quot;&quot;</span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>    <span class="c1"># --- Client RLA Tests ---</span>
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_supplier_user_sees_only_linked_clients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;S1 user should see C1 (linked) but not C2, C3.&quot;&quot;&quot;</span>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_supplier_user_does_not_see_other_supplier_clients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;S1 user should not see clients exclusively linked to S2.&quot;&quot;&quot;</span>
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_client_user_sees_own_client</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;C1 user should see C1.&quot;&quot;&quot;</span>
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a>
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>    <span class="c1"># --- Product RLA Tests ---</span>
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a>
+</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_supplier_products_isolated</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;S1 products not visible to S2 user.&quot;&quot;&quot;</span>
+</span><span id="__span-11-40"><a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a>
+</span><span id="__span-11-41"><a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_client_sees_linked_supplier_products</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-42"><a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;C1 user should see products from S1, S2, S3.&quot;&quot;&quot;</span>
+</span><span id="__span-11-43"><a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a>
+</span><span id="__span-11-44"><a id="__codelineno-11-44" name="__codelineno-11-44" href="#__codelineno-11-44"></a>    <span class="c1"># --- Order RLA Tests ---</span>
+</span><span id="__span-11-45"><a id="__codelineno-11-45" name="__codelineno-11-45" href="#__codelineno-11-45"></a>
+</span><span id="__span-11-46"><a id="__codelineno-11-46" name="__codelineno-11-46" href="#__codelineno-11-46"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_supplier_sees_only_own_orders</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-47"><a id="__codelineno-11-47" name="__codelineno-11-47" href="#__codelineno-11-47"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;S1 user sees only orders where supplier=S1.&quot;&quot;&quot;</span>
+</span><span id="__span-11-48"><a id="__codelineno-11-48" name="__codelineno-11-48" href="#__codelineno-11-48"></a>
+</span><span id="__span-11-49"><a id="__codelineno-11-49" name="__codelineno-11-49" href="#__codelineno-11-49"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_order_isolation_between_suppliers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-50"><a id="__codelineno-11-50" name="__codelineno-11-50" href="#__codelineno-11-50"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;S1 user cannot see S2 orders even for shared client.&quot;&quot;&quot;</span>
+</span><span id="__span-11-51"><a id="__codelineno-11-51" name="__codelineno-11-51" href="#__codelineno-11-51"></a>
+</span><span id="__span-11-52"><a id="__codelineno-11-52" name="__codelineno-11-52" href="#__codelineno-11-52"></a>    <span class="c1"># --- Superuser &amp; Platform Admin Tests ---</span>
+</span><span id="__span-11-53"><a id="__codelineno-11-53" name="__codelineno-11-53" href="#__codelineno-11-53"></a>
+</span><span id="__span-11-54"><a id="__codelineno-11-54" name="__codelineno-11-54" href="#__codelineno-11-54"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_superuser_sees_all_suppliers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-55"><a id="__codelineno-11-55" name="__codelineno-11-55" href="#__codelineno-11-55"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Superuser bypasses RLA.&quot;&quot;&quot;</span>
+</span><span id="__span-11-56"><a id="__codelineno-11-56" name="__codelineno-11-56" href="#__codelineno-11-56"></a>
+</span><span id="__span-11-57"><a id="__codelineno-11-57" name="__codelineno-11-57" href="#__codelineno-11-57"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_platform_admin_sees_all_clients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-58"><a id="__codelineno-11-58" name="__codelineno-11-58" href="#__codelineno-11-58"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Platform admin bypasses RLA.&quot;&quot;&quot;</span>
+</span><span id="__span-11-59"><a id="__codelineno-11-59" name="__codelineno-11-59" href="#__codelineno-11-59"></a>
+</span><span id="__span-11-60"><a id="__codelineno-11-60" name="__codelineno-11-60" href="#__codelineno-11-60"></a>    <span class="c1"># --- Blocking Tests ---</span>
+</span><span id="__span-11-61"><a id="__codelineno-11-61" name="__codelineno-11-61" href="#__codelineno-11-61"></a>
+</span><span id="__span-11-62"><a id="__codelineno-11-62" name="__codelineno-11-62" href="#__codelineno-11-62"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_blocked_by_supplier_still_in_supplier_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-63"><a id="__codelineno-11-63" name="__codelineno-11-63" href="#__codelineno-11-63"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;is_blocked should not affect RLA queryset (only ordering ability).&quot;&quot;&quot;</span>
+</span><span id="__span-11-64"><a id="__codelineno-11-64" name="__codelineno-11-64" href="#__codelineno-11-64"></a>
+</span><span id="__span-11-65"><a id="__codelineno-11-65" name="__codelineno-11-65" href="#__codelineno-11-65"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">test_blocked_by_client_still_in_client_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-11-66"><a id="__codelineno-11-66" name="__codelineno-11-66" href="#__codelineno-11-66"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;is_blocked should not affect RLA queryset (only ordering ability).&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<h3 id="potential-issues-found-during-analysis">Potential Issues Found During Analysis<a class="headerlink" href="#potential-issues-found-during-analysis" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong><code>ClientSupplierLink</code> не имеет <code>rla_roles_filter()</code></strong> — API endpoint <code>/api/client_supplier_link/</code> вернёт пустой queryset для неадминов</li>
+<li><strong><code>Order.rla_roles_filter</code> фильтрует ТОЛЬКО по supplier</strong> — клиентские пользователи могут НЕ видеть свои заказы через API</li>
+<li><strong><code>Swiss Timepieces Group SA</code> не имеет пользователей в seed</strong> — нельзя залогиниться в BackOffice этого поставщика</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/MaxShytov" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

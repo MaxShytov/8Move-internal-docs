@@ -1,0 +1,3687 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Internal documentation for the 8Move project">
+      
+      
+      
+        <link rel="canonical" href="https://maxshytov.github.io/8Move-internal-docs/tasks/current/notes/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/8move-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Working Notes - 8Move Internal Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#working-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="8Move Internal Docs" class="md-header__button md-logo" aria-label="8Move Internal Docs" data-md-component="logo">
+      
+  <img src="../../../assets/images/8move-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            8Move Internal Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Working Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MaxShytov/8Move-internal-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    8Move-internal-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../architecture/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../backend/getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Backend
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../flutter/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Flutter Apps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../users/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Users & Roles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../api/overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tasks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../back-office/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Back Office
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../features/supply-now/change-password/user-guide/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Features
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../support/chatbot/change-password/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Support
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/development-workflow/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="8Move Internal Docs" class="md-nav__button md-logo" aria-label="8Move Internal Docs" data-md-component="logo">
+      
+  <img src="../../../assets/images/8move-logo.png" alt="logo">
+
+    </a>
+    8Move Internal Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MaxShytov/8Move-internal-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    8Move-internal-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/tech-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/django-backend/workflows/change-password/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Password
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/django-backend/workflows/order-placement-constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Order Placement Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Backend
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/project-structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Flutter Apps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Flutter Apps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../flutter/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../users/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users & Roles
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Users & Roles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/platform-admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Admin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/supplier-back-office/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supplier — Back Office
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/client-supply-now/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client — Supply Now
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/driver-driver-pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Driver — Driver Pro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/delivery-manager-fleet-manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivery Manager — Fleet Manager
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../users/employee-docuflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Employee — DocuFlow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../run-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Current Tasks
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Current Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_2" id="__nav_7_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back Office
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back Office
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../back-office/BO-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BO-01 Supplier Client Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_3" id="__nav_7_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supply Now
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supply Now
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supply-now/SN-01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-01 Multi-Supplier Verification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supply-now/SN-02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-02 Client Company Profile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3_4" id="__nav_7_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Details
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Full Details
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/BE-01-full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-01 Full
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../details/BE-01.1-full/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SN-02 Full
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bugs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Tracker
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bug Tracker
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bugs/BUG-001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BUG-001 Receipt Save 500
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../completed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Completed Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/ai-chatbot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Chatbot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/developers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/admins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Admins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    End Users
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../back-office/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back Office
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back Office
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Быстрый старт
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Дашборд
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/orders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Заказы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/invoices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Счета
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/products/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Продукты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/clients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Клиенты
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пользователи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../back-office/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Настройки поставщика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supply Now
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Supply Now
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1_1" id="__nav_9_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Password
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Change Password
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/supply-now/change-password/user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../features/supply-now/change-password/admin-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Support
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chatbot KB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chatbot KB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../support/chatbot/change-password/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change Password
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/development-workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/docs-local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Docs Locally
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-26
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-26_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-26
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-25
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-24
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-23
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-21
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-20
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-18
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-17
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-02-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-02-16
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="working-notes">Working Notes<a class="headerlink" href="#working-notes" title="Permanent link">&para;</a></h1>
+<h2 id="2026-02-26">2026-02-26<a class="headerlink" href="#2026-02-26" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Back Office: OrderInvoiceCard widget — 3 states (pending, single, consolidated), invoice number/total/period/status/pdf</li>
+<li>[x] Backend: invoice serialization in OrderSerializer — prefetch invoices, get_invoice() method</li>
+<li>[x] Back Office: 9 new l10n keys for invoice card (en/fr/de/it): invoicePendingBanner, invoicePeriod, invoiceIssued, downloadPdf, viewFullInvoice, viewInvoice, invoiceStatusPaid, invoiceStatusUnpaid, invoiceConsolidatedHint</li>
+<li>[x] Back Office: Fix Flutter Web Border.all() crash — replaced all Border.all() with Border.fromBorderSide() in order form widgets (8 files, 26 occurrences)</li>
+<li>[x] Seed: seed310_james_pub_invoices — Dec 2025 monthly (12 invoices), Jan 2026 weekly (4), Feb 2026 per-order (10); Fix seed305 to create Invoice records for Invoiced/Paid orders</li>
+<li>[x] Supply Now: Order detail screen full redesign — TopBar, DetailsCard, ProductsCard, SummaryCard, NotesCard, HistoryCard, BottomBar, CancelledBanner, FailedBanner, ConfirmationBanner, skeleton, error state</li>
+<li>[x] Supply Now: confirmOrder / declineOrder API methods and Riverpod providers for CLIENT_CONFIRMATION_REQUIRED</li>
+<li>[x] Supply Now: invoices feature directory — InvoiceModel (freezed), invoicesProvider, InvoicesListScreen, InvoiceDetailScreen</li>
+<li>[x] Supply Now: 40+ new l10n keys for order detail redesign (en/fr/de/it)</li>
+<li>[x] Supply Now: orders screen redesign — grouped by date, search, status filter chips with counts, summary bar</li>
+<li>[x] Supply Now: ClientOrderModel — added totalWeight field (mapped from total_weight JSON)</li>
+<li>[x] Supply Now: order cards — weight in meta row, thousands separator in price, removed supplier row</li>
+<li>[x] Supply Now: action banners per card for CLIENT_CONFIRMATION_REQUIRED and SUPPLIER_MANAGER_REVIEW</li>
+<li>[x] Supply Now: orders API — getOrders() now returns totalCount for pagination</li>
+<li>[x] Supply Now: infinite scroll for All tab — loadMoreOrders(), allHasMore, isLoadingMore, SliverList.builder</li>
+<li>[x] Supply Now: seeded weight_kg for Unit 145 (5kg) and Unit 149 (2kg), recalculated 41 orders</li>
+<li>[x] Supply Now: l10n — added 31 missing translations in DE and IT (address form keys)</li>
+<li>[x] Supply Now: 67 unit tests (orders_state + client_order_model)</li>
+<li>[x] Back Office: orders auto-refresh every 30s with proper timer disposal</li>
+</ul>
+<hr />
+<ol>
+<li>Supply Now — Страница товара (Product Screen)
+Файлы: product_screen.dart, product_action_button.dart, product_provider.dart, providers.dart, product_model.dart</li>
+</ol>
+<p>Галерея изображений — если у товара несколько изображений, показывается ProductImageGallery (свайп) вместо одиночной картинки
+Две цены — отображаются цена за базовую единицу (Fr 35.00/kg) и цена за единицу заказа (Fr 350.00/pkg). Анимированная стрелка указывает на активную цену
+Выбор единицы измерения — под quantity selector показываются чипсы с orderable units. Если несколько — ChoiceChip для переключения
+Минимальное количество — кнопка "−" не позволяет опуститься ниже минимума для выбранной единицы
+Сумма — под кнопкой "Add to bag" отображается итог (price × conversion × qty)
+Orderable units из API — бэкенд теперь отдаёт orderable_units прямо в продукте, Flutter парсит их в ProductModel
+productsApiProvider — новый провайдер для ProductsApiService
+selectedUnitIdProvider — shared state между экраном и action button
+2. Supply Now — Главная страница
+Файл: home_content_screen.dart</p>
+<p>Убрана ссылка "See all" рядом с "Categories" (была нерабочая)
+3. Supply Now — Заказы (Orders)
+Файлы: orders_screen.dart, orders_provider.dart, order_status_badge.dart, client_order_model.dart, status_filter_chips.dart (новый)</p>
+<p>Фильтрация по статусу — новый виджет StatusFilterChips с горизонтальными чипсами для фильтрации заказов по статусу
+Расширены статусы — добавлены Ordered, CLIENT_CONFIRMATION_REQUIRED, Invoiced, Paid, Completed с цветами и переводами
+Обновлена логика "active" — активные заказы теперь включают Ordered, SUPPLIER_MANAGER_REVIEW, CLIENT_CONFIRMATION_REQUIRED, In_Fulfillment (вместо In_Delivery)
+Рефакторинг — _getStatusConfig вынесен в глобальную функцию getStatusConfig() для переиспользования в чипсах
+4. Backend — Заказы
+Файлы: orders/views.py, orders/serializers.py, orders/models.py</p>
+<p>Удаление из корзины — UiAppCartViewSet.destroy() теперь пересчитывает total_sum и total_weight заказа после удаления товара
+Fix calc_total_sum — исправлен баг с walrus operator (new_total := ...), когда total=0 считался falsy
+Обновлён фильтр active — бэкенд тоже использует новый набор статусов для status_type=active
+Fix unpacking — <em>_ заменён на </em>_rest в нескольких местах (избегает конфликт с gettext)
+5. Backend — Продукты
+Файл: products/serializers.py</p>
+<p>orderable_units — новое поле в UiAppProductSerializer, возвращает список orderable units прямо в продукте
+product_images — новое поле, возвращает все URL изображений товара (отсортированные по primary + sort_order)
+6. Back Office — DataTable
+Файл: data_table_widget.dart</p>
+<p>Fix crash — замена IntrinsicHeight + OverflowBox на UnconstrainedBox + SizedBox (исправляет RenderBox assertion failure)
+Разделитель — вместо отдельного Container(width:1) между frozen/scrollable колонками используется Border(right:) на frozen контейнере
+7. Shared Core
+Файл: dio_client.dart</p>
+<p>Accept-Language — всегда отправляется header, дефолт 'en' если локаль ещё не загрузилась
+8. Локализация
+Файлы: app_en.arb, app_de.arb, app_fr.arb, app_it.arb + generated files</p>
+<p>Новые ключи: statusOrdered, statusClientConfirmation, statusInvoiced, statusPaid, statusCompleted
+9. Новые файлы
+status_filter_chips.dart — виджет горизонтальных чипсов для фильтрации заказов
+product_image_gallery.dart — галерея изображений товара со свайпом
+seed305_james_pub_orders.py — seed-скрипт для тестовых данных</p>
+<h2 id="2026-02-26_1">2026-02-26<a class="headerlink" href="#2026-02-26_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Backend: <code>set_purpose</code> — removed clearing logic, multiple purposes now coexist on addresses</li>
+<li>[x] Backend: <code>clear_single_purpose</code> endpoint — <code>POST /api/actors/clients-addresses/{id}/clear-purpose/{purpose}/</code></li>
+<li>[x] Backend: <code>purposes</code> list field in ClientAddressSerializer (alongside backward-compatible <code>purpose</code>)</li>
+<li>[x] Supply Now: <code>ClientCompanyModel</code> (freezed) — official name, fiscal/VAT, self_settings, invoicing_settings, isBlocked computed</li>
+<li>[x] Supply Now: <code>ClientSelfSettings</code> — blocked, preferred language, default delivery address, notification recipient</li>
+<li>[x] Supply Now: <code>ClientInvoicingSettings</code> — period, payment terms, delivery method, order weight/amount constraints</li>
+<li>[x] Supply Now: <code>OrderNotificationRecipientDetails</code> — id, userName, email</li>
+<li>[x] Supply Now: <code>SupplierPhoneModel</code>, <code>SupplierEmailModel</code>, <code>FulfillmentSchemeModel</code> — new data models</li>
+<li>[x] Supply Now: Enhanced <code>SupplierSettingsModel</code> — description, fiscal/VAT, phones, emails, fulfillment scheme, weekly/monthly day</li>
+<li>[x] Supply Now: Orders screen redesign — search bar, grouped-by-date display, summary cards</li>
+<li>[x] Supply Now: <code>OrdersState</code> — searchQuery, searchedOrders, groupedOrders, statusCounts, summaryOrderCount, summaryTotalAmount</li>
+<li>[x] Supply Now: <code>OrdersNotifier</code> — updateSearch(), clearSearch(), tab switching clears filters/search</li>
+<li>[x] Supply Now: Company detail screen with full client company info</li>
+<li>[x] Supply Now: Supplier settings detail screen with phones, emails, fulfillment scheme</li>
+<li>[x] Supply Now: Multi-purpose addresses — <code>purposes</code> list field, <code>.contains()</code> extension methods</li>
+<li>[x] Supply Now: ETA/ATA timezone fix — <code>.toLocal()</code> before display, standardized date formatting</li>
+<li>[x] Supply Now: Removed "Client since" from profile header, subtitle = location only</li>
+<li>[x] Supply Now: Removed Favorites tab from navigation bar (5 tabs: Home, Scan, Cart, Orders, Profile)</li>
+<li>[x] Supply Now: Localization updates (EN/FR) — orders search, grouping, summary, company detail, supplier detail</li>
+<li>[x] Shared Core: <code>ClientAddressModel</code> — <code>purposes</code> list field, updated extension methods (isPrimary, isBilling, isRegistered use .contains())</li>
+<li>[x] Tests: <code>client_company_model_test.dart</code> — 16 tests (fromJson, toJson, defaults, equality, isBlocked)</li>
+<li>[x] Tests: <code>supplier_settings_model_test.dart</code> — 11 tests (FulfillmentScheme, Phone, Email, SupplierSettings)</li>
+<li>[x] Tests: <code>orders_state_test.dart</code> — 36 tests (defaults, copyWith, currentOrders, filteredOrders, searchedOrders, groupedOrders, statusCounts, summary, availableStatuses, computed booleans)</li>
+<li>[x] Tests: Updated <code>client_address_model_test.dart</code> — purposes list tests (multiple, single, empty, default)</li>
+</ul>
+<h2 id="2026-02-25">2026-02-25<a class="headerlink" href="#2026-02-25" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Backend: LegalDocument model in common app (document_type unique, title/content translated EN/DE/FR/IT via modeltranslation)</li>
+<li>[x] Backend: LegalDocumentAdmin with CKEditor 5 + TabbedTranslationAdmin for multilingual HTML editing</li>
+<li>[x] Backend: LegalDocumentViewSet (AllowAny, lookup by document_type) + LegalDocumentSerializer</li>
+<li>[x] Backend: /api/common/legal/ endpoint (list + retrieve by type: terms, privacy)</li>
+<li>[x] Backend: seed_legal_documents management command — seeds T&amp;C and Privacy Policy in all 4 languages</li>
+<li>[x] Supply Now: LegalDocumentModel (freezed) + legalDocumentProvider (FutureProvider.family)</li>
+<li>[x] Supply Now: Rewrite terms_conditions_screen and privacy_policy_screen — API-loaded HTML via flutter_widget_from_html_core, hardcoded fallback</li>
+<li>[x] Supply Now: Settings screen redesign — info cards (company, developer), "Powered by 8move" section with link</li>
+<li>[x] Supply Now: Trident Software logo in settings (SVG asset)</li>
+<li>[x] Supply Now: Navigation bar — 8move logo replaces home icon (colored inactive, white active)</li>
+<li>[x] Supply Now: ConvexAppBar icon sizing — OverflowBox for colored logo (42px), FractionallySizedBox for white logo (80%)</li>
+<li>[x] Supply Now: AppTab class extended with activeIcon and skipInactiveColorFilter fields</li>
+<li>[x] Supply Now: Product favorites — ProductFavorite model, toggle endpoint, FavoriteIconButton widget, favorites tab</li>
+<li>[x] Supply Now: Product grid/list items — favorite button, image border radius, price formatting improvements</li>
+<li>[x] Supply Now: New color tokens — surfaceContainerHighest, onSurfaceVariant, outlineVariant (light + dark)</li>
+<li>[x] Supply Now: New text styles — titleLarge, labelLarge (light + dark)</li>
+<li>[x] Supply Now: Localization (EN/DE/FR/IT) — legal documents, favorites, settings, powered by</li>
+<li>[x] Supply Now: Addresses screen M3 redesign — map previews (Google Static API + fallback), zoom controls, purpose tags, summary chips, action buttons</li>
+<li>[x] Supply Now: MapPreviewWidget — added zoom parameter for static map URL</li>
+<li>[x] Supply Now: _AddressMapPreview — self-contained StatefulWidget for independent zoom per card</li>
+<li>[x] Supply Now: Edit/delete protection — always show buttons, SnackBar warning when address has orders</li>
+<li>[x] Supply Now: Language sync — Settings and Personal Info now show same value, Settings saves to backend</li>
+<li>[x] Supply Now: Personal info phone field redesign — country code selector, DioException handling</li>
+<li>[x] Supply Now: Cart &amp; home screen improvements, navigation bar updates</li>
+<li>[x] Backend: Remove phone unique constraint in identity model (migration 0013)</li>
+<li>[x] Supply Now: Localization (EN/DE/FR/IT) — address summary chips, default badge, map controls</li>
+<li>[x] Supply Now: Address form M3 redesign — dual-mode input (smart search + manual), selected address card, map preview, tag chips, default switch, sticky bottom bar</li>
+<li>[x] Supply Now: ~30 new l10n keys (EN/FR) — complement, NPA, locality, delivery instructions, tags, address sections, validation messages, mode switch</li>
+<li>[x] Supply Now: Swiss canton dropdown (26 cantons + FL) with full French names</li>
+<li>[x] Supply Now: Favorites tab — replaced 2-column grid (ProductGridItemWidget) with vertical list (ProductItemWidget) matching home page layout</li>
+<li>[x] Supply Now: Cart buttons unified — solid primary add button, quantity stepper with delete icon, row-based layout (was Stack+Positioned with pale green pill)</li>
+<li>[x] Supply Now: "Added to cart" snackbar — neutral surface color with rounded corners (was pale pink lightGreen in product_item_widget and product_action_button)</li>
+</ul>
+<h2 id="2026-02-24">2026-02-24<a class="headerlink" href="#2026-02-24" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Supply Now: Product detail M3 redesign — SliverAppBar, pricing card, specs table, unit toggle, availability chip, bottom action bar</li>
+<li>[x] Supply Now: Share button (share_plus), favorite toggle, M3 color tokens, Outfit + DM Sans fonts</li>
+<li>[x] Supply Now: All units display — SegmentedButton shows orderable + non-orderable units, snackbar for blocked units</li>
+<li>[x] Supply Now: Next delivery date in availability chip (dispatch slots + delivery zone lookup)</li>
+<li>[x] Supply Now: Quantity selector flicker fix — replaced sync-in-build with ref.listen</li>
+<li>[x] Supply Now: Price defaults to first orderable unit when price unit is non-orderable</li>
+<li>[x] Backend: all_units field in UiAppProductSerializer (all units, not just orderable)</li>
+<li>[x] Backend: next_delivery_date field — delivery zone lookup with address fallback (primary → billing → registered)</li>
+<li>[x] Backend: ProductFavorite model + toggle-favorite endpoint + is_favorite on product response</li>
+<li>[x] Supply Now: Localization (EN/DE/FR/IT) — specifications, availability, unitNotOrderable, nextDelivery, share, etc.</li>
+<li>[x] Backend: Change active orders filter — Ordered, SUPPLIER_MANAGER_REVIEW, CLIENT_CONFIRMATION_REQUIRED, In_Fulfillment</li>
+<li>[x] Backend: Fix UnboundLocalError in CartOrderProductsSerializer — <code>*_</code> → <code>*_rest</code> (Python 3.12 scoping)</li>
+<li>[x] Backend: seed305 James Pub orders (Ordered, SUPPLIER_MANAGER_REVIEW, In_Fulfillment, Invoiced, Paid)</li>
+<li>[x] Supply Now: Update isActive extension to match new active statuses</li>
+<li>[x] Supply Now: Add status filter chips — multi-select, dynamic, reset, color-coded</li>
+<li>[x] Supply Now: Order status badge — all statuses with distinct colors (Ordered, CLIENT_CONFIRMATION_REQUIRED, Invoiced, Paid, Completed)</li>
+<li>[x] Supply Now: Localization (EN/FR/DE/IT) — statusOrdered, statusClientConfirmation, statusInvoiced, statusPaid, statusCompleted</li>
+<li>[x] Back Office: No-access blocking screen for users without SupplierUserLink</li>
+<li>[x] Back Office: Router — splash-based loading guard (prevent dashboard flash while suppliers load)</li>
+<li>[x] Back Office: Localization (EN/FR/DE/IT) — noAccess* strings (9 keys)</li>
+</ul>
+<h2 id="2026-02-23">2026-02-23<a class="headerlink" href="#2026-02-23" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Back Office: Orders Kanban board — kanban_board_widget, kanban_order_card, kanbanOrdersProvider, view switcher</li>
+<li>[x] Back Office: Supplier users list redesign + new supplier_user_edit_screen + avatar support</li>
+<li>[x] Backend: SupplierUserLinkSerializer — user_avatar field (S3 URL), select_related optimization</li>
+<li>[x] Back Office: Supplier users router — /users/:id/edit route</li>
+<li>[x] Back Office: Fix supplier persistence — restoreFromSuppliers + immediate check in DashboardLayout</li>
+<li>[x] Back Office: Localization updates (EN/DE/FR/IT) for kanban board strings</li>
+<li>[x] Back Office: Orders — fulfillment scheme filter locked to "Ship Now, Pay Later"</li>
+<li>[x] Back Office: Orders — kanban columns ordered by scheme's status workflow (statusOrders sorted by sortOrder)</li>
+<li>[x] Back Office: Orders — multi-select status filter (Set<String>, status__in API lookup)</li>
+<li>[x] Back Office: Orders — persistent view mode + filters via PreferencesStorage (SharedPreferences)</li>
+<li>[x] Back Office: Orders — auto-refresh data on page navigation (invalidate providers in initState)</li>
+<li>[x] Back Office: Orders — kanban card redesign (avatar, zone/address, copy/map, dispatch slot, ETA/ATA)</li>
+<li>[x] Back Office: Orders — kanban column headers (name+count, weight+sum)</li>
+<li>[x] Backend: Orders API — added fulfillment_scheme to filterset_fields, status supports in lookup</li>
+<li>[x] Supply Now: Changed app theme from green to Swiss red color palette (light_colors, dark_colors + 19 files with hardcoded colors)</li>
+<li>[x] Backend: UiAppProductSerializer — min_order_info with unit conversion, prefetch units__classifier</li>
+<li>[x] Supply Now: MinOrderInfoModel + minOrderFormat utility for product cards</li>
+<li>[x] Supply Now: Category item widget and product item widget UI improvements</li>
+<li>[x] Back Office: Product units section widget + product table cell redesign</li>
+<li>[x] Django i18n: German (DE) translations 100% — 1124/1124 entries filled, .mo compiled</li>
+<li>[x] Django i18n: Italian (IT) translations 100% — 1123/1123 entries filled, .mo compiled</li>
+<li>[x] Supply Now: New l10n keys (minOrder, perUnit, minimumOrder)</li>
+<li>[x] Back Office: Fix product list crash — removed LayoutBuilder from ProductTableCell (incompatible with IntrinsicHeight in frozen table rows)</li>
+</ul>
+<h2 id="2026-02-22">2026-02-22<a class="headerlink" href="#2026-02-22" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Backend: Make fulfillment_scheme read-only in SupplierSettingsSelfControlledSerializer and ClientSettingsSupplierControlledSerializer</li>
+<li>[x] Backend: Default new suppliers to "Ship Now, Pay Later" scheme in signals.py</li>
+<li>[x] Backend: Add CurrentUserMiddleware and SimpleJWTAuthenticationWithThreadLocal for audit trail</li>
+<li>[x] Backend: Refactor order number generation, add price unit conversion to OrderProductsSerializer</li>
+<li>[x] Backend: Add supplier filtering and search to ClientUserLink API</li>
+<li>[x] Back Office: Redesign dashboard with collapsible sidebar navigation (NavigationRail pattern)</li>
+<li>[x] Back Office: Add settings tab to profile with supplier picker and multi-supplier toggle</li>
+<li>[x] Back Office: Expand supplier settings form with branding (logo, company details, fiscal/VAT numbers)</li>
+<li>[x] Back Office: Remove fulfillment scheme selector from supplier settings and client form</li>
+<li>[x] Back Office: Restructure user management into supplier_users and client_users</li>
+<li>[x] Back Office: Redesign order products card with flex layout, show article and category</li>
+<li>[x] Back Office: Add 8move branding assets (icon, logo SVG)</li>
+<li>[x] Back Office: Add multi-supplier mode provider and preferences storage</li>
+<li>[x] Back Office: Add fiscalNumber and vatNumber to SupplierModel</li>
+<li>[x] Back Office: Add client users list screen and filters</li>
+<li>[x] Back Office: Order Products Bulk Edit dialog — compound ProductTableCell column (image + name + article + category)</li>
+<li>[x] Back Office: Order Products Bulk Edit dialog — client name + price category badge + individual prices count in header</li>
+<li>[x] Back Office: Order Products Bulk Edit dialog — unit warnings with color-coded badges and tooltips</li>
+<li>[x] Back Office: Order Products Bulk Edit dialog — orderable unit switcher dropdown (loads units per product in parallel)</li>
+<li>[x] Back Office: Order Products Bulk Edit dialog — enhanced price cell with individual/strikethrough, min order info</li>
+<li>[x] Back Office: Currency formatting — consistent "521.40 CHF" format everywhere (CurrencyDisplay.formatCurrency)</li>
+<li>[x] Back Office: Fixed model extensions (OrderProduct, BackOfficeOrder, ProductPrice, IndividualPrice) to use currency code</li>
+<li>[x] Back Office: Order summary card, delivery tab, optional card, form header — all use currencyCode now</li>
+<li>[x] Backend: ClientViewSet.get_serializer_class() — retrieve action now uses ClientListSerializer (returns price_category_name)</li>
+<li>[x] Back Office: New reusable widgets — ProductTableCell, AddressTableCell</li>
+<li>[x] Back Office: Bulk edit dialog — min order quantity enforcement (auto-increase + snackbar on Enter/Tab, blur, unit switch)</li>
+<li>[x] Back Office: Products list — pin/unpin category panel (sidebar ↔ dropdown chip with searchable dialog)</li>
+<li>[x] Back Office: Bulk edit dialog — fix total calculation for non-base units (unit conversion rate ratio)</li>
+</ul>
+<h2 id="2026-02-21">2026-02-21<a class="headerlink" href="#2026-02-21" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Backend: ReassignDeliveryZonesService — reuses admin panel assign_delivery_zone() logic</li>
+<li>[x] Backend: DataImportLog.operation_type field (bexio_csv_import / reassign_zones) + migration</li>
+<li>[x] Backend: ClientAddressDeliveryZone.is_manual field + migration</li>
+<li>[x] Backend: Zone reassignment rollback in DataImportRollbackService</li>
+<li>[x] Backend: POST /api/actors/clients/reassign-delivery-zones/ endpoint</li>
+<li>[x] Back Office: "Import" → "Bulk" rename with 3 menu items (Import CSV, Reassign Zones, History)</li>
+<li>[x] Back Office: Reassign zones dialog with include_manual checkbox, results dialog</li>
+<li>[x] Back Office: History screen — operation type badges, context-aware row log and rollback</li>
+<li>[x] Back Office: 20 new localization strings in EN/DE/FR/IT for bulk zone operations</li>
+<li>[x] Shared Core: reassignDeliveryZones() API method in clients_api_service.dart</li>
+<li>[x] Backend: get_price() extended to return (price, currency, actual_unit, is_individual, regular_price)</li>
+<li>[x] Backend: _get_regular_price() helper for strikethrough display when individual pricing applies</li>
+<li>[x] Backend: New product filters — has_image, has_base_price, base_unit_null, price_category, price_category_null</li>
+<li>[x] Backend: Updated order serializers for new get_price() return format</li>
+<li>[x] Back Office: Products list — frozen Name column with subtle divider for horizontal scrolling</li>
+<li>[x] Back Office: Products list — client price column with individual/regular price strikethrough display</li>
+<li>[x] Back Office: Products list — ClientPriceDialog for inline individual price editing</li>
+<li>[x] Back Office: Products list — advanced filter sheet (image, base price, base unit, price category)</li>
+<li>[x] Back Office: Category tree — "No category" filter with uncategorized products count badge</li>
+<li>[x] Back Office: Orders list — redesigned compact columns (status, client+#, address+zone+maps, slot, date, total+weight)</li>
+<li>[x] Back Office: Orders list — auto-filter by current supplier, removed debug prints</li>
+<li>[x] Shared UI: MapsConfigError enum + context-aware Google Maps error messages (no supplier link / no keys / fetch error)</li>
+<li>[x] Back Office: Localization updates in DE/EN/FR/IT for new filter labels and client price strings</li>
+<li>[x] Backend: Interactive Leaflet.js map preview in DeliveryZone admin (full-width, dynamic CDN load, zone color, popups)</li>
+</ul>
+<h2 id="2026-02-20">2026-02-20<a class="headerlink" href="#2026-02-20" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Back Office: Replace industry FilterChip selector with multi-select dropdown dialog in client form</li>
+<li>[x] Backend: ProductImage model with is_primary, sort_order, alt_text + partial unique constraint</li>
+<li>[x] Backend: Schema migration (0006) + data migration (0007) for existing product images</li>
+<li>[x] Backend: ProductImageSerializer with S3ImageField, backward-compatible images field in ProductSerializer</li>
+<li>[x] Backend: ProductImageViewSet with set-primary and reorder actions, nested router</li>
+<li>[x] Backend: Order serializers updated for backward compat with new product images</li>
+<li>[x] Backend: ProductImageInline in admin with image preview</li>
+<li>[x] Flutter: ProductImageModel (freezed) + Product model updated with productImages field</li>
+<li>[x] Flutter: Products API service — 6 new image endpoints</li>
+<li>[x] Flutter: ProductImagesSection widget with grid view, upload, set primary, delete</li>
+<li>[x] Flutter: Product form integration — images section for edit, simple uploader for create</li>
+<li>[x] Flutter: Product images localization strings in EN/DE/FR/IT</li>
+<li>[x] Back Office: Products list full rework with improved layout, filtering, stats</li>
+<li>[x] Back Office: M3 polish — consistent card headers, theme tokens in ImageUploadField</li>
+<li>[x] Back Office: Individual prices pagination (10 per page)</li>
+<li>[x] Back Office: Category price dialog unit-aware display, product unit dialog ordering constraints</li>
+<li>[x] Backend: Seed data updates for pricing, products, secondary units</li>
+<li>[x] Back Office: Inline price editing in products list — edit icons next to base price and category prices</li>
+<li>[x] Back Office: BasePriceDialog widget for creating/editing base price from product list</li>
+<li>[x] Back Office: CategoryPriceDialog reuse for editing category prices from list</li>
+<li>[x] Back Office: Default base unit for new individual prices and barcodes</li>
+<li>[x] Back Office: Refresh button in product form header to reload all sections</li>
+<li>[x] Backend: main_category_null filter for products without main category</li>
+<li>[x] Flutter tests: BasePriceDialog (9 tests), PriceEditIcon (6 tests), ProductsFilter (5 tests)</li>
+<li>[x] Flutter tests: Test helpers — MockPricingApiService, MockProductsApiService, MockSuppliersApiService, TestData factory</li>
+</ul>
+<h2 id="2026-02-18">2026-02-18<a class="headerlink" href="#2026-02-18" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Django Admin: Force Delete action for Suppliers — bypasses PROTECT constraints via Collector patching + raw SQL deletion</li>
+<li>[x] Django Admin: 13 unit tests for force_delete_suppliers (products, orders, invoices, depots, full chain, rollback, isolation, PROTECT restoration)</li>
+<li>[x] Django Admin: ProductInlineMixin — filter unit FK in Barcode/QRCode/ProductPrice inlines to current product only</li>
+<li>[x] Back Office: Supplier Settings screen redesign with Material Design 3 (ListTile, SwitchListTile, ExpansionTile)</li>
+<li>[x] Back Office: Clients list screen improvements</li>
+<li>[x] Back Office: Addresses section copy-to-clipboard enhancements + localization (EN/DE/FR/IT)</li>
+<li>[x] Backend: ClientPhone/ClientEmail serializers + viewsets with auto-primary logic</li>
+<li>[x] Backend: phones_data/emails_data on client detail response</li>
+<li>[x] Flutter: SupplierPhonesSection/SupplierEmailsSection in Supplier Settings with CRUD dialogs</li>
+<li>[x] Flutter: Supplier phone/email models, API services, Riverpod providers</li>
+<li>[x] Flutter: Clients list — copy buttons next to Name, #ID, Bexio ID; Invoicing↔User column swap</li>
+</ul>
+<h2 id="2026-02-17">2026-02-17<a class="headerlink" href="#2026-02-17" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Client form UX: SegmentedButton for type, merged Industry+Description into Basic Info, group dividers, red asterisks for required, "Optional" helper text, ID in header subtitle, secondary headers for settings sections</li>
+<li>[x] Client form: moved logo to inline 128px avatar with camera picker (reuses Profile avatar pattern) next to Company Name / Official Name fields</li>
+<li>[x] Bexio CSV Import: backend service (BexioCsvImportService) with Bexio ID matching, name+postal manual review, duplicate email detection</li>
+<li>[x] Bexio CSV Import: BexioImportLog model + ReadOnly ViewSet + list/detail serializers</li>
+<li>[x] Bexio CSV Import: Phone/Email models, salutation, industries M2M, data migration</li>
+<li>[x] Bexio CSV Import: Flutter import dialog (file picker, preview, dry run, progress, results)</li>
+<li>[x] Bexio CSV Import: Flutter import history screen with expandable cards + detail drill-down</li>
+<li>[x] Bexio CSV Import: Email Report button (mailto: with formatted import results)</li>
+<li>[x] Bexio CSV Import: management command <code>import_bexio_csv</code> for CLI</li>
+<li>[x] Clients list: copy address button next to map pin, Bexio ID display next to client ID</li>
+<li>[x] AddressesSection widget: copy address button with localized tooltip (EN/DE/FR/IT)</li>
+<li>[x] Client form: fixed sync section parsing (external_identifiers/sync_logs nested response)</li>
+<li>[x] Backend: added bexio_id to ClientListSerializer via GenericRelation + prefetch</li>
+<li>[x] Backend: RLA access control on ClientPhone/ClientEmail models (rla_roles_filter)</li>
+<li>[x] Backend: ClientPhoneSerializer/ClientEmailSerializer with auto-primary logic</li>
+<li>[x] Backend: ClientPhoneViewSet/ClientEmailViewSet with perform_destroy auto-primary promotion</li>
+<li>[x] Backend: phones_data/emails_data added to ClientListSerializer for list view</li>
+<li>[x] Backend: BexioImportLog → DataImportLog rename + ROLLED_BACK status + rollback service</li>
+<li>[x] Flutter: ClientPhonesSection/ClientEmailsSection — M3 list items with CRUD</li>
+<li>[x] Flutter: ClientPhoneDialog/ClientEmailDialog — add/edit with type picker, label, primary toggle</li>
+<li>[x] Flutter: Swiss phone formatter (+41 (0) 79 745-33-22 format)</li>
+<li>[x] Flutter: "+N more" contacts chip in clients list with popup showing all phones/emails</li>
+<li>[x] Flutter: Phones/emails sections side-by-side in client edit form</li>
+<li>[x] Flutter: Delivery address column — zone left, lat/lon + map icon right-aligned</li>
+<li>[x] Flutter: Address form header with client name + IDs</li>
+<li>[x] Flutter: Business Information section moved above Contact Information</li>
+<li>[x] Flutter: clientAddressesProvider now passes supplierId for delivery zone display</li>
+<li>[x] Flutter: Bexio import → Data import rename (screens, providers, router)</li>
+<li>[x] Backend tests: ClientPhone/Email CRUD + auto-primary (8+7 tests), RLA isolation (4 tests), serializer phones_data/emails_data (4 tests), DataImportRollback (6 tests)</li>
+<li>[x] Backend tests: BexioCsvClassifier — all 8 Col6 classification types (19 tests)</li>
+<li>[x] Backend tests: BexioCsvImport — normalize_country, get_field, CSV parsing, client creation pipeline (16 tests)</li>
+<li>[x] Flutter tests: ClientModel, ClientAddressModel (with extensions), ClientUserLinkModel, OrderItemModel, DeliverySlotModel (5 model test files)</li>
+<li>[x] Flutter tests: phone_formatter (Swiss formats), color_utils (hex parsing), formatters (currency/weight/distance/duration)</li>
+<li>[x] Test coverage analysis saved to CURRENT_TASK_Test_Coverage.md</li>
+</ul>
+<h2 id="2026-02-16">2026-02-16<a class="headerlink" href="#2026-02-16" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[x] Created shared <code>userProfileProvider</code> in shared_core (state, notifier, provider with auth listener)</li>
+<li>[x] Created <code>ProfilePersonalTab</code> in shared_ui (avatar, name auto-save, change password, language, logout)</li>
+<li>[x] Created <code>SharedProfileScreen</code> shell in shared_ui (title, tabs, desktop responsive, leading widget)</li>
+<li>[x] Created <code>ProfilePersonalLabels</code> model for localization</li>
+<li>[x] Integrated profile screen in Back Office (new screen + /profile route)</li>
+<li>[x] Integrated profile screen in Fleet Planner (new screen + /profile route)</li>
+<li>[x] Integrated profile screen in Driver Pro (new screen + /profile route + bottom nav)</li>
+<li>[x] Replaced DocuFlow profile with shared version, removed custom DioService and UserProvider</li>
+<li>[x] Refactored Supply Now profile to use SharedProfileScreen with 4 tabs</li>
+<li>[x] Back Office: removed language switcher, email, popup menu from dashboard header; avatar now navigates directly to /profile</li>
+<li>[x] Fleet Planner: removed language switcher from dashboard header; fixed avatar to show user image</li>
+<li>[x] Added back arrow (leading widget) to Back Office and Fleet Planner profile screens</li>
+<li>[ ] Full localization verification across all apps (arb files)</li>
+<li>[ ] Manual end-to-end testing (avatar upload, change password, language switch, logout)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/MaxShytov" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
