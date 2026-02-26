@@ -86,10 +86,12 @@ Order history and tracking.
 | Summary bar | Total order count, total amount (e.g., `Fr 7,419.50`), and total weight when available |
 | Order card | Accent stripe by status, price with thousands separator, weight + item count in meta row |
 | Action banners | Amber banner for `CLIENT_CONFIRMATION_REQUIRED` (Review button), purple for `SUPPLIER_MANAGER_REVIEW` |
-| Order detail | Items, quantities, prices, status, delivery info |
-| Status history | Track order through workflow states |
-| Driver tracking | Real-time map with driver location |
-| Delivery window | Estimated delivery time range |
+| Order detail | Card-based layout: TopBar (order # + status), DetailsCard (address, zone, slot, ETA/ATA), ProductsCard, SummaryCard (weight, subtotal, tax, total), NotesCard (driver notes), HistoryCard (timeline) |
+| Confirmation | Confirm Order / Decline buttons shown for `CLIENT_CONFIRMATION_REQUIRED` status |
+| Cancelled / Failed | Red banner with reason shown for cancelled or failed delivery orders |
+| Bottom actions | Contact Supplier and Reorder buttons (hidden for cancelled orders) |
+| Status history | Timeline with colored dots and status transitions |
+| Loading skeleton | Shimmer animation while order data loads |
 
 ### Profile
 

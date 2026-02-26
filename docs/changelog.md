@@ -6,6 +6,30 @@ All notable documentation and platform changes are documented here.
 
 ## 2026-02-26
 
+### Platform (Back Office + Supply Now + Backend)
+
+#### :material-new-box: Back Office — Invoice Card in Order Form
+Order form now shows an **Invoice** section in the right column. Three states: (1) **Pending** — "Invoice will be generated after delivery confirmation" banner; (2) **Single invoice** — invoice number, issue date / period, total amount, paid/unpaid status badge, Download PDF button, View Invoice button; (3) **Consolidated** — same as single with an additional blue badge showing "Consolidated — includes N orders". Invoice data includes number, total, currency, issued date, period start/end, lock status (paid), and PDF URL.
+
+#### :material-new-box: Supply Now — Order Detail Screen Full Redesign
+Complete overhaul of the order detail screen with a new card-based layout:
+
+- **TopBar** — sticky white header with back button, order number + creation date, status badge
+- **DetailsCard** — delivery address, zone chip (color-coded), delivery slot chip, ETA and ATA rows with icons
+- **ProductsCard** — order items list with empty state
+- **SummaryCard** — items count, total weight, subtotal, tax, total (large red)
+- **NotesCard** — driver notes from route stop (shown only when notes exist)
+- **HistoryCard** — timeline with colored dots and status transitions
+- **BottomBar** — Contact Supplier + Reorder buttons (hidden for Cancelled orders)
+- **CancelledBanner** — red card with cancellation reason, cancelled-by info; detail cards shown at 55% opacity
+- **FailedBanner** — red card with failure reason, driver note, and next steps
+- **ConfirmationBanner** — orange card with Confirm Order / Decline buttons for `CLIENT_CONFIRMATION_REQUIRED` status
+- **Loading skeleton** with shimmer animation
+- **Error state** with retry and back buttons
+
+#### :material-wrench: Back Office — Flutter Web Border.all() Crash Fix
+Fixed a Flutter 3.35.7 Web bug where `Border.all()` returns a `LegacyJavaScriptObject` instead of a Dart `Border`, causing `padding.isNonNegative` assertion failures. Replaced all `Border.all(...)` calls with `Border.fromBorderSide(BorderSide(...))` across all order form widgets (history card, optional card, required card, products card, products tab, delivery tab, history tab, orders list).
+
 ### Platform (Supply Now + Backend)
 
 #### :material-new-box: Supply Now — Orders Screen Redesign

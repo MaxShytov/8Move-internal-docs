@@ -2,6 +2,15 @@
 
 ## 2026-02-26
 
+- [x] Back Office: OrderInvoiceCard widget — 3 states (pending, single, consolidated), invoice number/total/period/status/pdf
+- [x] Backend: invoice serialization in OrderSerializer — prefetch invoices, get_invoice() method
+- [x] Back Office: 9 new l10n keys for invoice card (en/fr/de/it): invoicePendingBanner, invoicePeriod, invoiceIssued, downloadPdf, viewFullInvoice, viewInvoice, invoiceStatusPaid, invoiceStatusUnpaid, invoiceConsolidatedHint
+- [x] Back Office: Fix Flutter Web Border.all() crash — replaced all Border.all() with Border.fromBorderSide() in order form widgets (8 files, 26 occurrences)
+- [x] Seed: seed310_james_pub_invoices — Dec 2025 monthly (12 invoices), Jan 2026 weekly (4), Feb 2026 per-order (10); Fix seed305 to create Invoice records for Invoiced/Paid orders
+- [x] Supply Now: Order detail screen full redesign — TopBar, DetailsCard, ProductsCard, SummaryCard, NotesCard, HistoryCard, BottomBar, CancelledBanner, FailedBanner, ConfirmationBanner, skeleton, error state
+- [x] Supply Now: confirmOrder / declineOrder API methods and Riverpod providers for CLIENT_CONFIRMATION_REQUIRED
+- [x] Supply Now: invoices feature directory — InvoiceModel (freezed), invoicesProvider, InvoicesListScreen, InvoiceDetailScreen
+- [x] Supply Now: 40+ new l10n keys for order detail redesign (en/fr/de/it)
 - [x] Supply Now: orders screen redesign — grouped by date, search, status filter chips with counts, summary bar
 - [x] Supply Now: ClientOrderModel — added totalWeight field (mapped from total_weight JSON)
 - [x] Supply Now: order cards — weight in meta row, thousands separator in price, removed supplier row
